@@ -66,6 +66,31 @@ class DefaultController extends Controller {
         ));
     }
 
+        /**
+     * @Route(
+     *     "/people/{page}",
+     *     name="people",
+     *    defaults={"page" = 1},
+     *     requirements={
+     *         "page": "\d*"
+     *     }
+     * )
+     */
+    public function peopleAction($page) {
+        $client = $this->get('tmdb.client');
+        $TopRatedMovies = $client->getPeopleApi()->getPopular(array('page' => $page));
+        $pagination = array(
+            'page' => $page,
+            'route' => 'people',
+            'pages_count' => $TopRatedMovies['total_pages'],
+            'route_params' => array()
+        );
+        return $this->render('AppBundle:Core:people.html.twig', array(
+                    'items' => $TopRatedMovies['results'],
+                    'pagination' => $pagination
+        ));
+    }
+    
     /**
      * @Route(
      *     "/movies/{page}",

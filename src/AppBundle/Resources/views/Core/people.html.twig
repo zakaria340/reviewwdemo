@@ -1,0 +1,31 @@
+{# On utilise ici le layout général, qui se situe dans ce même CoreBundle maintenant #}
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block title %}
+    List Movies - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="media">
+        <h2><span class="title">People</span>
+        </h2>
+
+        <div class="results">
+            {% for key,item in items %}
+                <div class="item poster">
+                    <div class="image_content">
+                        <a alt="{{item.name}}" title="{{item.name}}" href="{{ path('viewpeople', {'slug': item.name|GenerateSlug, 'id': item.id, '_format': 'html'}) }}">
+                            <img alt="{{item.name}}" data-srcset="https://image.tmdb.org/t/p/w185/{{ item.profile_path }} 1x, https://image.tmdb.org/t/p/w370{{ item.profile_path }} 2x" data-src="https://image.tmdb.org/t/p/w185{{ item.profile_path }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w185{{ item.profile_path }} 1x, https://image.tmdb.org/t/p/w370{{ item.profile_path }} 2x" src="https://image.tmdb.org/t/p/w185{{ item.profile_path }}">
+                           
+                        </a>
+                    </div>
+                    <p><a alt="{{item.name}}" title="{{item.name}}" href="{{ path('viewpeople', {'slug': item.name|GenerateSlug, 'id': item.id, '_format': 'html'}) }}">{{item.name}}</a></p>
+                </div>
+            {% endfor %}
+        </div>
+        {% include 'AppBundle::pagination.html.twig' %}
+
+    </div>
+
+{% endblock %}

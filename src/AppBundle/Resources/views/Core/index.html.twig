@@ -2,136 +2,134 @@
 {% extends "AppBundle::layout.html.twig" %}
 
 {% block title %}
-    Page d'accueil - {{ parent() }}
+  Page d'accueil - {{ parent() }}
 {% endblock %}
 
 {% block body %}
 
-    <div class="media">
-        <section class="index tv">
-            <h2><a href="#">ON TV</a></h2>
-            {% for key,tv in firstTvs %}
-                <div class="info {{ key == 0 ? 'first' : key == 1 ? 'second' : 'third' }}">
-                    {% if key == 0 %}
-                        <a href="{{ path('viewtvshow', {'slug': tv.slug, 'id': tv.id, '_format': 'html'}) }}">
-                            <img alt="{{tv.name}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.backdrop_path }}">
-                        </a>
-                        <span>
-                            <a href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}">
-                                <img alt="{{tv.name}}" data-srcset="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.poster_path }}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.poster_path }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.poster_path }}" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.poster_path }}">
-                            </a>
-                            <div class="content">
-                                <a href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}" class="text">
-                                    <h3>{{tv.name}}</h3>
-                                    <p>{{tv.overview}}</p>
-                                </a>
-                            </div>
-                        </span>
-                    {% else %}
-                        <a href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}">
-                            <img alt="{{tv.name}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.backdrop_path }}">
-                        </a>
-                        <span>
-                            <a class="text" href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}">
-                                <h3>{{tv.name}}</h3>
-                            </a>
-                            <a class="text" alt="{{tv.name}}" title="{{tv.name}}" href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}">
-                                <p>{{tv.overview}}</p>
-                            </a>
-                        </span>
-                    {% endif %}
-                </div>
-            {% endfor %}
-        </section>
-        <section class="index movie">
-            <h2><a href="{{ path('nowplayingMovies') }}">In Theaters</a></h2>
-            {% for key,movie in firstMovies %}
-                <div class="info {{ key == 0 ? 'second' : key == 1 ? 'third' : 'first' }}">
-                    {% if key == 0 %}
-                        <a href="{{ path('viewmovie', {'slug': movie.slug, 'id': movie.id, '_format': 'html'}) }}">
-                            <img alt="{{movie.title}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}">
-                        </a>
-                        <span>
-
-                            <div class="content">
-                                <a href="{{ path('viewmovie', {'slug': movie.slug, 'id': movie.id, '_format': 'html'}) }}" class="text">
-                                    <h3>{{movie.title}}</h3>
-                                    <p>{{movie.overview}}</p>
-                                </a>
-                            </div>
-                        </span>
-                    {% else %}
-                        <a href="{{ path('viewmovie', {'slug': movie.slug, 'id': movie.id, '_format': 'html'}) }}">
-                            <img alt="{{movie.title}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}">
-                        </a>
-                        <span>
-                            <a class="text" href="{{ path('viewmovie', {'slug': movie.slug, 'id': movie.id, '_format': 'html'}) }}">
-                                <h3>{{movie.title}}</h3>
-                            </a>
-                            <a class="text" alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.slug, 'id': movie.id, '_format': 'html'}) }}">
-                                <p>{{movie.overview}}</p>
-                            </a>
-                        </span>
-                    {% endif %}
-                </div>
-            {% endfor %}
-        </section>
-
-        <div class="media">
-            <h2><span class="title">
-                    <a alt="Popular Movies" title="Popular Movies" href="{{ path('popularMovies') }}">Films Populaires</a></span>
-            </h2>
-            <div class="results">
-                {% for key,movie in movies %}
-
-                    <div class="item {{ key == 0 ? 'backdrop' : 'poster' }}">
-                        <div class="image_content">
-
-                            <a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id, '_format': 'html'}) }}">
-                                {% if key == 0 %}
-                                    <img alt="{{movie.title}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}">
-                                {% else %}
-
-                                    <img alt="{{movie.title}}" data-srcset="https://image.tmdb.org/t/p/w185/{{ movie.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ movie.poster_path }} 2x" data-src="https://image.tmdb.org/t/p/w185{{ movie.poster_path }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w185{{ movie.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ movie.poster_path }} 2x" src="https://image.tmdb.org/t/p/w185{{ movie.poster_path }}">
-                                {% endif %}
-                                <div class="meta" data-role="tooltip">
-                                    <span class="release_date"> {{movie.release_date}}</span>
-                                    <span class="vote_average">{{movie.vote_average}}<span class="glyphicons glyphicons-star x1 rating" id="rating_5256cfba19c2956ff60a01e4"></span></span>
-                                </div>
-                            </a>
-
-                        </div>
-                        <p><a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.slug, 'id': movie.id, '_format': 'html'}) }}">{{movie.title}}</a></p>
-                    </div>
-                {% endfor %}
-            </div>
-
-            <h2><span class="title">Films Populaires</span>
-            </h2>
-            <div class="results">
-                {% for key,tv in tvs %}
-
-                    <div class="item {{ key == 3 ? 'backdrop' : 'poster' }}">
-                        <div class="image_content">
-
-                            <a alt="{{tv.name}}" title="{{tv.name}}" href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}">
-                                {% if key == 3 %}
-                                    <img alt="{{tv.name}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.backdrop_path }}">
-                                {% else %}
-
-                                    <img alt="{{tv.name}}" data-srcset="https://image.tmdb.org/t/p/w185/{{ tv.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ tv.poster_path }} 2x" data-src="https://image.tmdb.org/t/p/w185{{ tv.poster_path }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w185{{ tv.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ tv.poster_path }} 2x" src="https://image.tmdb.org/t/p/w185{{ tv.poster_path }}">
-                                {% endif %}
-                                <div class="meta" data-role="tooltip">
-                                    <span class="release_date"> {{tv.first_air_date}}</span>
-                                    <span class="vote_average">{{tv.vote_average}}<span class="glyphicons glyphicons-star x1 rating" id="rating_5256cfba19c2956ff60a01e4"></span></span>
-                                </div>
-                            </a>
-
-                        </div>
-                        <p><a alt="{{tv.name}}" title="{{tv.name}}" href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}">{{tv.name}}</a></p>
-                    </div>
-                {% endfor %}
-            </div>
+  <div class="media">
+    <section class="index tv">
+      <h2><a href="{{ path('tvshow') }}">ON TV</a></h2>
+      {% for key,tv in firstTvs %}
+        <div class="info {{ key == 0 ? 'first' : key == 1 ? 'second' : 'third' }}">
+          {% if key == 0 %}
+            <a href="{{ path('viewtvshow', {'slug': tv.slug, 'id': tv.id, '_format': 'html'}) }}">
+              <img alt="{{tv.name}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.backdrop_path }}">
+            </a>
+            <span>
+              <a href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}">
+                <img alt="{{tv.name}}" data-srcset="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.poster_path }}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.poster_path }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.poster_path }}" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.poster_path }}">
+              </a>
+              <div class="content">
+                <a href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}" class="text">
+                  <h3>{{tv.name}}</h3>
+                  <p>{{tv.overview}}</p>
+                </a>
+              </div>
+            </span>
+          {% else %}
+            <a href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}">
+              <img alt="{{tv.name}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.backdrop_path }}">
+            </a>
+            <span>
+              <a class="text" href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}">
+                <h3>{{tv.name}}</h3>
+              </a>
+              <a class="text" alt="{{tv.name}}" title="{{tv.name}}" href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}">
+                <p>{{tv.overview}}</p>
+              </a>
+            </span>
+          {% endif %}
         </div>
+      {% endfor %}
+    </section>
+    <section class="index movie">
+      <h2><a href="{{ path('nowplayingMovies') }}">In Theaters</a></h2>
+      {% for key,movie in firstMovies %}
+        <div class="info {{ key == 0 ? 'second' : key == 1 ? 'third' : 'first' }}">
+          {% if key == 0 %}
+            <a href="{{ path('viewmovie', {'slug': movie.slug, 'id': movie.id, '_format': 'html'}) }}">
+              <img alt="{{movie.title}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}">
+            </a>
+            <span>
+
+              <div class="content">
+                <a href="{{ path('viewmovie', {'slug': movie.slug, 'id': movie.id, '_format': 'html'}) }}" class="text">
+                  <h3>{{movie.title}}</h3>
+                  <p>{{movie.overview}}</p>
+                </a>
+              </div>
+            </span>
+          {% else %}
+            <a href="{{ path('viewmovie', {'slug': movie.slug, 'id': movie.id, '_format': 'html'}) }}">
+              <img alt="{{movie.title}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}">
+            </a>
+            <span>
+              <a class="text" href="{{ path('viewmovie', {'slug': movie.slug, 'id': movie.id, '_format': 'html'}) }}">
+                <h3>{{movie.title}}</h3>
+              </a>
+              <a class="text" alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.slug, 'id': movie.id, '_format': 'html'}) }}">
+                <p>{{movie.overview}}</p>
+              </a>
+            </span>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </section>
+
+    <div class="media">
+      <h2><span class="title">
+          <a alt="Popular Movies" title="Popular Movies" href="{{ path('popularMovies') }}">Films Populaires</a></span>
+      </h2>
+      <div class="results">
+        {% for key,movie in movies %}
+
+          <div class="item {{ key == 0 ? 'backdrop' : 'poster' }}">
+            <div class="image_content">
+
+              <a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id, '_format': 'html'}) }}">
+                {% if key == 0 %}
+                  <img alt="{{movie.title}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}">
+                {% else %}
+
+                  <img alt="{{movie.title}}" data-srcset="https://image.tmdb.org/t/p/w185/{{ movie.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ movie.poster_path }} 2x" data-src="https://image.tmdb.org/t/p/w185{{ movie.poster_path }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w185{{ movie.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ movie.poster_path }} 2x" src="https://image.tmdb.org/t/p/w185{{ movie.poster_path }}">
+                {% endif %}
+                <div class="meta" data-role="tooltip">
+                  <span class="release_date"> {{movie.release_date}}</span>
+                  <span class="vote_average">{{movie.vote_average}}<span class="glyphicons glyphicons-star x1 rating" id="rating_5256cfba19c2956ff60a01e4"></span></span>
+                </div>
+              </a>
+
+            </div>
+            <p><a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.slug, 'id': movie.id, '_format': 'html'}) }}">{{movie.title}}</a></p>
+          </div>
+        {% endfor %}
+      </div>
+      <h2><span class="title"><a href="{{ path('tvshow') }}">Last Tv show</a></span></h2>
+      <div class="results">
+        {% for key,tv in tvs %}
+
+          <div class="item {{ key == 3 ? 'backdrop' : 'poster' }}">
+            <div class="image_content">
+
+              <a alt="{{tv.name}}" title="{{tv.name}}" href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}">
+                {% if key == 3 %}
+                  <img alt="{{tv.name}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ tv.backdrop_path }}">
+                {% else %}
+
+                  <img alt="{{tv.name}}" data-srcset="https://image.tmdb.org/t/p/w185/{{ tv.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ tv.poster_path }} 2x" data-src="https://image.tmdb.org/t/p/w185{{ tv.poster_path }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w185{{ tv.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ tv.poster_path }} 2x" src="https://image.tmdb.org/t/p/w185{{ tv.poster_path }}">
+                {% endif %}
+                <div class="meta" data-role="tooltip">
+                  <span class="release_date"> {{tv.first_air_date}}</span>
+                  <span class="vote_average">{{tv.vote_average}}<span class="glyphicons glyphicons-star x1 rating" id="rating_5256cfba19c2956ff60a01e4"></span></span>
+                </div>
+              </a>
+
+            </div>
+            <p><a alt="{{tv.name}}" title="{{tv.name}}" href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id, '_format': 'html'}) }}">{{tv.name}}</a></p>
+          </div>
+        {% endfor %}
+      </div>
     </div>
+  </div>
 {% endblock %}

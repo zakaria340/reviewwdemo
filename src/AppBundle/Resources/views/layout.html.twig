@@ -2,52 +2,61 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{% block title %}OC Plateforme{% endblock %}</title>
-        {% block stylesheets %}
-            {# On charge le CSS de bootstrap depuis le site directement #}
-            <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500" type="text/css" rel="stylesheet">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-            <link rel="stylesheet" href="{{ asset('css/all.css') }}" />
-            <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
-            <link rel="stylesheet" href="http://fmovies.to/assets/min/frontend/all.css?575d5711" />
+    <title>{% block title %} Watch streaming movie{% endblock %}</title>
+    {% block stylesheets %}
+      {# On charge le CSS de bootstrap depuis le site directement #}
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500" type="text/css" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+      <link rel="stylesheet" href="{{ asset('css/all.css') }}" />
+      <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+      <link rel="stylesheet" href="http://fmovies.to/assets/min/frontend/all.css?575d5711" />
 
-               <link href="{{ asset('css/magnific-popup.css') }}" rel="stylesheet" />
-        {% endblock %}
-    </head>
+      <link href="{{ asset('css/magnific-popup.css') }}" rel="stylesheet" />
+    {% endblock %}
+  </head>
 
-    <body>
-        <div  id="wrapper">
-            <div id="header-wrapper"> <div id="header"> <div class="container"> <div class="menu-toggler btn btn-gray"><i class="fa fa-list"></i></div> <div class="search-toggler btn btn-gray"><i class="fa fa-search"></i></div> <div id="logo"> <a title="Watch online movies for free" href="">Watch online movies for free</a> </div> <ul id="menu"> <li> <a title="Home" href="">Home</a> </li> <li class="has-children"> <a>Genre</a> <ul class="sub-menu"> <li> <a href="/genre/action" title="Action movies">Action</a> </li> <li> <a href="/genre/adventure" title="Adventure movies">Adventure</a> </li> <li> <a href="/genre/animation" title="Animation movies">Animation</a> </li> <li> <a href="/genre/biography" title="Biography movies">Biography</a> </li> <li> <a href="/genre/costume" title="Costume movies">Costume</a> </li> <li> <a href="/genre/comedy" title="Comedy movies">Comedy</a> </li> <li> <a href="/genre/crime" title="Crime movies">Crime</a> </li> <li> <a href="/genre/documentary" title="Documentary movies">Documentary</a> </li> <li> <a href="/genre/drama" title="Drama movies">Drama</a> </li> <li> <a href="/genre/family" title="Family movies">Family</a> </li> <li> <a href="/genre/fantasy" title="Fantasy movies">Fantasy</a> </li> <li> <a href="/genre/game-show" title="Game-Show movies">Game-Show</a> </li> <li> <a href="/genre/history" title="History movies">History</a> </li> <li> <a href="/genre/horror" title="Horror movies">Horror</a> </li> <li> <a href="/genre/kungfu" title="Kungfu movies">Kungfu</a> </li> <li> <a href="/genre/music" title="Music movies">Music</a> </li> <li> <a href="/genre/mystery" title="Mystery movies">Mystery</a> </li> <li> <a href="/genre/reality-tv" title="Reality-TV movies">Reality-TV</a> </li> <li> <a href="/genre/romance" title="Romance movies">Romance</a> </li> <li> <a href="/genre/sci-fi" title="Sci-Fi movies">Sci-Fi</a> </li> <li> <a href="/genre/sport" title="Sport movies">Sport</a> </li> <li> <a href="/genre/thriller" title="Thriller movies">Thriller</a> </li> <li> <a href="/genre/tv-show" title="TV Show movies">TV Show</a> </li> <li> <a href="/genre/war" title="War movies">War</a> </li> <li> <a href="/genre/western" title="Western movies">Western</a> </li> </ul> </li> <li class="has-children"> <a>Country</a> <ul style="width: 400px;" class="sub-menu c3"> <li> <a href="/country/united-states" title="United States movies">United States</a> </li> <li> <a href="/country/united-kingdom" title="United Kingdom movies">United Kingdom</a> </li> <li> <a href="/country/france" title="France movies">France</a> </li> <li> <a href="/country/japan" title="Japan movies">Japan</a> </li> <li> <a href="/country/korea" title="Korea movies">Korea</a> </li> <li> <a href="/country/thailand" title="Thailand movies">Thailand</a> </li> <li> <a href="/country/hongkong" title="Hongkong movies">Hongkong</a> </li> <li> <a href="/country/taiwan" title="Taiwan movies">Taiwan</a> </li> <li> <a href="/country/indian" title="Indian movies">Indian</a> </li> <li> <a href="/country/china" title="China movies">China</a> </li> <li> <a href="/country/international" title="International movies">International</a> </li> </ul> </li> <li> <a href="http://fmovies.to/movies" title="Movies">Movies</a> </li> <li> <a href="http://fmovies.to/tv-series" title="TV-Series">TV-Series</a> </li><li class="has-children"> <a>Release</a> <ul style="width: 120px;" class="sub-menu c2"> <li style="width:50%"> <a href="http://fmovies.to/release-2016" title="Films release in 2016">2016</a> </li> <li style="width:50%"> <a href="http://fmovies.to/release-2015" title="Films release in 2015">2015</a> </li> <li style="width:50%"> <a href="http://fmovies.to/release-2014" title="Films release in 2014">2014</a> </li> <li style="width:50%"> <a href="http://fmovies.to/release-2013" title="Films release in 2013">2013</a> </li> <li style="width:50%"> <a href="http://fmovies.to/release-2012" title="Films release in 2012">2012</a> </li> <li style="width:50%"> <a href="http://fmovies.to/release-2011" title="Films release in 2011">2011</a> </li> </ul> </li> <li> <a title="Most watched movies" href="http://fmovies.to/most-watched">Most Watched</a> </li> <li> <a href="#pop-request" data-toggle="modal">Request</a> </li> </ul> <div id="sign"><button data-target="#pop-sign" data-toggle="modal" class="btn btn-primary btn-login">Login</button>
+  <body>
+    <div  id="wrapper">
+      <div id="header-wrapper">
+        <div id="header"> 
+          <div class="container"> 
+            <div id="logo"> <a href="{{ path('homepage') }}" title="Watch streaming movies and tv show">Watch streaming movies and tv show</a> </div>
+            <ul id="menu">
+              <li> <a href="{{ path('homepage') }}" title="Home">Home</a> </li>   
+              <li> <a href="{{ path('people') }}" title="People">People</a> </li> 
+              <li> <a href="{{ path('tvshow') }}" title="Popular tv show">Most Watched</a> </li> 
+              <li> <a href="{{ path('popularMovies') }}" title="Popular movies">Popular movies</a> </li> 
+            </ul> 
+          </div> 
+        </div> 
+      </div>
+      <div class="container">
 
-                        </div> <div id="search"> <form action="http://fmovies.to/search" method="get"> <input type="text" placeholder="Enter keywords here" name="keyword" autocomplete="off"> <button type="submit"><i class="fa fa-search"></i></button> <div style="display: none" class="suggestions"></div> </form> </div> </div> </div>  </div>
-
-            <div class="container">
-
-                {% block body %}
-
-                {% endblock %}
-
-
-            </div>
-            <hr>
-
-            <footer>
-                <p>The sky's the limit © {{ 'now'|date('Y') }} and beyond.</p>
-            </footer>
-        </div>
-
-        {% block javascripts %}
-            {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-                <script src="{{ asset('js/thumbnail-slider.js') }}" type="text/javascript"></script>
-                <script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
+        {% block body %}
 
         {% endblock %}
 
-    </body>
+
+      </div>
+      <hr>
+
+      <footer>
+        <p>The sky's the limit © {{ 'now'|date('Y') }} and beyond.</p>
+      </footer>
+    </div>
+
+    {% block javascripts %}
+      {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <script src="{{ asset('js/thumbnail-slider.js') }}" type="text/javascript"></script>
+      <script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
+
+    {% endblock %}
+
+  </body>
 </html>
