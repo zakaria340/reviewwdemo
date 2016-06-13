@@ -1,0 +1,34 @@
+{# On utilise ici le layout général, qui se situe dans ce même CoreBundle maintenant #}
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block title %}
+    List Movies - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="media">
+        <h2><span class="title">Movies</span>
+        </h2>
+
+        <div class="results">
+            {% for key,movie in movies %}
+                <div class="item poster">
+                    <div class="image_content">
+                        <a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id, '_format': 'html'}) }}">
+                            <img alt="{{movie.title}}" data-srcset="https://image.tmdb.org/t/p/w185/{{ movie.posterPath }} 1x, https://image.tmdb.org/t/p/w370{{ movie.posterPath }} 2x" data-src="https://image.tmdb.org/t/p/w185{{ movie.posterPath }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w185{{ movie.posterPath }} 1x, https://image.tmdb.org/t/p/w370{{ movie.posterPath }} 2x" src="https://image.tmdb.org/t/p/w185{{ movie.posterPath }}">
+                            <div class="meta" data-role="tooltip">
+                                <span class="release_date"></span>
+                                <span class="vote_average">{{movie.voteAverage}}<span class="glyphicons glyphicons-star x1 rating" id="rating_5256cfba19c2956ff60a01e4"></span></span>
+                            </div>
+                        </a>
+                    </div>
+                    <p><a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id, '_format': 'html'}) }}">{{movie.title}}</a></p>
+                </div>
+            {% endfor %}
+        </div>
+        {% include 'AppBundle::pagination.html.twig' %}
+
+    </div>
+
+{% endblock %}

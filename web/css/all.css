@@ -1,0 +1,599 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 9 juin 2016, 20:41:54
+    Author     : hp4
+*/
+body {
+    background: #f6f6f6 none repeat scroll 0 0 !important;
+}
+#cast .castItem p {
+    font-size: 0.86rem;
+}
+#cast .castItem {
+    padding: 0 !important;
+}
+
+
+ul#list_items.media_items.isotope {
+    padding-top: 0;
+}
+ul.media_items::after, div.list ul.media_items::after, ul#posters::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+ul.media_items li, div.list ul.media_items li {
+    display: inline-block;
+    height: 201px;
+    margin-right: 3px;
+    vertical-align: top;
+    width: 130px;
+}
+ul.media_items span#sortable_release_date, ul.media_items span#sortable_title, ul.media_items span#sortable_rating {
+    display: none;
+}
+div.list ul.media_items li div#clear {
+    clear: both;
+}
+ul.media_items li.w92 {
+    height: auto;
+    line-height: normal;
+    width:80px;
+}
+ul#similar_movies.media_items li.w92, ul#known_for.media_items li.w92 {
+    margin: 0 12px 0 0;
+    padding-bottom: 8px;
+    width: 93px;
+}
+ul#posters li.w150 {
+    height: auto;
+    line-height: normal;
+    margin-right: 4px;
+    padding-bottom: 20px;
+    text-align: left;
+    width: 366px;
+}
+ul#posters {
+    padding-top: 10px;
+}
+ul#similar_movies, ul#known_for {
+    padding-top: 4px;
+    width: 759px;
+}
+ul#known_for {
+    min-height: 160px;
+}
+div.list ul.media_items li img.poster {
+    max-height: 195px;
+}
+ul.media_items li.w92 img {
+    display: block;
+    margin-bottom: 8px;
+}
+ul.media_items li.w92 a {
+    color: #666;
+    font-size: 13px;
+    text-decoration: none;
+}
+ul.media_items li.w92 a:hover {
+    color: #000;
+}
+ul.media_items li.w300 {
+    height: 180px;
+    margin: 0 !important;
+    width: 300px;
+}
+ul.media_items li.w480 {
+    height: 180px;
+    margin: 0 !important;
+    width: 460px;
+}
+ul.media_items li.w480 a span.w92 {
+    display: inline-block;
+    min-height: 142px;
+}
+ul.media_items li.w300 div.info {
+    left: 100px;
+    position: relative;
+    top: -156px;
+    width: 200px;
+}
+ul.media_items li.w480 div.info {
+    left: 106px;
+    position: relative;
+    top: -138px;
+    width: 346px;
+}
+div#movie div.first div.item div.info, div#tv div.first div.item div.info {
+    float: none !important;
+    left: 150px;
+    position: relative;
+    top: 0;
+}
+ul.media_items li.w480 div.info h4, ul.media_items li.w300 div.info h4 {
+    margin-bottom: 4px !important;
+    text-align: left;
+}
+ul#toolbar li:hover div.sub_menu, h2 span:hover div.sub_menu {
+    display: block;
+}
+ul#toolbar li.sub_sub_menu:hover div.sub_sub_menu {
+    display: block;
+}
+ul#toolbar li div.sub_menu, h2 span div.sub_menu {
+    background: #e7e7e7 none repeat scroll 0 0;
+    border: 1px solid #aaaaaa;
+    border-radius: 6px;
+    box-shadow: 0 1px white;
+    display: none;
+    float: left;
+    height: auto;
+    margin-top: 0;
+    position: absolute;
+    width: auto;
+    z-index: 9999;
+}
+ul#toolbar li.sub_sub_menu div.sub_sub_menu {
+    background: #e7e7e7 none repeat scroll 0 0;
+    border: 1px solid #aaaaaa;
+    border-radius: 6px;
+    box-shadow: 0 1px white;
+    display: none;
+    float: left;
+    height: auto;
+    left: 80px;
+    position: absolute;
+    top: 40px;
+    width: auto;
+    z-index: 9999;
+}
+ul#toolbar li div.sub_menu ul, div.sub_menu ul {
+    list-style-type: none;
+    margin: 0 !important;
+    padding: 6px 12px;
+}
+ul#toolbar li div.sub_menu ul li {
+    display: block !important;
+    float: none !important;
+    white-space: nowrap;
+}
+ul#toolbar li div.sub_menu ul li.hide {
+    display: none !important;
+}
+ul#toolbar li div.sub_menu ul li.icon a {
+    height: 16px;
+    padding-left: 24px;
+    padding-top: 1px;
+}
+h4 span.date, ul.media_items li.w480 div.info h4 span.date, ul.media_items li.w300 div.info h4 span.date {
+    color: #666;
+    font-size: 13px;
+    font-weight: normal;
+}
+div.first div.item div.poster {
+    left: 26px;
+    max-height: 195px;
+    min-height: 195px;
+    position: absolute;
+    top: 40px;
+}
+div.first p.genres, div.first p.cast, ul.media_items li.w480 div.info p, ul.media_items li.w300 div.info p {
+    text-align: left;
+}
+div.first p.known_for {
+    background: transparent url("https://assets.tmdb.org/images/film-icon-sprite.png") no-repeat scroll 0 -17px;
+    padding-left: 24px !important;
+}
+div.first p.known_for:hover {
+    background-position: 0 0;
+}
+ul.media_items li.w480 div.info p.known {
+    background: transparent url("https://assets.tmdb.org/images/film-icon-sprite.png") no-repeat scroll 0 -17px;
+    height: 16px !important;
+    margin-bottom: 20px !important;
+    padding-left: 18px !important;
+}
+ul.media_items li.w480 div.info p.known:hover {
+    background-position: 0 0;
+}
+ul.media_items li.w480 div.info p.known_for {
+    padding-left: 0 !important;
+    padding-top: 6px !important;
+}
+div.first p.genres, ul.media_items li.w480 div.info p.genres, ul.media_items li.w300 div.info p.genres {
+    background: transparent url("https://assets.tmdb.org/images/tag.png") no-repeat scroll 0 0;
+    color: #666;
+    font-size: 12px;
+    margin: 24px 0 0 !important;
+}
+div.first a, ul.media_items li.w480 a, ul.media_items li.w300 a {
+    text-decoration: none;
+}
+div.first div.info ul.icons li, ul.media_items li.w480 div.info ul.icons li, ul.media_items li.w300 div.info ul.icons li {
+    height: 16px !important;
+    line-height: 17px !important;
+}
+ul.media_items li.w480 div.info ul.icons li, ul.media_items li.w300 div.info ul.icons li {
+    float: left;
+    height: inherit;
+    width: auto;
+}
+div.list ul#toolbar {
+    margin-top: 14px !important;
+}
+h2 span.username, h2 span.username a, div.list h2 span.username, div.list h2 span.username a {
+    font-size: 12px !important;
+}
+ul#account_movie_list {
+    width: 724px;
+}
+a.light {
+    text-decoration: none;
+}
+a.light:hover {
+    color: #000;
+}
+div.choose_api_key_type {
+    margin-top: 40px;
+}
+div.choose_api_key_type a {
+    text-decoration: none;
+}
+div.choose_api_key_type hr {
+    display: block;
+    height: 1px;
+    margin: 24px 0 20px;
+    padding: 0;
+}
+div.choose_api_key_type p {
+    float: left;
+    padding-bottom: 20px;
+    text-align: center;
+    width: 340px;
+}
+div.choose_api_key_type ul {
+    color: #555;
+    float: left;
+    font-family: HelveticaNeue-Light,HelveticaNeue,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.8 !important;
+    list-style-position: inside;
+    list-style-type: disc !important;
+    margin: 5px 0 40px;
+    width: 330px;
+}
+div.choose_api_key_type p img {
+    padding-right: 6px;
+    vertical-align: middle;
+}
+div.choose_api_key_type p:last-child {
+    padding-top: 22px;
+}
+span.left-column {
+    float: left;
+    width: 48%;
+}
+span.right-column {
+    float: right;
+    width: 50%;
+}
+table.edit tr.add_row {
+    height: 20px !important;
+}
+table.edit tr.add_row td {
+    height: 20px !important;
+    text-align: right;
+}
+table.edit tr img {
+    margin-bottom: 1px;
+}
+table.edit td.primary {
+    text-align: center;
+    width: 46px;
+}
+a.add {
+    background: transparent url("https://assets.tmdb.org/images/plus-circle-shadowless.png") no-repeat scroll left center;
+    color: #333;
+    float: right;
+    padding-left: 20px;
+    padding-top: 4px;
+    text-decoration: none;
+}
+table.edit span.calendar {
+    background: transparent url("https://assets.tmdb.org/images/calendar-icon-sprite.png") no-repeat scroll left bottom;
+    display: inline-block;
+    height: 16px;
+    width: 14px;
+}
+table.edit span.calendar:hover {
+    background-position: left top;
+}
+table.edit input.calendar {
+    position: relative;
+    top: 10px !important;
+    width: 100px !important;
+}
+tr.hidden, td.hidden {
+    visibility: hidden;
+}
+table.edit tr td input[type="submit"] {
+    margin-bottom: 0 !important;
+}
+table.edit tr.add_row {
+    background: #f2f2f2 none repeat scroll 0 0 !important;
+}
+.align-right {
+    text-align: right !important;
+}
+div.pad {
+    margin-bottom: 20px;
+}
+div.new.pad_window {
+    padding: 14px;
+}
+div.new.pad_window p {
+    margin-bottom: 16px;
+}
+div.new.pad_window p:last-child {
+    margin-bottom: 4px;
+}
+div.new.pad_window p img {
+    padding-bottom: 3px;
+    vertical-align: middle;
+}
+div#backdropCover {
+    background: transparent url("https://assets.tmdb.org/images/carousel-bg.png") repeat-y scroll right top;
+    display: inline;
+    float: right;
+    height: 169px;
+    position: relative;
+    right: 0;
+    top: -175px;
+    width: 143px;
+    z-index: 100;
+}
+div#backdrops.image_carousel {
+    height: 189px;
+}
+.image_carousel {
+    margin: -1px 0 0;
+    overflow: hidden;
+    padding: 4px 0 0;
+    position: relative;
+}
+.image_carousel.small {
+    max-height: 124px;
+    overflow: hidden;
+}
+.image_carousel img:first-child {
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+div#backdrops.image_carousel img {
+    max-height: 169px;
+}
+.image_carousel img {
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 9px 0 9px 9px;
+}
+.image_carousel img:last-child {
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 9px;
+}
+.image_carousel img:hover {
+    cursor: pointer;
+}
+ul#box_office_carousel li, ul#most_popular_carousel li {
+    float: left;
+    height: 200px;
+    width: 92px;
+}
+ul#box_office_carousel li a, ul#most_popular_carousel li a {
+    display: inline-block;
+}
+ul#box_office_carousel li h3, ul#most_popular_carousel li h3 {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+}
+ul#box_office_carousel li.hide {
+    display: none;
+}
+a.prev, a.next {
+    display: inline-block;
+    float: right;
+    height: 21px;
+    margin-top: -3px;
+    text-decoration: none;
+    width: 31px;
+}
+a.prev:hover, a.next:hover {
+    text-decoration: none !important;
+}
+a.prev {
+    background: transparent url("https://assets.tmdb.org/images/prev-new.png") no-repeat scroll 0 0;
+    margin-left: 10px;
+}
+a.next {
+    background: transparent url("https://assets.tmdb.org/images/next-new.png") no-repeat scroll 0 0;
+}
+div#image_panel {
+    padding-top: 20px;
+}
+div#add_person {
+    clear: both;
+    padding: 10px 0;
+}
+p.add_person_toggle {
+    padding-top: 4px;
+}
+p.add_person_toggle:hover {
+    cursor: pointer;
+}
+ul.tagged_person_list {
+    margin: 0;
+    width: 200px;
+}
+ul.tagged_person_list.min_height {
+    min-height: 24px !important;
+}
+ul.tagged_person_list li {
+    background: #eee none repeat scroll 4px 3px;
+    border: 1px solid #666;
+    border-radius: 3px;
+    float: left;
+    font-size: 11px;
+    height: 16px;
+    margin: 0 4px 4px 0;
+    padding: 3px 4px 0 !important;
+}
+ul.tagged_person_list li a {
+    background: transparent url("https://assets.tmdb.org/images/user-silhouette-small.png") no-repeat scroll left top;
+    display: inline-block;
+    height: 16px;
+    left: 0;
+    position: relative;
+    text-decoration: none;
+    top: -2px;
+    width: 16px;
+}
+ul.tagged_person_list li a:hover {
+    background: transparent url("https://assets.tmdb.org/images/icon-close.png") no-repeat scroll left top;
+    top: 0;
+}
+ul.tagged_person_list.false li a:hover {
+    background: transparent url("https://assets.tmdb.org/images/user-silhouette-small.png") no-repeat scroll left top;
+    top: -2px;
+}
+td.drag {
+    cursor: move;
+}
+.dragging {
+    opacity: 0.3;
+}
+div.bottom_shadow {
+    box-shadow: 0 8px 16px -10px #666;
+    height: 20px;
+    left: -26px;
+    margin-bottom: 30px;
+    padding: 0 30px 10px;
+    position: relative;
+    top: 0;
+    width: 948px;
+}
+div.bottom_shadow p {
+    z-index: 9999;
+}
+div#error_window div.content ul {
+    margin-bottom: 10px;
+}
+div#error_window div.content ul h4 {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+}
+input:disabled, x:-moz-any-link, textarea:disabled, x:-moz-any-link {
+    color: #ccc !important;
+}
+ul.season_list, ul.episode_list {
+    padding-top: 4px;
+}
+ul.season_list li, ul.episode_list li {
+    padding-bottom: 20px;
+}
+ul.season_list li:last-child {
+    padding-bottom: 0;
+}
+ul.season_list li a.season_poster, ul.episode_list li a.episode_poster {
+    float: left;
+    margin: 0 14px 0 0;
+}
+ul.season_list li div.info {
+    float: left;
+    width: 662px;
+}
+ul.episode_list li div.info {
+    float: left;
+    width: 600px;
+}
+table.credits a.tv {
+    color: inherit;
+    text-decoration: none;
+}
+table.credits a.tv:hover {
+    color: #000;
+}
+table.bogus {
+    color: #000;
+}
+th.center {
+    text-align: center !important;
+}
+td.center_button {
+    padding: 0 24px 0 0 !important;
+}
+div.video {
+    margin-bottom: 36px;
+    margin-top: 16px;
+}
+iframe {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+div.video ul {
+    float: left;
+    margin: 6px 0 0 20px;
+    max-width: 290px;
+}
+div.video ul li {
+    padding-bottom: 4px;
+}
+div.video ul li h3 {
+    margin-bottom: 4px;
+}
+div.video ul li.report {
+    margin-top: 8px;
+}
+div.video h3 {
+    font-size: 14px !important;
+    margin: 0 !important;
+}
+table.popular_people {
+    margin-bottom: 30px;
+}
+table.popular_people td {
+    padding-bottom: 20px;
+    vertical-align: top;
+}
+table.popular_people td.image {
+    padding-right: 20px;
+}
+table.popular_people td.details {
+    padding-top: 4px;
+}
+p.clock {
+    background-image: url("https://assets.tmdb.org/images/clock-arrow.png");
+    background-position: 0 -1px;
+    background-repeat: no-repeat;
+    padding-left: 21px !important;
+}
+
+ul.media_items li.w92 a {
+    font-family: Roboto;
+    font-size: 0.76rem;
+}

@@ -1,0 +1,136 @@
+{# On utilise ici le layout général, qui se situe dans ce même CoreBundle maintenant #}
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block title %}
+    {{people.name}} - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <div id="body-wrapper">
+        <div class="watching">
+            <div id="body-wrapper">
+                <div itemtype="http://data-vocabulary.org/Review-aggregate" itemscope="" data-short-url="http://fmovies.to/film/7lr6" data-cover="" data-id="7lr6" id="movie" class="container"> <ol itemtype="http://schema.org/BreadcrumbList" itemscope="" class="breadcrumb"> <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement"> <a title="Watching movies online" href="" itemprop="item"><span itemprop="name">Home</span></a> </li> <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement"> <a title="Movies" href="http://fmovies.to/movies" itemprop="item"><span itemprop="name">Movies</span></a> </li> <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class="active"> <a title="X-Men: Apocalypse" href="http://fmovies.to/film/x-men-apocalypse.7lr6" itemprop="item"><span itemprop="name">X-Men: Apocalypse</span></a> </li> </ol> 
+                    <div class="widget">   
+                        <div class="mt row"> <div class="col-left col-md-14 col-xs-24"> 
+                                <div class="mt" id="info">
+                                    <div class="row">
+                                        <div class="thumb col-md-6 hidden-sm hidden-xs"> 
+                                            <img width="185" height="278" src="https://image.tmdb.org/t/p/w185{{people.profilePath}}" class="shadow" title="X-Men - Apocalypse Poster" alt="X-Men - Apocalypse Poster" id="upload_poster" itemprop="image">
+
+                                        </div>
+                                        <div class="info col-md-18"> 
+                                            <div itemtype="http://schema.org/Movie" itemscope="" itemprop="itemReviewed"> 
+                                                <h1 itemprop="name" class="name">{{people.name}}</h1> 
+                                                <div itemprop="description" class="desc">
+                                                    <div class="shortcontent">
+                                                        <p itemprop="description" id="overview">   {{people.biography}}</p>
+                                                    </div>
+                                                </div> 
+                                                <div class="row"> 
+                                                    <dl class="meta col-sm-12"> 
+                                                        <dt>Place Of Birth:</dt> 
+                                                        <dd>
+                                                            {{people.placeOfBirth}}
+                                                        </dd>
+
+                                                        <dt>Birthday:</dt>
+                                                        <dd>
+                                                            {{people.birthday.date|date('Y-m-d')}}
+                                                        </dd> 
+
+                                                    </dl> 
+
+                                                </div> 
+                                            </div>
+                                        </div> 
+                                    </div> 
+                                </div>
+
+
+
+                                <div id="tags"> 
+                                    <label>Keywords:</label> <a rel="tag" href="http://fmovies.to/tag/marvel">marvel</a>
+                                    <a rel="tag" href="http://fmovies.to/tag/x-men">x men</a> 
+                                    <a rel="tag" href="http://fmovies.to/tag/xmen">xmen</a>
+                                    <a rel="tag" href="http://fmovies.to/tag/apocalypse">apocalypse</a> 
+                                </div>
+
+                            </div>
+                            <div class="col-left col-md-10 col-xs-14">
+                                <div id="info" class="mt">
+                                    <div class="col-left col-md-24 col-xs-24">
+                                        <div class="popup-gallery">
+
+                                            {% for item in listImages|slice(0, 20) %}
+
+                                                <a href="https://image.tmdb.org/t/p/original{{item.filePath}}" title="The Cleaner"><img src="https://image.tmdb.org/t/p/w185{{item.filePath}}" height="100" width="100"></a>
+                                                {% endfor %}
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+
+                        <div class="mt row">
+                            <div class="col-left col-md-24 col-xs-24">
+                                <h3 class="name">List Movies</h3>
+                                <ul class="media_items">
+                                    {% for item in listCrewMovie %}
+                                        {% if item.posterPath is not null %}
+                                            <li class="w92">
+                                                <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id, '_format': 'html'}) }}"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.posterPath }}" title="{{ item.title }}" alt="{{ item.title }}" class="shadow"></a>
+                                                <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id, '_format': 'html'}) }}" class="title">{{ item.title }} </a>
+                                            </li> 
+                                        {% endif %}
+                                    {% endfor %}
+                                    <div style="clear: both;"></div>
+                                </ul> 
+                                <ul class="media_items">
+                                    {% for item in listCastMovie %}
+                                        {% if item.posterPath is not null %}
+                                            <li class="w92">
+                                                <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id, '_format': 'html'}) }}"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.posterPath }}" title="{{ item.title }}" alt="{{ item.title }}" class="shadow"></a>
+                                                <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id, '_format': 'html'}) }}" class="title">{{ item.title }} </a>
+                                            </li> 
+                                        {% endif %}
+                                    {% endfor %}
+                                    <div style="clear: both;"></div>
+                                </ul> 
+
+
+                                <h3 class="name">List Tv</h3>
+                                <ul class="media_items">
+                                    {% for item in listCrewTv %}
+                                        {% if item.posterPath is not null %}
+                                            <li class="w92">
+                                                <a href="#"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.posterPath }}" title="{{ item.title }}" alt="{{ item.title }}" class="shadow"></a>
+                                                <a href="#" class="title">{{ item.title }} </a>
+                                            </li> 
+                                        {% endif %}
+                                    {% endfor %}
+                                    <div style="clear: both;"></div>
+                                </ul> 
+                                <ul class="media_items">
+                                    {% for item in listCastTv %}
+                                        {% if item.posterPath is not null %}
+                                            <li class="w92">
+                                                <a href="#"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.posterPath }}" title="{{ item.title }}" alt="{{ item.title }}" class="shadow"></a>
+                                                <a href="#" class="title">{{ item.title }} </a>
+                                            </li> 
+                                        {% endif %}
+                                    {% endfor %}
+                                    <div style="clear: both;"></div>
+                                </ul> 
+                            </div>
+                        </div>
+
+                    </div>
+                </div> 
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

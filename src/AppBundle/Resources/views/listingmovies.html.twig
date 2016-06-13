@@ -1,0 +1,24 @@
+   <div class="results">
+                {% for key,movie in movies.results %}
+
+                    <div class="item {{ key % 4 == 0 ? 'backdrop' : 'poster' }}">
+                        <div class="image_content">
+
+                            <a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id, '_format': 'html'}) }}">
+                                {% if key % 4 == 0 %}
+                                    <img alt="{{movie.title}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}">
+                                {% else %}
+
+                                    <img alt="{{movie.title}}" data-srcset="https://image.tmdb.org/t/p/w185/{{ movie.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ movie.poster_path }} 2x" data-src="https://image.tmdb.org/t/p/w185{{ movie.poster_path }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w185{{ movie.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ movie.poster_path }} 2x" src="https://image.tmdb.org/t/p/w185{{ movie.poster_path }}">
+                                {% endif %}
+                                <div class="meta" data-role="tooltip">
+                                    <span class="release_date"> {{movie.release_date}}</span>
+                                    <span class="vote_average">{{movie.vote_average}}<span class="glyphicons glyphicons-star x1 rating" id="rating_5256cfba19c2956ff60a01e4"></span></span>
+                                </div>
+                            </a>
+
+                        </div>
+                        <p><a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id, '_format': 'html'}) }}">{{movie.title}}</a></p>
+                    </div>
+                {% endfor %}
+            </div>
