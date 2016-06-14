@@ -597,3 +597,9 @@ ul.media_items li.w92 a {
     font-family: Roboto;
     font-size: 0.76rem;
 }
+.pagination {
+    background: #FFF;
+}
+#header #menu {
+    float:left;
+}

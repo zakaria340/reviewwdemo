@@ -2,61 +2,61 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %} Watch streaming movie{% endblock %}</title>
-    {% block stylesheets %}
-      {# On charge le CSS de bootstrap depuis le site directement #}
-      <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500" type="text/css" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-      <link rel="stylesheet" href="{{ asset('css/all.css') }}" />
-      <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
-      <link rel="stylesheet" href="http://fmovies.to/assets/min/frontend/all.css?575d5711" />
+        <title>{% block title %} Watch streaming movie{% endblock %}</title>
+        {% block stylesheets %}
+            {# On charge le CSS de bootstrap depuis le site directement #}
+            <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500" type="text/css" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+            <link rel="stylesheet" href="{{ asset('css/all.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+            <link rel="stylesheet" href="http://fmovies.to/assets/min/frontend/all.css?575d5711" />
 
-      <link href="{{ asset('css/magnific-popup.css') }}" rel="stylesheet" />
-    {% endblock %}
-  </head>
+            <link href="{{ asset('css/magnific-popup.css') }}" rel="stylesheet" />
+        {% endblock %}
+    </head>
 
-  <body>
-    <div  id="wrapper">
-      <div id="header-wrapper">
-        <div id="header"> 
-          <div class="container"> 
-            <div id="logo"> <a href="{{ path('homepage') }}" title="Watch streaming movies and tv show">Watch streaming movies and tv show</a> </div>
-            <ul id="menu">
-              <li> <a href="{{ path('homepage') }}" title="Home">Home</a> </li>   
-              <li> <a href="{{ path('people') }}" title="People">People</a> </li> 
-              <li> <a href="{{ path('tvshow') }}" title="Popular tv show">Most Watched</a> </li> 
-              <li> <a href="{{ path('popularMovies') }}" title="Popular movies">Popular movies</a> </li> 
-            </ul> 
-          </div> 
-        </div> 
-      </div>
-      <div class="container">
+    <body>
+        <div  id="wrapper">
+            <div id="header-wrapper">
+                <div id="header"> 
+                    <div class="container"> 
+                        <div id="logo"> <a href="{{ path('homepage') }}" title="Watch streaming movies and tv show">Watch streaming movies and tv show</a> </div>
+                        <ul id="menu">
+                            <li> <a href="{{ path('homepage') }}" title="Home">Home</a> </li>   
+                            <li> <a href="{{ path('popularMovies') }}" title="Movies">Movies</a> </li> 
+                            <li> <a href="{{ path('tvshow') }}" title="Tv show">Tv show</a> </li> 
+                            <li> <a href="{{ path('people') }}" title="People">People</a> </li> 
+                        </ul> 
+                    </div> 
+                </div> 
+            </div>
+            <div class="container">
 
-        {% block body %}
+                {% block body %}
+
+                {% endblock %}
+
+
+            </div>
+            <hr>
+
+            <footer>
+                <p>The sky's the limit © {{ 'now'|date('Y') }} and beyond.</p>
+            </footer>
+        </div>
+
+        {% block javascripts %}
+            {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+            <script src="{{ asset('js/thumbnail-slider.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
 
         {% endblock %}
 
-
-      </div>
-      <hr>
-
-      <footer>
-        <p>The sky's the limit © {{ 'now'|date('Y') }} and beyond.</p>
-      </footer>
-    </div>
-
-    {% block javascripts %}
-      {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-      <script src="{{ asset('js/thumbnail-slider.js') }}" type="text/javascript"></script>
-      <script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
-
-    {% endblock %}
-
-  </body>
+    </body>
 </html>

@@ -2,14 +2,35 @@
 {% extends "AppBundle::layout.html.twig" %}
 
 {% block title %}
-    {{movie.name}} - {{ parent() }}
+    {{tvshow.name}} {{season.name}} {{movie.name}} - {{ parent() }}
 {% endblock %}
 
 {% block body %}
     <div id="body-wrapper">
         <div class="watching">
             <div id="body-wrapper">
-                <div itemtype="http://data-vocabulary.org/Review-aggregate" itemscope="" data-short-url="http://fmovies.to/film/7lr6" data-cover="" data-id="7lr6" id="movie" class="container"> <ol itemtype="http://schema.org/BreadcrumbList" itemscope="" class="breadcrumb"> <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement"> <a title="Watching movies online" href="" itemprop="item"><span itemprop="name">Home</span></a> </li> <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement"> <a title="Movies" href="http://fmovies.to/movies" itemprop="item"><span itemprop="name">Movies</span></a> </li> <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class="active"> <a title="X-Men: Apocalypse" href="http://fmovies.to/film/x-men-apocalypse.7lr6" itemprop="item"><span itemprop="name">X-Men: Apocalypse</span></a> </li> </ol> 
+                <div itemtype="http://data-vocabulary.org/Review-aggregate" itemscope="" data-short-url="http://fmovies.to/film/7lr6" data-cover="" data-id="7lr6" id="movie" class="container">
+                    <ol itemtype="http://schema.org/BreadcrumbList" itemscope="" class="breadcrumb"> 
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement">
+                            <a title="Watching movies online" href="{{ path('homepage') }}" itemprop="item"><span itemprop="name">Home</span></a>
+                        </li> 
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement"> 
+                            <a title="Movies" href="{{ path('tvshow') }}" itemprop="item"><span itemprop="name">Tv show</span></a> 
+                        </li> 
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class=""> 
+                            <a title=" {{tvshow.name}}" href="{{ path('viewtvshow', {'slug': tvshow.name|GenerateSlug, 'id': tvshow.id, '_format': 'html'}) }}" itemprop="item">
+                                <span itemprop="name"> {{tvshow.name}}</span></a> 
+                        </li> 
+
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class=""> 
+                            <a title=" {{tvshow.name}} {{season.name}}" href="{{ path('viewseasonshow', {'slug': tvshow.name|GenerateSlug, 'id': tvshow.id,'idseason': season.seasonNumber, '_format': 'html'}) }}" itemprop="item">
+                                <span itemprop="name">  {{season.name}}</span></a> 
+                        </li> 
+                          <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class="active"> 
+                            <a title=" {{tvshow.name}} {{season.name}}" href="{{ path('viewepisodeshow', {'slug': tvshow.name|GenerateSlug, 'id': tvshow.id,'idseason': season.seasonNumber,'idepisode':movie.episodeNumber, '_format': 'html'}) }}" itemprop="item">
+                                <span itemprop="name">  {{movie.name}}</span></a> 
+                        </li> 
+                    </ol> 
                     <div class="widget">   
                         <div class="mt row"> 
                             <div class="col-left col-md-14 col-xs-24"> 
@@ -40,14 +61,14 @@
 
                                 <div id="info" class="mt">
                                     <div class="col-left col-md-24 col-xs-24">
-                          <div class="popup-gallery">
-                           
-                                {% for item in listImages %}
-                                      
-	<a href="https://image.tmdb.org/t/p/original{{item.filePath}}" title="The Cleaner"><img src="https://image.tmdb.org/t/p/w185{{item.filePath}}" height="100" width="75"></a>
-      {% endfor %}
-                                </div>
-                                    
+                                        <div class="popup-gallery">
+
+                                            {% for item in listImages %}
+
+                                                <a href="https://image.tmdb.org/t/p/original{{item.filePath}}" title="The Cleaner"><img src="https://image.tmdb.org/t/p/w185{{item.filePath}}" height="100" width="75"></a>
+                                                {% endfor %}
+                                        </div>
+
                                     </div>
                                 </div>
 
@@ -59,7 +80,7 @@
                                 </div>
 
                             </div>
-                            
+
                         </div> 
 
                     </div>
