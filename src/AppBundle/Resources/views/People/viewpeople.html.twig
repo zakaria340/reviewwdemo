@@ -19,7 +19,7 @@
                             <a title="Movies" href="{{ path('people') }}" itemprop="item"><span itemprop="name">People</span></a> 
                         </li> 
                         <li class="active" itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement"> 
-                            <a title="Movies" href="{{ path('viewpeople', {'slug': people.name|GenerateSlug, 'id': people.id, '_format': 'html'}) }}" itemprop="item"><span itemprop="name">{{people.name}}</span></a> 
+                            <a title="Movies" href="{{ path('viewpeople', {'slug': people.name|GenerateSlug, 'id': people.id}) }}" itemprop="item"><span itemprop="name">{{people.name}}</span></a> 
                         </li> 
                     </ol> 
                     <div class="widget">   
@@ -27,11 +27,11 @@
                                 <div class="mt" id="info">
                                     <div class="row">
                                         <div class="thumb col-md-6 hidden-sm hidden-xs"> 
-                                            <img width="185" height="278" src="https://image.tmdb.org/t/p/w185{{people.profilePath}}" class="shadow" title="X-Men - Apocalypse Poster" alt="X-Men - Apocalypse Poster" id="upload_poster" itemprop="image">
+                                            <img width="185" height="278" src="https://image.tmdb.org/t/p/w185{{people.profilePath}}" class="shadow" title="{{people.name}}" alt="{{people.name}}" id="upload_poster" itemprop="image">
 
                                         </div>
                                         <div class="info col-md-18"> 
-                                            <div itemtype="http://schema.org/Movie" itemscope="" itemprop="itemReviewed"> 
+                                            <div itemtype="http://schema.org/People" itemscope="" itemprop="itemReviewed"> 
                                                 <h1 itemprop="name" class="name">{{people.name}}</h1> 
                                                 <div itemprop="description" class="desc">
                                                     <div class="shortcontent">
@@ -59,14 +59,6 @@
                                 </div>
 
 
-
-                                <div id="tags"> 
-                                    <label>Keywords:</label> <a rel="tag" href="http://fmovies.to/tag/marvel">marvel</a>
-                                    <a rel="tag" href="http://fmovies.to/tag/x-men">x men</a> 
-                                    <a rel="tag" href="http://fmovies.to/tag/xmen">xmen</a>
-                                    <a rel="tag" href="http://fmovies.to/tag/apocalypse">apocalypse</a> 
-                                </div>
-
                             </div>
                             <div class="col-left col-md-10 col-xs-14">
                                 <div id="info" class="mt">
@@ -84,7 +76,6 @@
                             </div>
                         </div> 
 
-
                         <div class="mt row">
                             <div class="col-left col-md-24 col-xs-24">
                                 <h3 class="name">List Movies</h3>
@@ -92,8 +83,8 @@
                                     {% for item in listCrewMovie %}
                                         {% if item.posterPath is not null %}
                                             <li class="w92">
-                                                <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id, '_format': 'html'}) }}"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.posterPath }}" title="{{ item.title }}" alt="{{ item.title }}" class="shadow"></a>
-                                                <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id, '_format': 'html'}) }}" class="title">{{ item.title }} </a>
+                                                <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id}) }}"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.posterPath }}" title="{{ item.title }}" alt="{{ item.title }}" class="shadow"></a>
+                                                <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id}) }}" class="title">{{ item.title }} </a>
                                             </li> 
                                         {% endif %}
                                     {% endfor %}
@@ -103,8 +94,8 @@
                                     {% for item in listCastMovie %}
                                         {% if item.posterPath is not null %}
                                             <li class="w92">
-                                                <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id, '_format': 'html'}) }}"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.posterPath }}" title="{{ item.title }}" alt="{{ item.title }}" class="shadow"></a>
-                                                <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id, '_format': 'html'}) }}" class="title">{{ item.title }} </a>
+                                                <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id}) }}"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.posterPath }}" title="{{ item.title }}" alt="{{ item.title }}" class="shadow"></a>
+                                                <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id}) }}" class="title">{{ item.title }} </a>
                                             </li> 
                                         {% endif %}
                                     {% endfor %}

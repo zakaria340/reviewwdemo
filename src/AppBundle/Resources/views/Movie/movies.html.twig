@@ -15,7 +15,7 @@
             {% for key,movie in movies %}
                 <div class="item poster">
                     <div class="image_content">
-                        <a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id, '_format': 'html'}) }}">
+                        <a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id}) }}">
                             <img alt="{{movie.title}}" data-srcset="https://image.tmdb.org/t/p/w185/{{ movie.posterPath }} 1x, https://image.tmdb.org/t/p/w370{{ movie.posterPath }} 2x" data-src="https://image.tmdb.org/t/p/w185{{ movie.posterPath }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w185{{ movie.posterPath }} 1x, https://image.tmdb.org/t/p/w370{{ movie.posterPath }} 2x" src="https://image.tmdb.org/t/p/w185{{ movie.posterPath }}">
                             <div class="meta" data-role="tooltip">
                                 <span class="release_date"></span>
@@ -23,7 +23,7 @@
                             </div>
                         </a>
                     </div>
-                    <p><a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id, '_format': 'html'}) }}">{{movie.title}}</a></p>
+                    <p><a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id}) }}">{{movie.title}}</a></p>
                 </div>
             {% endfor %}
         </div>

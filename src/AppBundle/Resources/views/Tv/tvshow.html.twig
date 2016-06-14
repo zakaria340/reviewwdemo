@@ -16,7 +16,7 @@
                 <div class="item {{ key % 4 == 0 ? 'backdrop' : 'poster' }}">
                     <div class="image_content">
 
-                        <a alt="{{movie.name}}" title="{{movie.name}}" href="{{ path('viewtvshow', {'slug': movie.name|GenerateSlug, 'id': movie.id, '_format': 'html'}) }}">
+                        <a alt="{{movie.name}}" title="{{movie.name}}" href="{{ path('viewtvshow', {'slug': movie.name|GenerateSlug, 'id': movie.id}) }}">
                             {% if key % 4 == 0 %}
                                 <img alt="{{movie.name}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}">
                             {% else %}
@@ -30,7 +30,7 @@
                         </a>
 
                     </div>
-                    <p><a alt="{{movie.name}}" title="{{movie.name}}" href="{{ path('viewmovie', {'slug': movie.name|GenerateSlug, 'id': movie.id, '_format': 'html'}) }}">{{movie.name}}</a></p>
+                    <p><a alt="{{movie.name}}" title="{{movie.name}}" href="{{ path('viewmovie', {'slug': movie.name|GenerateSlug, 'id': movie.id}) }}">{{movie.name}}</a></p>
                 </div>
             {% endfor %}
         </div>
