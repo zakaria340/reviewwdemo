@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Urls list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Video</th>
+                <th>Name</th>
+                <th>Qualite</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for url in urls %}
+            <tr>
+                <td><a href="{{ path('admin_urls_show', { 'id': url.id }) }}">{{ url.id }}</a></td>
+                <td>{{ url.video }}</td>
+                <td>{{ url.name }}</td>
+                <td>{{ url.qualite }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_urls_show', { 'id': url.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_urls_edit', { 'id': url.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_urls_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

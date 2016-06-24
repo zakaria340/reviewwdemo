@@ -28,38 +28,39 @@ class Item {
    */
   private $idApi;
 
+  /**
+   * Get id
+   *
+   * @return integer
+   */
+  public function getId() {
+    return $this->id;
+  }
 
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+  /**
+   * Set idApi
+   *
+   * @param string $idApi
+   *
+   * @return Item
+   */
+  public function setIdApi($idApi) {
+    $this->idApi = $idApi;
 
-    /**
-     * Set idApi
-     *
-     * @param string $idApi
-     *
-     * @return Item
-     */
-    public function setIdApi($idApi)
-    {
-        $this->idApi = $idApi;
+    return $this;
+  }
 
-        return $this;
-    }
+  /**
+   * Get idApi
+   *
+   * @return string
+   */
+  public function getIdApi() {
+    return $this->idApi;
+  }
 
-    /**
-     * Get idApi
-     *
-     * @return string
-     */
-    public function getIdApi()
-    {
-        return $this->idApi;
-    }
+  public function __toString() {
+    return $this->idApi;
+  }
+
 }

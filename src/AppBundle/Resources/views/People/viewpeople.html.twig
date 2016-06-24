@@ -10,7 +10,7 @@
     <div id="body-wrapper">
         <div class="watching">
             <div id="body-wrapper">
-                <div itemtype="http://data-vocabulary.org/Review-aggregate" itemscope="" data-short-url="http://fmovies.to/film/7lr6" data-cover="" data-id="7lr6" id="movie" class="container">
+                <div id="movie" class="container">
                       <ol itemtype="http://schema.org/BreadcrumbList" itemscope="" class="breadcrumb"> 
                         <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement">
                             <a title="Watching movies online" href="{{ path('homepage') }}" itemprop="item"><span itemprop="name">Home</span></a>
@@ -31,7 +31,7 @@
 
                                         </div>
                                         <div class="info col-md-18"> 
-                                            <div itemtype="http://schema.org/People" itemscope="" itemprop="itemReviewed"> 
+                                            <div itemtype="http://schema.org/Person" itemscope=""> 
                                                 <h1 itemprop="name" class="name">{{people.name}}</h1> 
                                                 <div itemprop="description" class="desc">
                                                     <div class="shortcontent">

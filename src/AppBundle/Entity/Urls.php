@@ -31,7 +31,7 @@ class Urls {
   /**
    * @var text
    *
-   * @ORM\Column(name="video", type="string", unique=true)
+   * @ORM\Column(name="video", type="text")
    */
   private $video;
 

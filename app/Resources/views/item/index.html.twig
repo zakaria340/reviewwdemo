@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Item list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Idapi</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+            <tr>
+                <td><a href="{{ path('admin_item_show', { 'id': item.id }) }}">{{ item.id }}</a></td>
+                <td>{{ item.idApi }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_item_show', { 'id': item.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_item_edit', { 'id': item.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_item_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

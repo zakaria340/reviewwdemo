@@ -25,24 +25,26 @@
                     </ol> 
                     <div class="widget">   
                         <div class="mt row"> <div class="col-left col-md-14 col-xs-24"> 
-                                <div class="mt" id="info">
-                                    <div class="row">
-                                        <div class="thumb col-md-6 hidden-sm hidden-xs"> 
-                                            <img width="185" height="278" src="https://image.tmdb.org/t/p/w185{{movie.posterPath}}" class="shadow" title="X-Men - Apocalypse Poster" alt="X-Men - Apocalypse Poster" id="upload_poster" itemprop="image">
+                                <span class="hidden" itemprop="votes">{{movie.voteCount}}</span>
+                                <span class="hidden" itemtype="http://data-vocabulary.org/Rating" itemscope itemprop="rating"> <span itemprop="average">{{movie.voteAverage}}</span> <meta itemprop="best" content="10"> <meta itemprop="worst" content="1"> </span>
 
-                                        </div>
-                                        <div class="info col-md-18"> 
-                                            <div itemtype="http://schema.org/Movie" itemscope="" itemprop="itemReviewed"> 
+                                <div itemtype="http://schema.org/Movie" itemscope="" itemprop="itemReviewed"> 
+
+                                    <div class="mt" id="info">
+                                        <div class="row">
+                                            <div class="thumb col-md-6 hidden-sm hidden-xs"> 
+                                                <img width="185" height="278" src="https://image.tmdb.org/t/p/w185{{movie.posterPath}}" class="shadow" title="X-Men - Apocalypse Poster" alt="X-Men - Apocalypse Poster" id="upload_poster">
+
+                                            </div>
+                                            <div class="info col-md-18"> 
+
                                                 <h1 itemprop="name" class="name">{{movie.originalTitle}}</h1> 
                                                 <div class="meta">
                                                     <span> <span class="imdb">IMDb</span> <b>7.5</b> </span> 
                                                     <span> <i class="fa fa-clock-o"></i> <b>{{movie.runtime}} min</b> </span> 
                                                 </div>  
                                                 <div itemprop="description" class="desc">
-                                                    <div class="shortcontent">
-
-                                                        <p itemprop="description" id="overview">   {{movie.overview}}</p>
-                                                    </div>
+                                                    {{movie.overview}}
                                                 </div> 
                                                 <div class="row"> 
                                                     <dl class="meta col-sm-12"> 
@@ -103,7 +105,6 @@
                                                     <div style="clear: both;"></div>
                                                     <dl class="meta col-sm-12"> 
                                                         <dt>Rating:</dt>
-
                                                         <dd itemtype="http://schema.org/AggregateRating" itemprop="aggregateRating" itemscope="" class="rating"> 
                                                             <span itemprop="ratingValue">{{movie.voteAverage}}</span> / <span itemprop="ratingCount">{{movie.voteCount}}</span> times 
                                                             <meta content="10" itemprop="bestRating">
@@ -134,15 +135,38 @@
 
                                     </div>
                                 </div>
+                                <div id="servers"> 
+                                    {%if listUrls is not empty%}
 
+                                        <div class="alert alert-primary notice">
+                                            <i class="fa fa-exclamation-circle"></i>
+                                            Scroll down to choose episode or server you want to watch.<br> 
+                                            There is no pop, pop-up or any annoying advertising.<br>
+                                            If you don't hear the sounds, please try another server or use Desktop browsers to watch.
+                                        </div>
+                                    {%endif%}
+                                    <div data-type="direct" class="server row"> 
+                                        <label class="name col-md-4 col-sm-5"> <i class="fa fa-server"></i> Servers </label> 
+                                        <div class="col-md-20 col-sm-19">
+                                            <ul id="list-servers" data-range-id="0" class="list-servers-link range active">
+                                                {% for key,itemUrl in listUrls %}
+                                                    <li> 
+                                                        <a href="javascript:void(0)" data-id="{{itemUrl.id}}" class="{% if key == 0 %} active {% endif %}"> {{itemUrl.name}} -- {{itemUrl.qualite}}</a> 
+                                                    </li>  
+                                                {% endfor %}
 
-                                <div id="tags"> 
-                                    <label>Keywords:</label> <a rel="tag" href="http://fmovies.to/tag/marvel">marvel</a>
-                                    <a rel="tag" href="http://fmovies.to/tag/x-men">x men</a> 
-                                    <a rel="tag" href="http://fmovies.to/tag/xmen">xmen</a>
-                                    <a rel="tag" href="http://fmovies.to/tag/apocalypse">apocalypse</a> 
+                                                {%if listUrls is empty%}
+                                                    <li> 
+                                                        <div class="alert alert-primary notice">
+                                                            No video currently available. Please choose another movie or come back later. 
+
+                                                        </div>
+                                                    </li>  
+                                                {%endif%}
+                                            </ul> 
+                                        </div>
+                                    </div> 
                                 </div>
-                                        
                             </div>
                             <div class="col-left col-md-10 col-xs-14">
                                 <ul class="media_items">
@@ -157,14 +181,30 @@
                             </div>
                         </div> 
 
-
-                                     <div class="mt row">
-                            <div class="col-left col-md-24 col-xs-24">
-<iframe width="100%" height="500" frameborder="0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" src="http://videomega.tv/view.php?ref=085117070052057078115050109118118109050115078057052070117085&amp;width=700&amp;height=430&amp;val=1" scrolling="no" id="iframe-embed"></iframe>          
-                                 
+                        <div class="container">
+                            <div class="row">
+                                <div class="span12">
+                                    <ul class="nav nav-tabs" id="myTabs">
+                                        {% for key,itemUrl in listUrls %}
+                                            <li><a href="#videoo-{{itemUrl.id}}" data-toggle="tab">{{itemUrl.name}} - {{itemUrl.qualite}}</a></li>
+                                            {% endfor %}
+                                    </ul>
+                                    <div class="tab-content">
+                                        {% for key,itemUrl in listUrls %}
+                                            <div  {%if itemUrl.type =='iframe'%}data-src="{{itemUrl.url|raw}}" {%endif%} class="tab-pane  {% if key == 0 %} active {% endif %}" id="videoo-{{itemUrl.id}}">
+                                                {%if itemUrl.type =='direct'%}
+                                                    <video id="video_video_1" class="video-js vjs-default-skin" controls preload="none" poster="https://image.tmdb.org/t/p/original{{movie.backdropPath}}" data-setup="{}">
+                                                        <source src="{{itemUrl.url|raw}}"  type="video/mp4">
+                                                    </video>
+                                                {%elseif itemUrl.type =='iframe'%}
+                                                    <iframe  width="850" height="480" frameborder="0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" scrolling="no" src="{{itemUrl.url|raw}}"></iframe>
+                                                {%endif%}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                                    
                         <div class="mt row">
                             <div class="col-left col-md-24 col-xs-24">
                                 <ul class="media_items">

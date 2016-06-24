@@ -603,3 +603,43 @@ ul.media_items li.w92 a {
 #header #menu {
     float:left;
 }
+.watching #servers {
+    background: #fff none repeat scroll 0 0;
+}
+.video-js {
+    height: 500px;
+    width: 100%;
+}
+
+.watching #servers .server ul.list-servers-link li a {
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    color: #888;
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0 2px 5px;
+    padding: 2px 5px;
+}
+
+.watching #servers .server ul.list-servers-link li a {
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    color: #888;
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0 2px 5px;
+    padding: 2px 5px;
+}
+.watching #servers .server ul.list-servers-link li a.active, .watching #servers .server ul.list-servers-link li a:hover {
+    background: #3eb495 none repeat scroll 0 0;
+    border-color: #3eb495;
+    color: #fff;
+}
+.watching #servers .server ul.list-servers-link li {
+    display: inline;
+}
+.alert-danger.notice, .alert-info.notice, .alert-primary.notice, .alert-success.notice, .alert-warning.notice {
+    font-size: 1rem !important;
+}
