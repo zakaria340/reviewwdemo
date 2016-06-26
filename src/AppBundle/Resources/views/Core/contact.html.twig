@@ -1,0 +1,13 @@
+{# On utilise ici le layout général, qui se situe dans ce même CoreBundle maintenant #}
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block title %}
+  {{ parent() }} DCMA
+{% endblock %}
+
+{% block body %}
+    <div id="body-wrapper">
+<div class="widget-title"><h1>Contact Us</h1></div>
+You can contact us by sending an email to contact@fmovies.to
+</div>
+    {% endblock %}

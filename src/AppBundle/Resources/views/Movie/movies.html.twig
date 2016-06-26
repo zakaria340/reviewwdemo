@@ -2,9 +2,12 @@
 {% extends "AppBundle::layout.html.twig" %}
 
 {% block title %}
-    List Movies - {{ parent() }}
+    List Movies Online streaming- {{ parent() }}
 {% endblock %}
 
+{% block meta_description %} 
+    List Movies Online streaming Openload videomega.List all movies streaming Online and for Free no popup
+{% endblock %}
 {% block body %}
 
     <div class="media">
@@ -23,7 +26,7 @@
                             </div>
                         </a>
                     </div>
-                    <p><a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id}) }}">{{movie.title}}</a></p>
+                    <p><a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id}) }}">{{movie.title}} {{movie.releaseDate.format('Y')}}</a></p>
                 </div>
             {% endfor %}
         </div>

@@ -6,6 +6,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sunra\PhpSimple\HtmlDomParser;
+use AppBundle\Entity\Item;
+use AppBundle\Entity\Urls;
 
 class MovieController extends Controller {
 
@@ -96,6 +98,37 @@ class MovieController extends Controller {
    */
   public function viewAction($slug, $id) {
     $movie = $this->get('tmdb.movie_repository')->load($id);
+    $title = str_replace(' ', '+', $movie->getTitle());
+    $imdbId = $movie->getImdbId();
+    $em = $this->getDoctrine()->getManager();
+    $itemEntity = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $id));
+
+    $listUrls = [];
+    if (!is_null($itemEntity)) {
+      $listUrls = $em->getRepository('AppBundle:Urls')
+          ->findBy(array('item' => $itemEntity));
+      $listUrlsVideo = array();
+      if (empty($listUrls)) {
+        $listUrlsVideo = $this->getUrlsMovies($title, $imdbId);
+        $this->SaveUrlsMovies($listUrlsVideo, $id);
+      }
+      else {
+        foreach ($listUrls as $url) {
+          $listUrlsVideo[] = array(
+            'url' => $url->getUrl(),
+            'name' => $url->getName(),
+            'qualite' => $url->getQualite(),
+            'id' => $url->getId(),
+            'type' => $url->getType(),
+            'host' => $url->getHost()
+          );
+        }
+      }
+    }
+    else {
+      $listUrlsVideo = $this->getUrlsMovies($title, $imdbId);
+      $this->SaveUrlsMovies($listUrlsVideo, $id);
+    }
     $crew = $movie->getCredits()->getCrew();
     $cast = $movie->getCredits()->getCast();
     $listMovies = $movie->getSimilar();
@@ -105,71 +138,8 @@ class MovieController extends Controller {
     foreach ($crew as $key => $value) {
       $crewList[$value->getJob()][] = $value;
     }
-    $imdbId = $movie->getImdbId();
-//    
-    $urlToParse = 'http://layarkaca21.tv/search/' . $imdbId;
-    $dom = HtmlDomParser::file_get_html($urlToParse);
-    $href = $dom->find('.entry-header h2 a', 0)->href;
-    $href = str_replace('http://lk21.tv/', '', $href);
-    $href = str_replace('/', '', $href);
-//
-    $urldirect720 = "http://layarkaca21.tv/movie/auth.php?movie=$href&size=720&server=0";
-    $urldirect360 = "http://layarkaca21.tv/movie/auth.php?movie=$href&size=360&server=0";
 
 
- 
-
-    $em = $this->getDoctrine()->getManager();
-    $itemEntity = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $id));
-
-    $listUrls = [];
-    if (!is_null($itemEntity)) {
-      $listUrls = $em->getRepository('AppBundle:Urls')
-          ->findBy(array('item' => $itemEntity));
-    }
-//    foreach($listUrls as $key => $value){
-//      var_dump($key);
-//      var_dump($value);die;
-//    }
-    $listUrlsVideo = array(
-      array(
-        'url' => $urldirect720,
-        'name' => 'Server 1 Direct',
-        'qualite' => '720',
-        'id' => 1,
-        'type' => 'direct'
-      ),
-      array(
-        'url' => $urldirect360,
-        'name' => 'Server 2 Direct',
-        'qualite' => '360',
-        'id' => 2,
-        'type' => 'direct'
-      )
-    );
-    
-       /**
-     * 
-     */
-        $title = str_replace(' ', '+',  $movie->getTitle());
-    $urlToParse = 'http://www.seehd.club/?s=' . $title;
-    $dom2 = HtmlDomParser::file_get_html($urlToParse);
-    if($dom2->find('#content .article-helper h2 a', 0)){
-          $href = $dom2->find('#content .article-helper h2 a', 0)->href;
-
-    $dom = HtmlDomParser::file_get_html($href);
-    $urlUpload = $dom->find('.entry-content iframe', 0)->src;
-
-    $parse = parse_url($urlUpload);
-    $listUrlsVideo[] = array(
-        'url' => $urlUpload,
-        'name' => 'Upload',
-        'qualite' => 'HD',
-        'id' => 3,
-        'type' => 'iframe',
-        'host'  => $parse['host']
-      );
-    }
     return $this->render('AppBundle:Movie:view.html.twig', array(
           'movie' => $movie,
           'crewList' => $crewList,
@@ -179,6 +149,82 @@ class MovieController extends Controller {
           'listUrls' => $listUrlsVideo
             )
     );
+  }
+
+  public function getUrlsMovies($title, $imdbId) {
+    $urlSearch = 'http://fmovies.to/search?keyword=' . $title;
+    $dom = HtmlDomParser::file_get_html($urlSearch);
+    $hrefIframedata = $dom->find('.movie-list .item', 0);
+    $listUrlsVideo = array();
+    if ($hrefIframedata) {
+      $hrefmovie = $hrefIframedata->find('a', 0)->href;
+      $urlToParse = 'http://fmovies.to' . $hrefmovie;
+      $dom = HtmlDomParser::file_get_html($urlToParse);
+      $i = 0;
+      foreach ($dom->find('#servers .server ') as $div) {
+        if ($div->attr['data-type'] == 'iframe') {
+          $i++;
+          $hrefIframedata = $div->find('a', 0)->attr['data-id'];
+          $hrefIframequalite = $div->find('a', 0)->plaintext;
+          $hrefIframe = 'http://fmovies.to/ajax/episode/info?id=' . $hrefIframedata;
+          $dom = file_get_contents($hrefIframe);
+          $dom = json_decode($dom);
+          $parse = parse_url($dom->target);
+          $listUrlsVideo[] = array(
+            'url' => $dom->target,
+            'name' => $parse['host'],
+            'qualite' => $hrefIframequalite,
+            'id' => $i,
+            'type' => 'iframe',
+            'host' => $parse['host']
+          );
+        }
+      }
+    }
+
+    /**
+     * 
+     */
+    $urlToParse = 'http://www.seehd.club/?s=' . $title;
+    $dom2 = HtmlDomParser::file_get_html($urlToParse);
+    if ($dom2->find('#content .article-helper h2 a', 0)) {
+      $href = $dom2->find('#content .article-helper h2 a', 0)->href;
+
+      $dom = HtmlDomParser::file_get_html($href);
+      $urlUpload = $dom->find('.entry-content iframe', 0)->src;
+
+      $parse = parse_url($urlUpload);
+      $listUrlsVideo[] = array(
+        'url' => $urlUpload,
+        'name' => 'Upload',
+        'qualite' => 'HD',
+        'id' => 3,
+        'type' => 'iframe',
+        'host' => $parse['host']
+      );
+    }
+
+    return $listUrlsVideo;
+  }
+
+  public function SaveUrlsMovies($listUrlMovies, $id) {
+
+    $em = $this->getDoctrine()->getManager();
+    $item = new Item();
+    $item->setIdApi($id);
+    foreach ($listUrlMovies as $url) {
+      $urls = new Urls();
+      $urls->setName($url['name']);
+      $urls->setUrl($url['url']);
+      $urls->setQualite($url['qualite']);
+      $urls->setType($url['type']);
+      $urls->setHost($url['host']);
+      $urls->setItem($item);
+      $em->persist($urls);
+    }
+
+    $em->persist($item);
+    $em->flush();
   }
 
 }

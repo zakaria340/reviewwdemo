@@ -2,7 +2,7 @@
 {% extends "AppBundle::layout.html.twig" %}
 
 {% block title %}
-  Page d'accueil - {{ parent() }}
+  {{ parent() }}
 {% endblock %}
 
 {% block body %}
@@ -36,7 +36,6 @@
                 <h3>{{tv.name}}</h3>
               </a>
               <a class="text" alt="{{tv.name}}" title="{{tv.name}}" href="{{ path('viewtvshow', {'slug': tv.name|GenerateSlug, 'id': tv.id}) }}">
-                <p>{{tv.overview}}</p>
               </a>
             </span>
           {% endif %}

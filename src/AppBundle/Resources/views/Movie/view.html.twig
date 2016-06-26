@@ -2,7 +2,10 @@
 {% extends "AppBundle::layout.html.twig" %}
 
 {% block title %}
-    {{movie.originalTitle}} - {{ parent() }}
+    {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie streaming online- {{ parent() }}
+{% endblock %}
+{% block meta_description %} 
+    Watch Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} streaming Online free. {{movie.overview}}
 {% endblock %}
 
 {% block body %}
@@ -38,7 +41,7 @@
                                             </div>
                                             <div class="info col-md-18"> 
 
-                                                <h1 itemprop="name" class="name">{{movie.originalTitle}}</h1> 
+                                                <h1 itemprop="name" class="name">{{movie.originalTitle}} {{movie.releaseDate.format('Y')}}</h1> 
                                                 <div class="meta">
                                                     <span> <span class="imdb">IMDb</span> <b>7.5</b> </span> 
                                                     <span> <i class="fa fa-clock-o"></i> <b>{{movie.runtime}} min</b> </span> 
@@ -137,7 +140,6 @@
                                 </div>
                                 <div id="servers"> 
                                     {%if listUrls is not empty%}
-
                                         <div class="alert alert-primary notice">
                                             <i class="fa fa-exclamation-circle"></i>
                                             Scroll down to choose episode or server you want to watch.<br> 
@@ -146,15 +148,8 @@
                                         </div>
                                     {%endif%}
                                     <div data-type="direct" class="server row"> 
-                                        <label class="name col-md-4 col-sm-5"> <i class="fa fa-server"></i> Servers </label> 
                                         <div class="col-md-20 col-sm-19">
                                             <ul id="list-servers" data-range-id="0" class="list-servers-link range active">
-                                                {% for key,itemUrl in listUrls %}
-                                                    <li> 
-                                                        <a href="javascript:void(0)" data-id="{{itemUrl.id}}" class="{% if key == 0 %} active {% endif %}"> {{itemUrl.name}} -- {{itemUrl.qualite}}</a> 
-                                                    </li>  
-                                                {% endfor %}
-
                                                 {%if listUrls is empty%}
                                                     <li> 
                                                         <div class="alert alert-primary notice">
@@ -212,7 +207,7 @@
 
                                         <li class="w92">
                                             <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id}) }}"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.posterPath }}" title="{{ item.title }}" alt="{{ item.title }}" class="shadow"></a>
-                                            <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id}) }}" class="title">{{ item.title }} </a>
+                                            <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id}) }}" class="title">{{ item.title }} {{item.releaseDate.format('Y')}}</a>
                                         </li>
                                     {% endfor %}
                                     <div style="clear: both;"></div>

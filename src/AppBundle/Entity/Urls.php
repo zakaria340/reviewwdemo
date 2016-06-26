@@ -31,9 +31,9 @@ class Urls {
   /**
    * @var text
    *
-   * @ORM\Column(name="video", type="text")
+   * @ORM\Column(name="url", type="text")
    */
-  private $video;
+  private $url;
 
   /**
    * @var string
@@ -49,110 +49,187 @@ class Urls {
    */
   private $qualite;
 
+  /**
+   * @var string
+   *
+   * @ORM\Column(name="type", type="string", length=255)
+   */
+  private $type;
+
+  /**
+   * @var string
+   *
+   * @ORM\Column(name="host", type="string", length=255)
+   */
+  private $host;
+
+  /**
+   * Get id
+   *
+   * @return integer
+   */
+  public function getId() {
+    return $this->id;
+  }
+
+  /**
+   * Set name
+   *
+   * @param string $name
+   *
+   * @return Urls
+   */
+  public function setName($name) {
+    $this->name = $name;
+
+    return $this;
+  }
+
+  /**
+   * Get name
+   *
+   * @return string
+   */
+  public function getName() {
+    return $this->name;
+  }
+
+  /**
+   * Set qualite
+   *
+   * @param string $qualite
+   *
+   * @return Urls
+   */
+  public function setQualite($qualite) {
+    $this->qualite = $qualite;
+
+    return $this;
+  }
+
+  /**
+   * Get qualite
+   *
+   * @return string
+   */
+  public function getQualite() {
+    return $this->qualite;
+  }
+
+  /**
+   * Set item
+   *
+   * @param \AppBundle\Entity\Item $item
+   *
+   * @return Urls
+   */
+  public function setItem(\AppBundle\Entity\Item $item) {
+    $this->item = $item;
+
+    return $this;
+  }
+
+  /**
+   * Get item
+   *
+   * @return \AppBundle\Entity\Item
+   */
+  public function getItem() {
+    return $this->item;
+  }
+
+  /**
+   * Set video
+   *
+   * @param string $video
+   *
+   * @return Urls
+   */
+  public function setVideo($video) {
+    $this->video = $video;
+
+    return $this;
+  }
+
+  /**
+   * Get video
+   *
+   * @return string
+   */
+  public function getVideo() {
+    return $this->video;
+  }
+
 
     /**
-     * Get id
+     * Set url
      *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
+     * @param string $url
      *
      * @return Urls
      */
-    public function setName($name)
+    public function setUrl($url)
     {
-        $this->name = $name;
+        $this->url = $url;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get url
      *
      * @return string
      */
-    public function getName()
+    public function getUrl()
     {
-        return $this->name;
+        return $this->url;
     }
 
     /**
-     * Set qualite
+     * Set type
      *
-     * @param string $qualite
+     * @param string $type
      *
      * @return Urls
      */
-    public function setQualite($qualite)
+    public function setType($type)
     {
-        $this->qualite = $qualite;
+        $this->type = $type;
 
         return $this;
     }
 
     /**
-     * Get qualite
+     * Get type
      *
      * @return string
      */
-    public function getQualite()
+    public function getType()
     {
-        return $this->qualite;
+        return $this->type;
     }
 
     /**
-     * Set item
+     * Set host
      *
-     * @param \AppBundle\Entity\Item $item
+     * @param string $host
      *
      * @return Urls
      */
-    public function setItem(\AppBundle\Entity\Item $item)
+    public function setHost($host)
     {
-        $this->item = $item;
+        $this->host = $host;
 
         return $this;
     }
 
     /**
-     * Get item
-     *
-     * @return \AppBundle\Entity\Item
-     */
-    public function getItem()
-    {
-        return $this->item;
-    }
-
-    /**
-     * Set video
-     *
-     * @param string $video
-     *
-     * @return Urls
-     */
-    public function setVideo($video)
-    {
-        $this->video = $video;
-
-        return $this;
-    }
-
-    /**
-     * Get video
+     * Get host
      *
      * @return string
      */
-    public function getVideo()
+    public function getHost()
     {
-        return $this->video;
+        return $this->host;
     }
 }
