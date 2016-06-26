@@ -2,10 +2,10 @@
 {% extends "AppBundle::layout.html.twig" %}
 
 {% block title %}
-    {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie streaming online- {{ parent() }}
+   Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - {{ parent() }}
 {% endblock %}
 {% block meta_description %} 
-    Watch Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} streaming Online free. {{movie.overview}}
+    Watch Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Online Free. {{movie.overview}}
 {% endblock %}
 
 {% block body %}
@@ -41,7 +41,7 @@
                                             </div>
                                             <div class="info col-md-18"> 
 
-                                                <h1 itemprop="name" class="name">{{movie.originalTitle}} {{movie.releaseDate.format('Y')}}</h1> 
+                                                <h1 itemprop="name" class="name">Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online</h1> 
                                                 <div class="meta">
                                                     <span> <span class="imdb">IMDb</span> <b>7.5</b> </span> 
                                                     <span> <i class="fa fa-clock-o"></i> <b>{{movie.runtime}} min</b> </span> 
