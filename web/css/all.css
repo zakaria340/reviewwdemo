@@ -643,3 +643,18 @@ ul.media_items li.w92 a {
 .alert-danger.notice, .alert-info.notice, .alert-primary.notice, .alert-success.notice, .alert-warning.notice {
     font-size: 1rem !important;
 }
+
+#myTabs li a.active, #myTabs li a:hover {
+    background: #3eb495 none repeat scroll 0 0;
+    border-color: #3eb495;
+    color: #fff;
+}
+#myTabs li a {
+    border-radius: 2px;
+    display: inline-block;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 2px 5px;
+    padding: 2px 5px;
+}
