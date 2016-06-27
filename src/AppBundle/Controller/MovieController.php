@@ -99,11 +99,6 @@ class MovieController extends Controller {
   public function viewAction($slug, $id) {
     $movie = $this->get('tmdb.movie_repository')->load($id);
     $title = str_replace(' ', '+', $movie->getTitle());
-    $query = http_build_query(array('keyword'=>$title));
-$urlSearch = "http://fmovies.to/search?" . $query;
-
-    $dom = HtmlDomParser::file_get_html($urlSearch);
-var_dump($dom);die;
     $imdbId = $movie->getImdbId();
     $em = $this->getDoctrine()->getManager();
     $itemEntity = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $id));
