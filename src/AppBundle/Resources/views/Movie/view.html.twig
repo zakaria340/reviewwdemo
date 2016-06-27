@@ -2,10 +2,10 @@
 {% extends "AppBundle::layout.html.twig" %}
 
 {% block title %}
-   Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - {{ parent() }}
+    Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - TheMovieshow.biz
 {% endblock %}
 {% block meta_description %} 
-    Watch Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Online Free. {{movie.overview}}
+    Watch Free Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Online Free. {{movie.originalTitle}} Online
 {% endblock %}
 
 {% block body %}
@@ -42,6 +42,8 @@
                                             <div class="info col-md-18"> 
 
                                                 <h1 itemprop="name" class="name">Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online</h1> 
+                                                <h2> <a title="Movies" href="{{ path('popularMovies') }}" itemprop="item"><span itemprop="name">Movies</span></a></h2> 
+
                                                 <div class="meta">
                                                     <span> <span class="imdb">IMDb</span> <b>7.5</b> </span> 
                                                     <span> <i class="fa fa-clock-o"></i> <b>{{movie.runtime}} min</b> </span> 
@@ -119,6 +121,7 @@
                                                         <dd><span class="quality">HD 720p</span></dd>
                                                         <dt>Popularity:</dt> <dd>{{movie.popularity}}</dd>
                                                     </dl>
+    Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - TheMovieshow.biz
 
                                                 </div> 
                                             </div>
@@ -201,6 +204,8 @@
                             </div>
                         </div>
                         <div class="mt row">
+                            <h3> <a title="Similar Movies" href="#"><span>List Similar Movies to watch</span></a></h3> 
+
                             <div class="col-left col-md-24 col-xs-24">
                                 <ul class="media_items">
                                     {% for item in listMovies %}

@@ -1,13 +1,21 @@
 {# src/OC/CoreBundle/Resources/views/layout.html.twig #}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{% block title %} TheMovieshow Watch Movie And Tv show Online{% endblock %}</title>
-        <meta content="{% block meta_description %} TheMovieshow.byz Watch Movie and tv Show Online free, Watch your favorite movies online free on MovieTvshow. Discover latest movies online and tv show tv online openload and Videomega .. {% endblock %}" name="description">
+        <meta content="{% block meta_description %} TheMovieshow.byz Watch Movie and tv Show Online free, Watch your favorite movies online free on MovieTvshow.. {% endblock %}" name="description">
+        <meta name="robots" content="index, follow">
+        <meta name="revisit-after" content="1 days"> 
+        <link href="http://themovishow.biz" rel="canonical"> 
+        <meta property="og:url" content="http://themovishow.biz">
+        <meta property="og:title" content="TheMovieshow Watch Movie And Tv show Online"> 
+        <meta property="og:description" content=" TheMovieshow.byz Watch Movie and tv Show Online free, Watch your favorite movies online free on MovieTvshow..">
+        <meta property="og:site_name" content="Themovishow">
+        <meta property="og:type" content="website">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         {% block stylesheets %}
             {# On charge le CSS de bootstrap depuis le site directement #}
             <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500" type="text/css" rel="stylesheet">
