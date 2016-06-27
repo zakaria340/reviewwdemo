@@ -31,8 +31,8 @@ class MovieController extends Controller {
       'route_params' => array()
     );
     return $this->render('AppBundle:Movie:popularmovies.html.twig', array(
-          'movies' => $TopRatedMovies,
-          'pagination' => $pagination
+        'movies' => $TopRatedMovies,
+        'pagination' => $pagination
     ));
   }
 
@@ -49,8 +49,8 @@ class MovieController extends Controller {
       'route_params' => array()
     );
     return $this->render('AppBundle:Movie:topratedmovies.html.twig', array(
-          'movies' => $TopRatedMovies,
-          'pagination' => $pagination
+        'movies' => $TopRatedMovies,
+        'pagination' => $pagination
     ));
   }
 
@@ -67,8 +67,8 @@ class MovieController extends Controller {
       'route_params' => array()
     );
     return $this->render('AppBundle:Movie:nowplayingmovies.html.twig', array(
-          'movies' => $TopRatedMovies,
-          'pagination' => $pagination
+        'movies' => $TopRatedMovies,
+        'pagination' => $pagination
     ));
   }
 
@@ -85,8 +85,8 @@ class MovieController extends Controller {
       'route_params' => array()
     );
     return $this->render('AppBundle:Movie:upcomingmovies.html.twig', array(
-          'movies' => $TopRatedMovies,
-          'pagination' => $pagination
+        'movies' => $TopRatedMovies,
+        'pagination' => $pagination
     ));
   }
 
@@ -106,23 +106,17 @@ class MovieController extends Controller {
     $listUrls = [];
     if (!is_null($itemEntity)) {
       $listUrls = $em->getRepository('AppBundle:Urls')
-          ->findBy(array('item' => $itemEntity));
+        ->findBy(array('item' => $itemEntity));
       $listUrlsVideo = array();
-      if (empty($listUrls)) {
-        $listUrlsVideo = $this->getUrlsMovies($title, $imdbId);
-        $this->SaveUrlsMovies($listUrlsVideo, $id);
-      }
-      else {
-        foreach ($listUrls as $url) {
-          $listUrlsVideo[] = array(
-            'url' => $url->getUrl(),
-            'name' => $url->getName(),
-            'qualite' => $url->getQualite(),
-            'id' => $url->getId(),
-            'type' => $url->getType(),
-            'host' => $url->getHost()
-          );
-        }
+      foreach ($listUrls as $url) {
+        $listUrlsVideo[] = array(
+          'url' => $url->getUrl(),
+          'name' => $url->getName(),
+          'qualite' => $url->getQualite(),
+          'id' => $url->getId(),
+          'type' => $url->getType(),
+          'host' => $url->getHost()
+        );
       }
     }
     else {
@@ -141,13 +135,13 @@ class MovieController extends Controller {
 
 
     return $this->render('AppBundle:Movie:view.html.twig', array(
-          'movie' => $movie,
-          'crewList' => $crewList,
-          'castList' => $castList,
-          'listMovies' => $listMovies,
-          'listImages' => $listImages,
-          'listUrls' => $listUrlsVideo
-            )
+        'movie' => $movie,
+        'crewList' => $crewList,
+        'castList' => $castList,
+        'listMovies' => $listMovies,
+        'listImages' => $listImages,
+        'listUrls' => $listUrlsVideo
+        )
     );
   }
 
