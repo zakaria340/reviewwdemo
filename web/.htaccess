@@ -34,7 +34,6 @@ DirectoryIndex app.php
     RewriteCond %{HTTP:Authorization} .
     RewriteRule ^ - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    RewriteRule ^app\.php$ http://www.%{HTTP_HOST}/ [R=301,L]
     # Redirect to URI without front controller to prevent duplicate content
     # (with and without `/app.php`). Only do this redirect on the initial
     # rewrite by Apache and not on subsequent cycles. Otherwise we would get an
@@ -48,6 +47,7 @@ DirectoryIndex app.php
     #   following RewriteCond (best solution)
     RewriteCond %{ENV:REDIRECT_STATUS} ^$
     RewriteRule ^app\.php(?:/(.*)|$) %{ENV:BASE}/$1 [R=301,L]
+    RewriteRule ^app\.php$ http://www.%{HTTP_HOST}/ [R=301,L]
 
     # If the requested filename exists, simply serve it.
     # We only want to let Apache serve files and not directories.
