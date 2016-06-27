@@ -13,7 +13,7 @@ class TvController extends Controller {
 
   /**
    * @Route(
-   *     "/tv-show/{page}",
+   *     "/watch-tv-show/{page}",
    *     name="tvshow",
    *    defaults={"page" = 1},
    *     requirements={
@@ -38,7 +38,7 @@ class TvController extends Controller {
 
   /**
    * @Route(
-   *     "/tv-show/{id}-{slug}/",
+   *     "/watch-tv-show/{id}-{slug}/",
    *     name="viewtvshow"
    * )
    */
@@ -64,7 +64,7 @@ class TvController extends Controller {
 
   /**
    * @Route(
-   *     "/tv-show/{id}-{slug}/season/{idseason}/",
+   *     "/watch-tv-show/{id}-{slug}/season/{idseason}/",
    *     
    *     name="viewseasonshow"
    * )
@@ -110,7 +110,7 @@ class TvController extends Controller {
 
   /**
    * @Route(
-   *     "/tv-show/{id}-{slug}/season/{idseason}/episode/{idepisode}/",
+   *     "/watch-tv-show/{id}-{slug}/season/{idseason}/episode/{idepisode}/",
    *     name="viewepisodeshow"
    * )
    */

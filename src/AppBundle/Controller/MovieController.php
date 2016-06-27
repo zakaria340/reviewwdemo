@@ -13,7 +13,7 @@ class MovieController extends Controller {
 
   /**
    * @Route(
-   *     "/movies/{page}",
+   *     "/watch-movies/{page}",
    *     name="popularMovies",
    *    defaults={"page" = 1},
    *     requirements={
@@ -92,7 +92,7 @@ class MovieController extends Controller {
 
   /**
    * @Route(
-   *     "/movies/{id}-{slug}/",
+   *     "/watch-movies/{id}-{slug}/",
    *     name="viewmovie"
    * )
    */
