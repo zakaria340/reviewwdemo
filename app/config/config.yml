@@ -67,6 +67,12 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+doctrine_cache:
+    providers:
+        tmdb_cache:
+            file_system:
+                directory: %kernel.root_dir%/cache/tmdb
+                
 tmdb_symfony:
     api_key: d136a28deb5bc5b76c39aa9bc61619f1
     repositories:

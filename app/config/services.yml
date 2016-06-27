@@ -9,6 +9,6 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
     app.twig_extension:
         class: AppBundle\Twig\AppExtension
-        public: false
+        public: true
         tags:
             - { name: twig.extension }
