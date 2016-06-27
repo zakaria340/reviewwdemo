@@ -5,9 +5,16 @@
     Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - TheMovieshow.biz
 {% endblock %}
 {% block meta_description %} 
-    Watch Free Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Online Free. Watch {{movie.originalTitle}} Online For Free with No popUp.
+    Watch Free Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Online Free. {{movie.overview|slice(0, 80)}}.
 {% endblock %}
 
+      {% block meta_title %}
+        <meta property="og:url" content="{{ path('viewmovie', {'slug': movie.originalTitle|GenerateSlug, 'id': movie.id}) }}">
+        <meta property="og:title" content="Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - TheMovieshow.biz"> 
+        <meta property="og:description" content="Watch Free Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Online Free. {{movie.overview|slice(0, 80)}}">
+        <meta property="og:site_name" content="Themovishow">
+        {% endblock %}
+        
 {% block body %}
 
     <div id="body-wrapper">
