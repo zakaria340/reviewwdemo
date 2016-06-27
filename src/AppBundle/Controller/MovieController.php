@@ -154,60 +154,57 @@ class MovieController extends Controller {
   public function getUrlsMovies($title, $imdbId) {
     $urlSearch = 'http://fmovies.to/search?keyword=' . $title;
     $dom = HtmlDomParser::file_get_html($urlSearch);
+    
+    $hrefIframedata = $dom->find('.movie-list .item', 0);
     $listUrlsVideo = array();
-
-    if ($dom) {
-
-
-      $hrefIframedata = $dom->find('.movie-list .item', 0);
-      if ($hrefIframedata) {
-        $hrefmovie = $hrefIframedata->find('a', 0)->href;
-        $urlToParse = 'http://fmovies.to' . $hrefmovie;
-        $dom = HtmlDomParser::file_get_html($urlToParse);
-        $i = 0;
-        foreach ($dom->find('#servers .server ') as $div) {
-          if ($div->attr['data-type'] == 'iframe') {
-            $i++;
-            $hrefIframedata = $div->find('a', 0)->attr['data-id'];
-            $hrefIframequalite = $div->find('a', 0)->plaintext;
-            $hrefIframe = 'http://fmovies.to/ajax/episode/info?id=' . $hrefIframedata;
-            $dom = file_get_contents($hrefIframe);
-            $dom = json_decode($dom);
-            $parse = parse_url($dom->target);
-            $listUrlsVideo[] = array(
-              'url' => $dom->target,
-              'name' => $parse['host'],
-              'qualite' => $hrefIframequalite,
-              'id' => $i,
-              'type' => 'iframe',
-              'host' => $parse['host']
-            );
-          }
+    if ($hrefIframedata) {
+      $hrefmovie = $hrefIframedata->find('a', 0)->href;
+      $urlToParse = 'http://fmovies.to' . $hrefmovie;
+      $dom = HtmlDomParser::file_get_html($urlToParse);
+      $i = 0;
+      foreach ($dom->find('#servers .server ') as $div) {
+        if ($div->attr['data-type'] == 'iframe') {
+          $i++;
+          $hrefIframedata = $div->find('a', 0)->attr['data-id'];
+          $hrefIframequalite = $div->find('a', 0)->plaintext;
+          $hrefIframe = 'http://fmovies.to/ajax/episode/info?id=' . $hrefIframedata;
+          $dom = file_get_contents($hrefIframe);
+          $dom = json_decode($dom);
+          $parse = parse_url($dom->target);
+          $listUrlsVideo[] = array(
+            'url' => $dom->target,
+            'name' => $parse['host'],
+            'qualite' => $hrefIframequalite,
+            'id' => $i,
+            'type' => 'iframe',
+            'host' => $parse['host']
+          );
         }
       }
-
-      /**
-       * 
-       */
-      $urlToParse = 'http://www.seehd.club/?s=' . $title;
-      $dom2 = HtmlDomParser::file_get_html($urlToParse);
-      if ($dom2->find('#content .article-helper h2 a', 0)) {
-        $href = $dom2->find('#content .article-helper h2 a', 0)->href;
-
-        $dom = HtmlDomParser::file_get_html($href);
-        $urlUpload = $dom->find('.entry-content iframe', 0)->src;
-
-        $parse = parse_url($urlUpload);
-        $listUrlsVideo[] = array(
-          'url' => $urlUpload,
-          'name' => 'Upload',
-          'qualite' => 'HD',
-          'id' => 3,
-          'type' => 'iframe',
-          'host' => $parse['host']
-        );
-      }
     }
+
+    /**
+     * 
+     */
+    $urlToParse = 'http://www.seehd.club/?s=' . $title;
+    $dom2 = HtmlDomParser::file_get_html($urlToParse);
+    if ($dom2->find('#content .article-helper h2 a', 0)) {
+      $href = $dom2->find('#content .article-helper h2 a', 0)->href;
+
+      $dom = HtmlDomParser::file_get_html($href);
+      $urlUpload = $dom->find('.entry-content iframe', 0)->src;
+
+      $parse = parse_url($urlUpload);
+      $listUrlsVideo[] = array(
+        'url' => $urlUpload,
+        'name' => 'Upload',
+        'qualite' => 'HD',
+        'id' => 3,
+        'type' => 'iframe',
+        'host' => $parse['host']
+      );
+    }
+
     return $listUrlsVideo;
   }
 
