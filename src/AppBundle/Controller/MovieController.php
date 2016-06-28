@@ -145,8 +145,7 @@ class MovieController extends Controller {
   /**
    * @Route(
    *     "/watch-movies/{id}-{slug}/",
-   *      name="viewmovie",
-   *      options={"sitemap" = {"priority" = 0.5, "changefreq" = "weekly" }},
+   *      name="viewmovie"
    * )
    */
   public function viewAction($slug, $id) {
