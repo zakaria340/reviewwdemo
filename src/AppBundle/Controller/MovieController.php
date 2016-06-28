@@ -15,7 +15,8 @@ class MovieController extends Controller {
    * @Route(
    *     "/watch-movies/{page}",
    *     name="popularMovies",
-   *    defaults={"page" = 1},
+   *     options={"sitemap" = {"priority" = 0.7, "changefreq" = "weekly" }},
+   *     defaults={"page" = 1},
    *     requirements={
    *         "page": "\d*"
    *     }
