@@ -16,7 +16,8 @@ class AppKernel extends Kernel {
       new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
       new AppBundle\AppBundle(),
       new Tmdb\SymfonyBundle\TmdbSymfonyBundle(),
-      new \Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle()
+      new \Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
+      new Presta\SitemapBundle\PrestaSitemapBundle(),
     ];
 
     if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
