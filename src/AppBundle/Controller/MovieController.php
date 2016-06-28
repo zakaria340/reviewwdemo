@@ -38,7 +38,7 @@ class MovieController extends Controller {
   }
 
   /**
-   * @Route("/top-rated-movies/{page}", name="topratedMovies", defaults={"page" = 1})
+   * @Route("/top-rated-movies/{page}", name="topratedMovies","sitemap" = {"priority" = 0.7, "changefreq" = "weekly" }, defaults={"page" = 1})
    */
   public function topratedmoviesAction($page) {
     $client = $this->get('tmdb.client');
@@ -107,7 +107,7 @@ class MovieController extends Controller {
   }
 
   /**
-   * @Route("/now-playing-movies/{page}", name="nowplayingMovies", defaults={"page" = 1})
+   * @Route("/now-playing-movies/{page}", name="nowplayingMovies","sitemap" = {"priority" = 0.7, "changefreq" = "weekly" }, defaults={"page" = 1})
    */
   public function nowplayingmoviesAction($page) {
     $client = $this->get('tmdb.client');
@@ -125,7 +125,7 @@ class MovieController extends Controller {
   }
 
   /**
-   * @Route("/up-coming-movies/{page}", name="upcomingMovies", defaults={"page" = 1})
+   * @Route("/up-coming-movies/{page}", name="upcomingMovies","sitemap" = {"priority" = 0.7, "changefreq" = "weekly" }, defaults={"page" = 1})
    */
   public function upcomingmoviesAction($page) {
     $client = $this->get('tmdb.client');
@@ -145,7 +145,8 @@ class MovieController extends Controller {
   /**
    * @Route(
    *     "/watch-movies/{id}-{slug}/",
-   *     name="viewmovie"
+   *     name="viewmovie",
+   *     "sitemap" = {"priority" = 0.4, "changefreq" = "weekly" }
    * )
    */
   public function viewAction($slug, $id) {
