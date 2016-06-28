@@ -31,8 +31,8 @@ class MovieController extends Controller {
       'route_params' => array()
     );
     return $this->render('AppBundle:Movie:popularmovies.html.twig', array(
-        'movies' => $TopRatedMovies,
-        'pagination' => $pagination
+          'movies' => $TopRatedMovies,
+          'pagination' => $pagination
     ));
   }
 
@@ -49,9 +49,59 @@ class MovieController extends Controller {
       'route_params' => array()
     );
     return $this->render('AppBundle:Movie:topratedmovies.html.twig', array(
-        'movies' => $TopRatedMovies,
-        'pagination' => $pagination
+          'movies' => $TopRatedMovies,
+          'pagination' => $pagination
     ));
+  }
+
+  /**
+   * @Route("/updatabase", name="updatabase")
+   */
+  public function updatabaseAction() {
+    for ($i = 5; $i < 11; $i++) {
+      $urlSearch = 'http://fmovies.to/movies?page=' . $i;
+      $dom = HtmlDomParser::file_get_html($urlSearch);
+      foreach ($dom->find('.movie-list .item') as $element) {
+        sleep(2);
+        $hrefmovie = $element->find('a', 0)->href;
+        $urlToParse = 'http://fmovies.to' . $hrefmovie;
+        $dom = HtmlDomParser::file_get_html($urlToParse);
+
+        $title_movie = $dom->find('h1.name', 0)->plaintext;
+        $client = $this->get('tmdb.client');
+        $search = $client->getSearchApi()->searchMovies($title_movie);
+        if (!empty($search['results'])) {
+          $firstMovie = $search['results'][0];
+          $idMovie = $firstMovie['id'];
+              $em = $this->getDoctrine()->getManager();
+    $itemEntity = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $idMovie));
+    if (empty($itemEntity)) {
+          $i = 0;
+          $listUrlsVideo = array();
+          foreach ($dom->find('#servers .server ') as $div) {
+            if ($div->attr['data-type'] == 'iframe') {
+              $i++;
+              $hrefIframedata = $div->find('a', 0)->attr['data-id'];
+              $hrefIframequalite = $div->find('a', 0)->plaintext;
+              $hrefIframe = 'http://fmovies.to/ajax/episode/info?id=' . $hrefIframedata;
+              $dom = file_get_contents($hrefIframe);
+              $dom = json_decode($dom);
+              $parse = parse_url($dom->target);
+              $listUrlsVideo[] = array(
+                'url' => $dom->target,
+                'name' => $parse['host'],
+                'qualite' => $hrefIframequalite,
+                'id' => $i,
+                'type' => 'iframe',
+                'host' => $parse['host']
+              );
+            }
+          }
+          $this->SaveUrlsMovies($listUrlsVideo, $idMovie);
+             }
+        }
+      }
+    }
   }
 
   /**
@@ -67,8 +117,8 @@ class MovieController extends Controller {
       'route_params' => array()
     );
     return $this->render('AppBundle:Movie:nowplayingmovies.html.twig', array(
-        'movies' => $TopRatedMovies,
-        'pagination' => $pagination
+          'movies' => $TopRatedMovies,
+          'pagination' => $pagination
     ));
   }
 
@@ -85,8 +135,8 @@ class MovieController extends Controller {
       'route_params' => array()
     );
     return $this->render('AppBundle:Movie:upcomingmovies.html.twig', array(
-        'movies' => $TopRatedMovies,
-        'pagination' => $pagination
+          'movies' => $TopRatedMovies,
+          'pagination' => $pagination
     ));
   }
 
@@ -106,7 +156,7 @@ class MovieController extends Controller {
     $listUrls = [];
     if (!is_null($itemEntity)) {
       $listUrls = $em->getRepository('AppBundle:Urls')
-        ->findBy(array('item' => $itemEntity));
+          ->findBy(array('item' => $itemEntity));
       $listUrlsVideo = array();
       foreach ($listUrls as $url) {
         $listUrlsVideo[] = array(
@@ -135,13 +185,13 @@ class MovieController extends Controller {
 
 
     return $this->render('AppBundle:Movie:view.html.twig', array(
-        'movie' => $movie,
-        'crewList' => $crewList,
-        'castList' => $castList,
-        'listMovies' => $listMovies,
-        'listImages' => $listImages,
-        'listUrls' => $listUrlsVideo
-        )
+          'movie' => $movie,
+          'crewList' => $crewList,
+          'castList' => $castList,
+          'listMovies' => $listMovies,
+          'listImages' => $listImages,
+          'listUrls' => $listUrlsVideo
+            )
     );
   }
 
