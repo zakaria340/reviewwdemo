@@ -95,3 +95,13 @@ tmdb_symfony:
             level: DEBUG
             handler: null
             subscriber: null
+            
+presta_sitemap:
+    timetolive: 3600
+    items_by_set: 50  
+    
+doctrine_cache:
+    providers:
+        presta_sitemap:
+            type: array #or anything your project might use (please see [DoctrineCacheBundle documentation](http://packagist.org/packages/doctrine/doctrine-cache-bundle))
+            namespace: presta_sitemap

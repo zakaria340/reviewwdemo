@@ -58,11 +58,11 @@ class MovieController extends Controller {
    * @Route("/updatabase", name="updatabase")
    */
   public function updatabaseAction() {
-    for ($i = 5; $i < 11; $i++) {
+    for ($i = 13; $i < 20; $i++) {
       $urlSearch = 'http://fmovies.to/movies?page=' . $i;
       $dom = HtmlDomParser::file_get_html($urlSearch);
       foreach ($dom->find('.movie-list .item') as $element) {
-        sleep(2);
+        sleep(3);
         $hrefmovie = $element->find('a', 0)->href;
         $urlToParse = 'http://fmovies.to' . $hrefmovie;
         $dom = HtmlDomParser::file_get_html($urlToParse);
@@ -84,6 +84,7 @@ class MovieController extends Controller {
               $hrefIframedata = $div->find('a', 0)->attr['data-id'];
               $hrefIframequalite = $div->find('a', 0)->plaintext;
               $hrefIframe = 'http://fmovies.to/ajax/episode/info?id=' . $hrefIframedata;
+              sleep(2);
               $dom = file_get_contents($hrefIframe);
               $dom = json_decode($dom);
               $parse = parse_url($dom->target);
