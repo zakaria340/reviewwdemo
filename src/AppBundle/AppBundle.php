@@ -30,7 +30,7 @@ class AppBundle extends Bundle
                     ),
                     'default'
                 );
-                for($page=1;$page<=800;$page++){
+                for($page=1;$page<=20;$page++){
                   
                        $TopRatedMovies = $client->getMoviesApi()->getPopular(array('page' => $page));
                     foreach ($TopRatedMovies['results'] as $movie) {

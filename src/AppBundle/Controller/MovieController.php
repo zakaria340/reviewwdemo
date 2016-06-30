@@ -28,7 +28,7 @@ class MovieController extends Controller {
     $pagination = array(
       'page' => $page,
       'route' => 'popularMovies',
-      'pages_count' => $TopRatedMovies['total_pages'],
+      'pages_count' => 20,//$TopRatedMovies['total_pages'],
       'route_params' => array()
     );
     return $this->render('AppBundle:Movie:popularmovies.html.twig', array(
@@ -37,23 +37,6 @@ class MovieController extends Controller {
     ));
   }
 
-  /**
-   * @Route("/top-rated-movies/{page}", name="topratedMovies", options={"sitemap" = {"priority" = 0.7, "changefreq" = "weekly" }}, defaults={"page" = 1})
-   */
-  public function topratedmoviesAction($page) {
-    $client = $this->get('tmdb.client');
-    $TopRatedMovies = $client->getMoviesApi()->getTopRated(array('page' => $page));
-    $pagination = array(
-      'page' => $page,
-      'route' => 'topratedMovies',
-      'pages_count' => $TopRatedMovies['total_pages'],
-      'route_params' => array()
-    );
-    return $this->render('AppBundle:Movie:topratedmovies.html.twig', array(
-          'movies' => $TopRatedMovies,
-          'pagination' => $pagination
-    ));
-  }
 
   /**
    * @Route("/updatabase", name="updatabase")
@@ -106,41 +89,6 @@ class MovieController extends Controller {
     }
   }
 
-  /**
-   * @Route("/now-playing-movies/{page}", name="nowplayingMovies", options={"sitemap" = {"priority" = 0.7, "changefreq" = "weekly" }}, defaults={"page" = 1})
-   */
-  public function nowplayingmoviesAction($page) {
-    $client = $this->get('tmdb.client');
-    $TopRatedMovies = $client->getMoviesApi()->getNowPlaying(array('page' => $page));
-    $pagination = array(
-      'page' => $page,
-      'route' => 'nowplayingMovies',
-      'pages_count' => $TopRatedMovies['total_pages'],
-      'route_params' => array()
-    );
-    return $this->render('AppBundle:Movie:nowplayingmovies.html.twig', array(
-          'movies' => $TopRatedMovies,
-          'pagination' => $pagination
-    ));
-  }
-
-  /**
-   * @Route("/up-coming-movies/{page}", name="upcomingMovies", options={"sitemap" = {"priority" = 0.7, "changefreq" = "weekly" }}, defaults={"page" = 1})
-   */
-  public function upcomingmoviesAction($page) {
-    $client = $this->get('tmdb.client');
-    $TopRatedMovies = $client->getMoviesApi()->getUpcoming(array('page' => $page));
-    $pagination = array(
-      'page' => $page,
-      'route' => 'upcomingMovies',
-      'pages_count' => $TopRatedMovies['total_pages'],
-      'route_params' => array()
-    );
-    return $this->render('AppBundle:Movie:upcomingmovies.html.twig', array(
-          'movies' => $TopRatedMovies,
-          'pagination' => $pagination
-    ));
-  }
 
   /**
    * @Route(

@@ -27,7 +27,7 @@ class TvController extends Controller {
     $pagination = array(
       'page' => $page,
       'route' => 'tvshow',
-      'pages_count' => $TopRatedMovies['total_pages'],
+      'pages_count' => 10,//$TopRatedMovies['total_pages'],
       'route_params' => array()
     );
     return $this->render('AppBundle:Tv:tvshow.html.twig', array(
@@ -170,16 +170,16 @@ class TvController extends Controller {
   }
 
   public function getUrlsMovies($title) {
-    $urlSearch = 'http://fmovies.to/search?keyword=' . $title;
-    $dom = HtmlDomParser::file_get_html($urlSearch);
+      $urlSearch = 'http://fmovies.to/search?keyword=' . $title;
+      $dom = HtmlDomParser::file_get_html($urlSearch);
     if(!$dom){
-      return array();
-    }
-    $hrefIframedata = $dom->find('.movie-list .item', 0);
+        return array();
+      }
+      $hrefIframedata = $dom->find('.movie-list .item', 0);
     $listUrlsVideo = array();
     if ($hrefIframedata) {
-      $hrefmovie = $hrefIframedata->find('a', 0)->href;
-      $urlToParse = 'http://fmovies.to' . $hrefmovie;
+        $hrefmovie = $hrefIframedata->find('a', 0)->href;
+        $urlToParse = 'http://fmovies.to' . $hrefmovie;
       $dom = HtmlDomParser::file_get_html($urlToParse);
       $i = 0;
       foreach ($dom->find('#servers .server ') as $div) {

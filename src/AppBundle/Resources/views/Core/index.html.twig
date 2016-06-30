@@ -6,9 +6,9 @@
 {% endblock %}
 
 {% block body %}
-  <h1><a href="#">TheMovieshow.biz - Watch Free Movies and Tv show.</a></h1>
   
   <div class="media">
+        <h1><a href="#">Watchmoviestv.net - Watch Free Movies and Tv show.</a></h1>
     <section class="index tv">
         
       <h2><a href="{{ path('tvshow') }}">ON TV</a></h2>
@@ -45,7 +45,7 @@
       {% endfor %}
     </section>
     <section class="index movie">
-      <h2><a href="{{ path('nowplayingMovies') }}">In Theaters</a></h2>
+      <h2><a href="{{ path('popularMovies') }}">In Theaters</a></h2>
       {% for key,movie in firstMovies %}
         <div class="info {{ key == 0 ? 'second' : key == 1 ? 'third' : 'first' }}">
           {% if key == 0 %}

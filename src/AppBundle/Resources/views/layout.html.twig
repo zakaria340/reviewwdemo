@@ -6,17 +6,17 @@
         <meta charset="utf-8">
 
         <title>{% block title %} TheMovieshow Watch Movie And Tv show Online{% endblock %}</title>
-        <meta content="{% block meta_description %} TheMovieshow.byz Watch Movie and tv Show Online free, Watch your favorite movies online free on MovieTvshow.. {% endblock %}" name="description">
+        <meta content="{% block meta_description %} TheMovieshow.byz Watch Movie and tv Show Online free, Watch your favorite movies online free on watchmoviestv.net .. {% endblock %}" name="description">
         <meta name="robots" content="index, follow">
         <meta name="revisit-after" content="1 days"> 
-        <link href="http://themovishow.biz" rel="canonical"> 
+        <link href="http://watchmoviestv.net" rel="canonical"> 
         <meta name="google-site-verification" content="hcOyHbR0YBf1biXQ_80KOg3FdmQBBhT5ie_8y95Y_WI" />
-         <link rel="alternate" href="http://themovishow.biz" hreflang="en" />
-      {% block meta_title %}
-        <meta property="og:url" content="http://themovishow.biz">
-        <meta property="og:title" content="TheMovieshow Watch Movie And Tv show Online"> 
-        <meta property="og:description" content=" TheMovieshow.byz Watch Movie and tv Show Online free, Watch your favorite movies online free on MovieTvshow..">
-        <meta property="og:site_name" content="Themovishow">
+        <link rel="alternate" href="http://watchmoviestv.net" hreflang="en" />
+        {% block meta_title %}
+            <meta property="og:url" content="http://watchmoviestv.net">
+            <meta property="og:title" content="watchmoviestv.net Watch Movie And Tv show Online"> 
+            <meta property="og:description" content="watchmoviestv.net Watch Movie and tv Show Online free, Watch your favorite movies online free on watchmoviestv.net ..">
+            <meta property="og:site_name" content="Themovishow">
         {% endblock %}
         <meta property="og:type" content="website">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -30,15 +30,22 @@
 
             <link href="{{ asset('css/magnific-popup.css') }}" rel="stylesheet" />
             <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r;
+                    i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+                    a = s.createElement(o),
+                            m = s.getElementsByTagName(o)[0];
+                    a.async = 1;
+                    a.src = g;
+                    m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-79863099-1', 'auto');
-  ga('send', 'pageview');
+                ga('create', 'UA-79863099-1', 'auto');
+                ga('send', 'pageview');
 
-</script>
+            </script>
         {% endblock %}
     </head>
 
@@ -50,18 +57,13 @@
                         <div id="logo"> <a href="{{ path('homepage') }}" title="Watch movies and tv show Online">Watch movies and tv show Online</a> </div>
                         <ul id="menu">
                             <li> <a href="{{ path('homepage') }}" title="Home">Home</a> </li>   
-                            <li class="has-children"> <a href="{{ path('popularMovies') }}" title="Movies">Movies</a>
+                            <li> <a href="{{ path('popularMovies') }}" title="Movies">Movies</a>
 
-                                <ul style="width: 300px;" class="sub-menu c3"> 
-                                    <li> <a href="{{ path('topratedMovies') }}" title="Top rated">Top rated</a> </li>
-                                    <li> <a href="{{ path('upcomingMovies') }}" title="Up coming">Up coming</a> </li> 
-                                    <li> <a href="{{ path('nowplayingMovies') }}" title="Now playing">Now playing</a> </li> 
-                                </ul>
                             </li> 
                             <li> <a href="{{ path('tvshow') }}" title="Tv show">Tv show</a> </li> 
                             <li> <a href="{{ path('people') }}" title="People">People</a> </li> 
-                             <li> <a href="{{ path('dcma') }}" title="DCMA">DCMA</a> </li> 
-                              <li> <a href="{{ path('contact') }}" title="contact">Contact</a> </li> 
+                            <li> <a href="{{ path('dcma') }}" title="DCMA">DCMA</a> </li> 
+                            <li> <a href="{{ path('contact') }}" title="contact">Contact</a> </li> 
                         </ul> 
                     </div> 
                 </div> 
