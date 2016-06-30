@@ -2,7 +2,7 @@
 {% extends "AppBundle::layout.html.twig" %}
 
 {% block title %}
-    Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - TheMovieshow.biz
+    Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - watchmoviestv.net
 {% endblock %}
 {% block meta_description %} 
     Watch Free Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Online Free. {{movie.overview|slice(0, 80)}}.
@@ -10,7 +10,7 @@
 
       {% block meta_title %}
         <meta property="og:url" content="{{ path('viewmovie', {'slug': movie.originalTitle|GenerateSlug, 'id': movie.id}) }}">
-        <meta property="og:title" content="Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - TheMovieshow.biz"> 
+        <meta property="og:title" content="Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - watchmoviestv.net"> 
         <meta property="og:description" content="Watch Free Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Online Free. {{movie.overview|slice(0, 80)}}">
         <meta property="og:site_name" content="Themovishow">
         {% endblock %}
@@ -128,7 +128,7 @@
                                                         <dd><span class="quality">HD 720p</span></dd>
                                                         <dt>Popularity:</dt> <dd>{{movie.popularity}}</dd>
                                                     </dl>
-    Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - TheMovieshow.biz
+    Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - watchmoviestv.net
 
                                                 </div> 
                                             </div>
