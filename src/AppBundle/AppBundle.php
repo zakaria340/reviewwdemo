@@ -31,6 +31,7 @@ class AppBundle extends Bundle
                     'default'
                 );
                 for($page=1;$page<=800;$page++){
+                  
                        $TopRatedMovies = $client->getMoviesApi()->getPopular(array('page' => $page));
                     foreach ($TopRatedMovies['results'] as $movie) {
                          // Lower case the string and remove whitespace from the beginning or end
