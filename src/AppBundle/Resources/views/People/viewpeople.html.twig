@@ -91,7 +91,7 @@
                                     <div style="clear: both;"></div>
                                 </ul> 
                                 <ul class="media_items">
-                                    {% for item in listCastMovie %}
+                                    {% for item in listCastMovie|slice(0, 10) %}
                                         {% if item.posterPath is not null %}
                                             <li class="w92">
                                                 <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id}) }}"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.posterPath }}" title="{{ item.title }}" alt="{{ item.title }}" class="shadow"></a>
