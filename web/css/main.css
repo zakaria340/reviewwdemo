@@ -1,6 +1,5 @@
 div.media {
     margin: 30px auto;
-    width: 1000px;
 }
 div.sub_media {
     margin: 0 auto;
@@ -718,7 +717,7 @@ section.search form input[type="submit"] {
 }
 div.media {
     margin: 30px auto;
-    width: 1000px;
+    width: 100%;
 }
 div.sub_media {
     margin: 0 auto;
