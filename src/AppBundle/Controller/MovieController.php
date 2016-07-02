@@ -28,7 +28,7 @@ class MovieController extends Controller {
     $pagination = array(
       'page' => $page,
       'route' => 'popularMovies',
-      'pages_count' => 20,//$TopRatedMovies['total_pages'],
+      'pages_count' => 20, //$TopRatedMovies['total_pages'],
       'route_params' => array()
     );
     return $this->render('AppBundle:Movie:popularmovies.html.twig', array(
@@ -36,7 +36,6 @@ class MovieController extends Controller {
           'pagination' => $pagination
     ));
   }
-
 
   /**
    * @Route("/updatabase", name="updatabase")
@@ -57,38 +56,37 @@ class MovieController extends Controller {
         if (!empty($search['results'])) {
           $firstMovie = $search['results'][0];
           $idMovie = $firstMovie['id'];
-              $em = $this->getDoctrine()->getManager();
-    $itemEntity = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $idMovie));
-    if (empty($itemEntity)) {
-          $i = 0;
-          $listUrlsVideo = array();
-          foreach ($dom->find('#servers .server ') as $div) {
-            if ($div->attr['data-type'] == 'iframe') {
-              $i++;
-              $hrefIframedata = $div->find('a', 0)->attr['data-id'];
-              $hrefIframequalite = $div->find('a', 0)->plaintext;
-              $hrefIframe = 'http://fmovies.to/ajax/episode/info?id=' . $hrefIframedata;
-              sleep(2);
-              $dom = file_get_contents($hrefIframe);
-              $dom = json_decode($dom);
-              $parse = parse_url($dom->target);
-              $listUrlsVideo[] = array(
-                'url' => $dom->target,
-                'name' => $parse['host'],
-                'qualite' => $hrefIframequalite,
-                'id' => $i,
-                'type' => 'iframe',
-                'host' => $parse['host']
-              );
+          $em = $this->getDoctrine()->getManager();
+          $itemEntity = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $idMovie));
+          if (empty($itemEntity)) {
+            $i = 0;
+            $listUrlsVideo = array();
+            foreach ($dom->find('#servers .server ') as $div) {
+              if ($div->attr['data-type'] == 'iframe') {
+                $i++;
+                $hrefIframedata = $div->find('a', 0)->attr['data-id'];
+                $hrefIframequalite = $div->find('a', 0)->plaintext;
+                $hrefIframe = 'http://fmovies.to/ajax/episode/info?id=' . $hrefIframedata;
+                sleep(2);
+                $dom = file_get_contents($hrefIframe);
+                $dom = json_decode($dom);
+                $parse = parse_url($dom->target);
+                $listUrlsVideo[] = array(
+                  'url' => $dom->target,
+                  'name' => $parse['host'],
+                  'qualite' => $hrefIframequalite,
+                  'id' => $i,
+                  'type' => 'iframe',
+                  'host' => $parse['host']
+                );
+              }
             }
+            $this->SaveUrlsMovies($listUrlsVideo, $idMovie);
           }
-          $this->SaveUrlsMovies($listUrlsVideo, $idMovie);
-             }
         }
       }
     }
   }
-
 
   /**
    * @Route(
@@ -157,6 +155,7 @@ class MovieController extends Controller {
       if ($hrefIframedata) {
         $hrefmovie = $hrefIframedata->find('a', 0)->href;
         $urlToParse = 'http://fmovies.to' . $hrefmovie;
+        sleep(2);
         $dom = HtmlDomParser::file_get_html($urlToParse);
         $i = 0;
         foreach ($dom->find('#servers .server ') as $div) {
@@ -177,6 +176,7 @@ class MovieController extends Controller {
               'host' => $parse['host']
             );
           }
+          sleep(2);
         }
       }
 
