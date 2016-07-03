@@ -12,7 +12,14 @@
        <div class="media">
             <h2><span class="title">Popular Movies</span>
             </h2>
-         
+          <ol itemtype="http://schema.org/BreadcrumbList" itemscope="" class="breadcrumb"> 
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement">
+                            <a title="Watching movies online" href="{{ path('homepage') }}" itemprop="item"><span itemprop="name">Home</span></a>
+                        </li> 
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement"> 
+                            <a title="Movies" href="{{ path('popularMovies') }}" itemprop="item"><span itemprop="name">Movies</span></a> 
+                        </li> 
+                    </ol> 
             {% include 'AppBundle::listingmovies.html.twig' %}
                 {% include 'AppBundle::pagination.html.twig' %}
 

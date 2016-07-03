@@ -13,7 +13,14 @@
     <div class="media">
         <h2><span class="title">Movies</span>
         </h2>
-
+  <ol itemtype="http://schema.org/BreadcrumbList" itemscope="" class="breadcrumb"> 
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement">
+                            <a title="Watching movies online" href="{{ path('homepage') }}" itemprop="item"><span itemprop="name">Home</span></a>
+                        </li> 
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class="active"> 
+                            <a title="Movies" href="{{ path('popularMovies') }}" itemprop="item"><span itemprop="name">Movies</span></a> 
+                        </li> 
+                    </ol> 
         <div class="results">
             {% for key,movie in movies %}
                 <div class="item poster">

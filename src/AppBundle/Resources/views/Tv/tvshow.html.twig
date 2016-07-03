@@ -11,7 +11,14 @@
 
     <div class="media">
         <h1><span class="title">Now Playing Tv show online Free</span></h1>
-
+   <ol itemtype="http://schema.org/BreadcrumbList" itemscope="" class="breadcrumb"> 
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement">
+                            <a title="Watching movies online" href="{{ path('homepage') }}" itemprop="item"><span itemprop="name">Home</span></a>
+                        </li> 
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class="active"> 
+                            <a title="Movies" href="{{ path('tvshow') }}" itemprop="item"><span itemprop="name">Tv show</span></a> 
+                        </li>  
+                    </ol> 
         <div class="results">
             {% for key,movie in movies.results %}
                 <div class="item {{ key % 4 == 0 ? 'backdrop' : 'poster' }}">
