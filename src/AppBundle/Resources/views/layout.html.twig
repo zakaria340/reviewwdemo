@@ -47,6 +47,22 @@
             <div id="header-wrapper">
                 <div id="header"> 
                     <div class="container"> 
+                        <div class="menu-toggler btn btn-gray">
+                              <ul id="menu">
+                            <li> <a href="{{ path('homepage') }}" title="Home">Home</a> </li>   
+                            <li> <a href="{{ path('popularMovies') }}" title="Movies">Movies</a>
+
+                            </li> 
+                            <li> <a href="{{ path('tvshow') }}" title="Tv show">Tv show</a> </li> 
+                            <li> <a href="{{ path('people') }}" title="People">People</a> </li> 
+                            <li> <a href="{{ path('dcma') }}" title="DCMA">DCMA</a> </li> 
+                            <li> <a href="{{ path('contact') }}" title="contact">Contact</a> </li> 
+                        </ul> 
+                            <i class="fa fa-list"></i>
+                        </div>
+                        
+                        <div class="search-toggler btn btn-gray"><i class="fa fa-search"></i></div>
+                        
                         <div id="logo"> <a href="{{ path('homepage') }}" title="Watch movies and tv show Online">Watch movies and tv show Online</a> </div>
                         <ul id="menu">
                             <li> <a href="{{ path('homepage') }}" title="Home">Home</a> </li>   
