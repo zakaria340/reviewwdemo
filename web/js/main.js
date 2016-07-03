@@ -18,7 +18,6 @@ $(document).ready(function () {
     });
 
   $('#myTabs').bind('show', function(e) {  
-      alert('r');
     paneID = $(e.target).attr('href');
     src = $(paneID).attr('data-src');
     console.log($(paneID+" iframe").attr("src"));
@@ -27,5 +26,10 @@ $(document).ready(function () {
     {
         $(paneID+" iframe").attr("src",src);
     }
+});
+
+$( ".menu-toggler" ).click(function() {
+  $( "#menu" ).toggle( "slow", function() {
+  });
 });
 });
