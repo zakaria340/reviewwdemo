@@ -34,7 +34,8 @@
                         </li> 
                     </ol> 
                     <div class="widget">   
-                        <div class="mt row"> <div class="col-left col-md-14 col-xs-24"> 
+                        <div class="mt row"> 
+                          <div class="col-left col-md-14 col-xs-24"> 
                                 <span class="hidden" itemprop="votes">{{movie.voteCount}}</span>
                                 <span class="hidden" itemtype="http://data-vocabulary.org/Rating" itemscope itemprop="rating"> <span itemprop="average">{{movie.voteAverage}}</span> <meta itemprop="best" content="10"> <meta itemprop="worst" content="1"> </span>
 
@@ -43,13 +44,13 @@
                                     <div class="mt" id="info">
                                         <div class="row">
                                             <div class="thumb col-md-6 hidden-sm hidden-xs"> 
-                                                <img width="185" height="278" src="https://image.tmdb.org/t/p/w185{{movie.posterPath}}" class="shadow" title="X-Men - Apocalypse Poster" alt="X-Men - Apocalypse Poster" id="upload_poster">
+                                                <img width="185" height="278" src="https://image.tmdb.org/t/p/w185{{movie.posterPath}}" class="shadow" title="X-Men - Apocalypse Poster" alt="X-Men - Apocalypse Poster" id="upload_poster" itemprop="image">
 
                                             </div>
                                             <div class="info col-md-18"> 
 
                                                 <h1 itemprop="name" class="name">Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online</h1> 
-                                                <h2> <a title="Movies" href="{{ path('popularMovies') }}" itemprop="item"><span itemprop="name">Movies</span></a></h2> 
+                                                <h2> <a title="Movies" href="{{ path('popularMovies') }}"><span itemprop="name">Movies</span></a></h2> 
 
                                                 <div class="meta">
                                                     <span> <span class="imdb">IMDb</span> <b>7.5</b> </span> 
@@ -115,6 +116,11 @@
                                                         </dd>
                                                     </dl> 
                                                     <div style="clear: both;"></div>
+                                                           <dl class="meta col-sm-12"> 
+                             <dt>Date created :</dt>
+                             
+                             <dt><span itemprop="dateCreated">{{movie.releaseDate.format('m/d/Y')}}</span></dt> 
+                              </dl>
                                                     <dl class="meta col-sm-12"> 
                                                         <dt>Rating:</dt>
                                                         <dd itemtype="http://schema.org/AggregateRating" itemprop="aggregateRating" itemscope="" class="rating"> 
