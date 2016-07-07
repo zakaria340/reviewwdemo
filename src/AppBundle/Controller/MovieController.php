@@ -102,7 +102,7 @@ class MovieController extends Controller {
     $itemEntity = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $id));
 
     $listUrls = [];
-    if (!is_null($itemEntity)) {
+    if (!empty($itemEntity)) {
       $listUrls = $em->getRepository('AppBundle:Urls')
           ->findBy(array('item' => $itemEntity));
       $listUrlsVideo = array();
