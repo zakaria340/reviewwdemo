@@ -172,8 +172,6 @@ class TvController extends Controller {
   public function getUrlsMovies($title) {
       $urlSearch = 'http://fmovies.to/search?keyword=' . $title;
       $dom = HtmlDomParser::file_get_html($urlSearch);
-         var_dump($urlSearch);
-    var_dump($dom);die;
     if(!$dom){
         return array();
       }
