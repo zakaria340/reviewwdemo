@@ -8,13 +8,13 @@
     Watch Free Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Online Free. {{movie.overview|slice(0, 80)}}.
 {% endblock %}
 
-      {% block meta_title %}
-        <meta property="og:url" content="{{ path('viewmovie', {'slug': movie.originalTitle|GenerateSlug, 'id': movie.id}) }}">
-        <meta property="og:title" content="Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - watchmoviestv.net"> 
-        <meta property="og:description" content="Watch Free Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Online Free. {{movie.overview|slice(0, 80)}}">
-        <meta property="og:site_name" content="Themovishow">
-        {% endblock %}
-        
+{% block meta_title %}
+    <meta property="og:url" content="{{ path('viewmovie', {'slug': movie.originalTitle|GenerateSlug, 'id': movie.id}) }}">
+    <meta property="og:title" content="Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - watchmoviestv.net"> 
+    <meta property="og:description" content="Watch Free Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Online Free. {{movie.overview|slice(0, 80)}}">
+    <meta property="og:site_name" content="Themovishow">
+{% endblock %}
+
 {% block body %}
 
     <div id="body-wrapper">
@@ -35,7 +35,7 @@
                     </ol> 
                     <div class="widget">   
                         <div class="mt row"> 
-                          <div class="col-left col-md-14 col-xs-24"> 
+                            <div class="col-left col-md-14 col-xs-24"> 
                                 <span class="hidden" itemprop="votes">{{movie.voteCount}}</span>
                                 <span class="hidden" itemtype="http://data-vocabulary.org/Rating" itemscope itemprop="rating"> <span itemprop="average">{{movie.voteAverage}}</span> <meta itemprop="best" content="10"> <meta itemprop="worst" content="1"> </span>
 
@@ -64,7 +64,7 @@
                                                         <dt>Genre:</dt> 
                                                         <dd>
                                                             {% for genre in movie.genres %}
-                                                                <a title="{{ genre.name }} movies" href="http://fmovies.to/genre/adventure">{{ genre.name }}</a>,
+                                                                <a title="{{ genre.name }} movies" href="{{ path('genreMovies', {'genre': genre.name|GenerateSlug, 'idgenre': genre.id}) }}">{{ genre.name }}</a>,
                                                             {% endfor %}
                                                         </dd>
                                                         <div style="clear: both;"></div>
@@ -116,11 +116,11 @@
                                                         </dd>
                                                     </dl> 
                                                     <div style="clear: both;"></div>
-                                                           <dl class="meta col-sm-12"> 
-                             <dt>Date created :</dt>
-                             
-                             <dt><span itemprop="dateCreated">{{movie.releaseDate.format('m/d/Y')}}</span></dt> 
-                              </dl>
+                                                    <dl class="meta col-sm-12"> 
+                                                        <dt>Date created :</dt>
+
+                                                        <dt><span itemprop="dateCreated">{{movie.releaseDate.format('m/d/Y')}}</span></dt> 
+                                                    </dl>
                                                     <dl class="meta col-sm-12"> 
                                                         <dt>Rating:</dt>
                                                         <dd itemtype="http://schema.org/AggregateRating" itemprop="aggregateRating" itemscope="" class="rating"> 
@@ -134,7 +134,7 @@
                                                         <dd><span class="quality">HD 720p</span></dd>
                                                         <dt>Popularity:</dt> <dd>{{movie.popularity}}</dd>
                                                     </dl>
-    Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - watchmoviestv.net
+                                                    Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online Free - watchmoviestv.net
 
                                                 </div> 
                                             </div>
@@ -153,6 +153,13 @@
                                         </div>
 
                                     </div>
+                                </div>
+                                <div id="tags"> <label>Keywords:</label> 
+
+                                    {% for tag in listTags %}
+                                        <a rel="tag" href="{{ path('moviestag', {'tag': tag|GenerateSlug}) }}">{{tag}}</a> 
+
+                                    {% endfor %}
                                 </div>
                                 <div id="servers"> 
                                     {%if listUrls is not empty%}

@@ -1,0 +1,46 @@
+{# On utilise ici le layout général, qui se situe dans ce même CoreBundle maintenant #}
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block title %}
+    Movies {{genre.name}} - {{ parent() }}
+{% endblock %}
+{% block meta_description %} 
+    Popular Movies {{genre.name}} Online and for free. List all movies to watch for free Online and for Free no popup.
+{% endblock %}
+{% block body %}
+    
+       <div class="media">
+            <h2><span class="title">Popular Movies</span>
+            </h2>
+          <ol itemtype="http://schema.org/BreadcrumbList" itemscope="" class="breadcrumb"> 
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement">
+                            <a title="Watching movies online" href="{{ path('homepage') }}" itemprop="item"><span itemprop="name">Home</span></a>
+                        </li> 
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement"> 
+                            <a title="Movies" href="{{ path('popularMovies') }}" itemprop="item"><span itemprop="name">Movies</span></a> 
+                        </li> 
+                          <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement"> 
+                            <a title="Movies {{genre.name}}" href="{{ path('genreMovies', {'genre': genre.name|GenerateSlug, 'idgenre': genre.id}) }}" itemprop="item"><span itemprop="name">{{genre.name}}</span></a> 
+                        </li> 
+                    </ol> 
+    <div class="results">
+            {% for key,movie in movies %}
+                <div class="item poster">
+                    <div class="image_content">
+                        <a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id}) }}">
+                            <img alt="{{movie.title}}" data-srcset="https://image.tmdb.org/t/p/w185/{{ movie.posterPath }} 1x, https://image.tmdb.org/t/p/w370{{ movie.posterPath }} 2x" data-src="https://image.tmdb.org/t/p/w185{{ movie.posterPath }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w185{{ movie.posterPath }} 1x, https://image.tmdb.org/t/p/w370{{ movie.posterPath }} 2x" src="https://image.tmdb.org/t/p/w185{{ movie.posterPath }}">
+                            <div class="meta" data-role="tooltip">
+                                <span class="release_date"></span>
+                                <span class="vote_average">{{movie.voteAverage}}<span class="glyphicons glyphicons-star x1 rating" id="rating_5256cfba19c2956ff60a01e4"></span></span>
+                            </div>
+                        </a>
+                    </div>
+                    <p><a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id}) }}">{{movie.title}} {{movie.releaseDate.format('Y')}}</a></p>
+                </div>
+            {% endfor %}
+        </div>            
+            {% include 'AppBundle::pagination.html.twig' %}
+
+        </div>
+    
+{% endblock %}

@@ -38,6 +38,62 @@ class MovieController extends Controller {
   }
 
   /**
+   * @Route(
+   *     "/movies/tag/{tag}",
+   *     name="moviestag",
+   *     options={"sitemap" = {"priority" = 0.7, "changefreq" = "weekly" }},
+   *     defaults={"page" = 1},
+   *     requirements={
+   *         "page": "\d*"
+   *     }
+   * )
+   */
+  public function moviestagAction($tag) {
+    $page = rand(2, 5);
+    $client = $this->get('tmdb.client');
+    $TopRatedMovies = $client->getMoviesApi()->getTopRated(array('page' => $page));
+    $pagination = array(
+      'page' => $page,
+      'route' => 'popularMovies',
+      'pages_count' => 1, //$TopRatedMovies['total_pages'],
+      'route_params' => array()
+    );
+    return $this->render('AppBundle:Movie:tagmovies.html.twig', array(
+          'movies' => $TopRatedMovies,
+          'pagination' => $pagination,
+          'tag' => $tag,
+    ));
+  }
+
+  /**
+   * @Route(
+   *     "/watch-movies/genre/{idgenre}-{genre}/{page}",
+   *     name="genreMovies",
+   *     options={"sitemap" = {"priority" = 0.7, "changefreq" = "weekly" }},
+   *     defaults={"page" = 1},
+   *     requirements={
+   *         "page": "\d*"
+   *     }
+   * )
+   */
+  public function moviesgenreAction($genre, $idgenre, $page) {
+    $repository = $this->get('tmdb.genre_repository');
+    $TopRatedMovies = $repository->getMovies($idgenre, array('page' => $page));
+    $genreData = $repository->load($idgenre);
+    $pagination = array(
+      'page' => $page,
+      'route' => 'genreMovies',
+      'pages_count' => 20, //$TopRatedMovies['total_pages'],
+      'route_params' => array('genre' => $genre, 'idgenre' => $idgenre)
+    );
+    return $this->render('AppBundle:Movie:genremovies.html.twig', array(
+          'movies' => $TopRatedMovies,
+          'pagination' => $pagination,
+          'genre' => $genreData,
+    ));
+  }
+
+  /**
    * @Route("/updatabase", name="updatabase")
    */
   public function updatabaseAction() {
@@ -106,15 +162,21 @@ class MovieController extends Controller {
       $listUrls = $em->getRepository('AppBundle:Urls')
           ->findBy(array('item' => $itemEntity));
       $listUrlsVideo = array();
-      foreach ($listUrls as $url) {
-        $listUrlsVideo[] = array(
-          'url' => $url->getUrl(),
-          'name' => $url->getName(),
-          'qualite' => $url->getQualite(),
-          'id' => $url->getId(),
-          'type' => $url->getType(),
-          'host' => $url->getHost()
-        );
+      if (empty($listUrlsVideo)) {
+        $listUrlsVideo = $this->getUrlsMovies($title, $imdbId);
+        $this->SaveUrlsMovies($listUrlsVideo, $id, FALSE);
+      }
+      else {
+        foreach ($listUrls as $url) {
+          $listUrlsVideo[] = array(
+            'url' => $url->getUrl(),
+            'name' => $url->getName(),
+            'qualite' => $url->getQualite(),
+            'id' => $url->getId(),
+            'type' => $url->getType(),
+            'host' => $url->getHost()
+          );
+        }
       }
     }
     else {
@@ -132,13 +194,16 @@ class MovieController extends Controller {
     }
 
 
+    $listTags = array(
+      'watch', 'watch movies', 'watch online', 'online', 'online movies', 'watch movies online', 'watch online free', 'online movies', 'online');
     return $this->render('AppBundle:Movie:view.html.twig', array(
           'movie' => $movie,
           'crewList' => $crewList,
           'castList' => $castList,
           'listMovies' => $listMovies,
           'listImages' => $listImages,
-          'listUrls' => $listUrlsVideo
+          'listUrls' => $listUrlsVideo,
+          'listTags' => $listTags
             )
     );
   }
@@ -149,13 +214,11 @@ class MovieController extends Controller {
     $listUrlsVideo = array();
 
     if ($dom) {
-
-
       $hrefIframedata = $dom->find('.movie-list .item', 0);
       if ($hrefIframedata) {
         $hrefmovie = $hrefIframedata->find('a', 0)->href;
         $urlToParse = 'http://fmovies.to' . $hrefmovie;
-        sleep(2);
+        sleep(1);
         $dom = HtmlDomParser::file_get_html($urlToParse);
         $i = 0;
         foreach ($dom->find('#servers .server ') as $div) {
@@ -166,17 +229,19 @@ class MovieController extends Controller {
             $hrefIframe = 'http://fmovies.to/ajax/episode/info?id=' . $hrefIframedata;
             $dom = file_get_contents($hrefIframe);
             $dom = json_decode($dom);
-            $parse = parse_url($dom->target);
-            $listUrlsVideo[] = array(
-              'url' => $dom->target,
-              'name' => $parse['host'],
-              'qualite' => $hrefIframequalite,
-              'id' => $i,
-              'type' => 'iframe',
-              'host' => $parse['host']
-            );
+            if (!is_null($dom)) {
+              $parse = parse_url($dom->target);
+              $listUrlsVideo[] = array(
+                'url' => $dom->target,
+                'name' => $parse['host'],
+                'qualite' => $hrefIframequalite,
+                'id' => $i,
+                'type' => 'iframe',
+                'host' => $parse['host']
+              );
+            }
+            sleep(2);
           }
-          sleep(2);
         }
       }
 
@@ -205,7 +270,7 @@ class MovieController extends Controller {
     return $listUrlsVideo;
   }
 
-  public function SaveUrlsMovies($listUrlMovies, $id) {
+  public function SaveUrlsMovies($listUrlMovies, $id, $save = TRUE) {
 
     $em = $this->getDoctrine()->getManager();
     $item = new Item();
@@ -220,8 +285,9 @@ class MovieController extends Controller {
       $urls->setItem($item);
       $em->persist($urls);
     }
-
-    $em->persist($item);
+    if ($save) {
+      $em->persist($item);
+    }
     $em->flush();
   }
 
