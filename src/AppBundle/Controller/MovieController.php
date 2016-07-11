@@ -245,27 +245,7 @@ class MovieController extends Controller {
         }
       }
 
-      /**
-       * 
-       */
-      $urlToParse = 'http://www.seehd.club/?s=' . $title;
-      $dom2 = HtmlDomParser::file_get_html($urlToParse);
-      if ($dom2->find('#content .article-helper h2 a', 0)) {
-        $href = $dom2->find('#content .article-helper h2 a', 0)->href;
-
-        $dom = HtmlDomParser::file_get_html($href);
-        $urlUpload = $dom->find('.entry-content iframe', 0)->src;
-
-        $parse = parse_url($urlUpload);
-        $listUrlsVideo[] = array(
-          'url' => $urlUpload,
-          'name' => 'Upload',
-          'qualite' => 'HD',
-          'id' => 3,
-          'type' => 'iframe',
-          'host' => $parse['host']
-        );
-      }
+ 
     }
     return $listUrlsVideo;
   }
