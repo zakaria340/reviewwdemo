@@ -152,7 +152,7 @@ class MovieController extends Controller {
    */
   public function viewAction($slug, $id) {
     $movie = $this->get('tmdb.movie_repository')->load($id);
-    $title = str_replace(' ', '+', $movie->getTitle());
+    $title = $movie->getTitle();
     $imdbId = $movie->getImdbId();
     $em = $this->getDoctrine()->getManager();
     $itemEntity = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $id));
@@ -162,7 +162,7 @@ class MovieController extends Controller {
       $listUrls = $em->getRepository('AppBundle:Urls')
           ->findBy(array('item' => $itemEntity));
       $listUrlsVideo = array();
-      if (empty($listUrlsVideo)) {
+      if (empty($listUrls)) {
         $listUrlsVideo = $this->getUrlsMovies($title, $imdbId);
         $this->SaveUrlsMovies($listUrlsVideo, $id, FALSE);
       }
@@ -209,52 +209,120 @@ class MovieController extends Controller {
   }
 
   public function getUrlsMovies($title, $imdbId) {
-    $urlSearch = 'http://fmovies.to/search?keyword=' . $title;
-    $dom = HtmlDomParser::file_get_html($urlSearch);
+    $title = urlencode($title);
     $listUrlsVideo = array();
+    $listUrlsVideo = $this->getContentFromCurl($title);
+    return $listUrlsVideo;
+  }
 
-    if ($dom) {
-      $hrefIframedata = $dom->find('.movie-list .item', 0);
-      if ($hrefIframedata) {
-        $hrefmovie = $hrefIframedata->find('a', 0)->href;
-        $urlToParse = 'http://fmovies.to' . $hrefmovie;
-        sleep(1);
-        $dom = HtmlDomParser::file_get_html($urlToParse);
-        $i = 0;
-        foreach ($dom->find('#servers .server ') as $div) {
-          if ($div->attr['data-type'] == 'iframe') {
-            $i++;
-            $hrefIframedata = $div->find('a', 0)->attr['data-id'];
-            $hrefIframequalite = $div->find('a', 0)->plaintext;
-            $hrefIframe = 'http://fmovies.to/ajax/episode/info?id=' . $hrefIframedata;
-            $dom = file_get_contents($hrefIframe);
-            $dom = json_decode($dom);
-            if (!is_null($dom)) {
-              $parse = parse_url($dom->target);
-              $listUrlsVideo[] = array(
-                'url' => $dom->target,
-                'name' => $parse['host'],
-                'qualite' => $hrefIframequalite,
-                'id' => $i,
-                'type' => 'iframe',
-                'host' => $parse['host']
-              );
-            }
-            sleep(2);
-          }
+  public function getContentFromCurl($keyword) {
+
+    $url = 'http://123movies.to/ajax/suggest_search';
+    $fields = array(
+      'keyword' => urlencode($keyword),
+    );
+    $fields_string = '';
+//url-ify the data for the POST
+    foreach ($fields as $key => $value) {
+      $fields_string .= $key . '=' . $value . '&';
+    }
+    rtrim($fields_string, '&');
+    $curl_handle = curl_init();
+    curl_setopt($curl_handle, CURLOPT_URL, $url);
+    curl_setopt($curl_handle, CURLOPT_POST, count($fields));
+    curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $fields_string);
+    curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
+    curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl_handle, CURLOPT_USERAGENT, 'Google');
+    $query = curl_exec($curl_handle);
+    curl_close($curl_handle);
+    $dom = HtmlDomParser::str_get_html($query);
+    $urlMovie = $dom->find('a', 1)->attr['href'];
+    $urlMovie = stripslashes($urlMovie);
+    $urlMovie = str_replace('/"n', '', $urlMovie);
+    $urlMovie = str_replace('"', '', $urlMovie);
+    $urlMovie = explode('-', $urlMovie);
+    $idMovie = end($urlMovie);
+
+    $listMovie = 'http://123movies.to/ajax/v2_get_episodes/' . $idMovie;
+
+    $curl_handle = curl_init();
+    curl_setopt($curl_handle, CURLOPT_URL, $listMovie);
+    curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
+    curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl_handle, CURLOPT_USERAGENT, 'Google');
+    $query = curl_exec($curl_handle);
+    curl_close($curl_handle);
+
+    $dom = HtmlDomParser::str_get_html($query);
+
+    $i = 0;
+    $listUrlsVideo = array();
+    foreach ($dom->find('.le-server') as $div) {
+      $nameText = $div->find('.les-title strong', 0)->plaintext;
+      $nameText = trim($nameText);
+
+      $array = array('OpenLoad', 'VideoMega');
+
+      if ($this->strposa($nameText, $array, 1)) {
+        $i++;
+        $hrefIframedata = $div->find('a', 0)->attr['episode-id'];
+        $hrefIframequalite = $div->find('a', 0)->attr['title'];
+        $hrefIframe = 'http://123movies.to/ajax/load_embed/' . $hrefIframedata;
+
+        $curl_handle = curl_init();
+        curl_setopt($curl_handle, CURLOPT_URL, $hrefIframe);
+        curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
+        curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl_handle, CURLOPT_USERAGENT, 'Google');
+        $query = curl_exec($curl_handle);
+        curl_close($curl_handle);
+
+        $json_decoded = json_decode(stripslashes($query));
+        if (!is_null($json_decoded)) {
+          $parse = parse_url($json_decoded->embed_url);
+
+          $listUrlsVideo[] = array(
+            'url' => $json_decoded->embed_url,
+            'name' => $parse['host'],
+            'qualite' => $hrefIframequalite,
+            'id' => $i,
+            'type' => 'iframe',
+            'host' => $parse['host']
+          );
         }
       }
-
- 
     }
     return $listUrlsVideo;
+  }
+
+  public function strposa($haystack, $needles = array(), $offset = 0) {
+    $chr = array();
+    foreach ($needles as $needle) {
+      $res = strpos($haystack, $needle, $offset);
+      if ($res !== false)
+        $chr[$needle] = $res;
+    }
+    if (empty($chr))
+      return false;
+    return min($chr);
   }
 
   public function SaveUrlsMovies($listUrlMovies, $id, $save = TRUE) {
 
     $em = $this->getDoctrine()->getManager();
-    $item = new Item();
+
+    if (!$save) {
+      $repository = $this
+          ->getDoctrine()
+          ->getManager()
+          ->getRepository('AppBundle:Item')
+      ;
+      $item = $repository->findOneBy(array('idApi' => $id));
+    }else{
+          $item = new Item();
     $item->setIdApi($id);
+    }
     foreach ($listUrlMovies as $url) {
       $urls = new Urls();
       $urls->setName($url['name']);
@@ -265,9 +333,8 @@ class MovieController extends Controller {
       $urls->setItem($item);
       $em->persist($urls);
     }
-    if ($save) {
       $em->persist($item);
-    }
+    
     $em->flush();
   }
 
