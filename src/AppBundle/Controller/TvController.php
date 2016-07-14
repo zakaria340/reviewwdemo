@@ -27,7 +27,7 @@ class TvController extends Controller {
     $pagination = array(
       'page' => $page,
       'route' => 'tvshow',
-      'pages_count' => 10,//$TopRatedMovies['total_pages'],
+      'pages_count' => 10, //$TopRatedMovies['total_pages'],
       'route_params' => array()
     );
     return $this->render('AppBundle:Tv:tvshow.html.twig', array(
@@ -120,7 +120,7 @@ class TvController extends Controller {
     $listImages = $movie->getImages();
     $tvshow = $this->get('tmdb.tv_repository')->load($id);
     $season = $this->get('tmdb.tv_season_repository')->load($id, $idseason);
-
+    $listEpisodes = $season->getEpisodes();
     $title = $tvshow->getName() . ' ' . $idseason;
     $title = str_replace(' ', '+', $title);
     $em = $this->getDoctrine()->getManager();
@@ -129,12 +129,16 @@ class TvController extends Controller {
     if (empty($itemEntity)) {
       $listUrlsVideo = $this->getUrlsMovies($title);
       if (!empty($listUrlsVideo)) {
-        $em = $this->getDoctrine()->getManager();
+            $itemEntityA = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $idseason));
+if(empty($itemEntityA)){
+      $em = $this->getDoctrine()->getManager();
         $item = new Item();
         $item->setIdApi($idseason);
         $em->persist($item);
         $em->flush();
 
+}
+    
         foreach ($listEpisodes as $ep) {
           $epNumber = $ep->getEpisodeNumber();
           $epNumber = sprintf('%02d', $epNumber);
@@ -147,15 +151,36 @@ class TvController extends Controller {
     else {
       $listUrls = $em->getRepository('AppBundle:Urls')
           ->findBy(array('item' => $itemEntity));
-      foreach ($listUrls as $url) {
-        $listUrlsVideo[] = array(
-          'url' => $url->getUrl(),
-          'name' => $url->getName(),
-          'qualite' => $url->getQualite(),
-          'id' => $url->getId(),
-          'type' => $url->getType(),
-          'host' => $url->getHost()
-        );
+
+      if (empty($listUrls)) {
+        $listUrlsVideo = $this->getUrlsMovies($title);
+        if (!empty($listUrlsVideo)) {
+          $em = $this->getDoctrine()->getManager();
+          $item = new Item();
+          $item->setIdApi($idseason);
+          $em->persist($item);
+          $em->flush();
+
+          foreach ($listEpisodes as $ep) {
+            $epNumber = $ep->getEpisodeNumber();
+            $epNumber = sprintf('%02d', $epNumber);
+            if (isset($listUrlsVideo[$epNumber])) {
+              $this->SaveUrlsMovies($listUrlsVideo[$epNumber], $ep->getId());
+            }
+          }
+        }
+      }
+      else {
+        foreach ($listUrls as $url) {
+          $listUrlsVideo[] = array(
+            'url' => $url->getUrl(),
+            'name' => $url->getName(),
+            'qualite' => $url->getQualite(),
+            'id' => $url->getId(),
+            'type' => $url->getType(),
+            'host' => $url->getHost()
+          );
+        }
       }
     }
 
@@ -170,16 +195,16 @@ class TvController extends Controller {
   }
 
   public function getUrlsMovies($title) {
-      $urlSearch = 'http://fmovies.to/search?keyword=' . $title;
-      $dom = HtmlDomParser::file_get_html($urlSearch);
-    if(!$dom){
-        return array();
-      }
-      $hrefIframedata = $dom->find('.movie-list .item', 0);
+    $urlSearch = 'http://fmovies.to/search?keyword=' . $title;
+    $dom = HtmlDomParser::file_get_html($urlSearch);
+    if (!$dom) {
+      return array();
+    }
+    $hrefIframedata = $dom->find('.movie-list .item', 0);
     $listUrlsVideo = array();
     if ($hrefIframedata) {
-        $hrefmovie = $hrefIframedata->find('a', 0)->href;
-        $urlToParse = 'http://fmovies.to' . $hrefmovie;
+      $hrefmovie = $hrefIframedata->find('a', 0)->href;
+      $urlToParse = 'http://fmovies.to' . $hrefmovie;
       $dom = HtmlDomParser::file_get_html($urlToParse);
       $i = 0;
       foreach ($dom->find('#servers .server ') as $div) {
@@ -196,7 +221,8 @@ class TvController extends Controller {
             $hrefIframe = 'http://fmovies.to/ajax/episode/info?id=' . $hrefIframedata;
             $dom = file_get_contents($hrefIframe);
             $dom = json_decode($dom);
-            $parse = parse_url($dom->target);
+            if(!is_null($dom)){
+               $parse = parse_url($dom->target);
 
             $listUrlsVideo[$episodNumber][] = array(
               'url' => $dom->target,
@@ -206,7 +232,9 @@ class TvController extends Controller {
               'type' => 'iframe',
               'host' => $parse['host']
             );
-            sleep(3);
+            sleep(2); 
+            }
+          
           }
         }
       }
@@ -219,10 +247,24 @@ class TvController extends Controller {
    * @param type $listUrlMovies
    * @param type $id
    */
-  public function SaveUrlsMovies($listUrlMovies, $id) {
+  public function SaveUrlsMovies($listUrlMovies, $id, $save = TRUE) {
     $em = $this->getDoctrine()->getManager();
-    $item = new Item();
-    $item->setIdApi($id);
+
+    $repository = $this
+        ->getDoctrine()
+        ->getManager()
+        ->getRepository('AppBundle:Item')
+    ;
+    $itemE = $repository->findOneBy(array('idApi' => $id));
+    if ($itemE) {
+      $item = $itemE;
+    }
+    else {
+      $item = new Item();
+      $item->setIdApi($id);
+    }
+
+
     foreach ($listUrlMovies as $url) {
       $urls = new Urls();
       $urls->setName($url['name']);
