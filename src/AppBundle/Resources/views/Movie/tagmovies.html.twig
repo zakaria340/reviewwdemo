@@ -7,6 +7,9 @@
 {% block meta_description %} 
     Popular Movies  {{tag}} Online and for free. List all movies by  {{tag}} to watch for free Online and for Free no popup.
 {% endblock %}
+{% block alternate %}
+    <link rel="alternate" href="{{ path('moviestag', {'tag': tag|GenerateSlug}) }}" hreflang="en-us" />
+{% endblock %}
 {% block body %}
 
     <div class="media">

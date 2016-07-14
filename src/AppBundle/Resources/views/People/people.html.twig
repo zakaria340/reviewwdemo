@@ -5,6 +5,9 @@
     List Movies - {{ parent() }}
 {% endblock %}
 
+    {% block alternate %}
+    <link rel="alternate" href="{{ path('people') }}" hreflang="en-us" />
+{% endblock %}
 {% block body %}
 
     <div class="media">

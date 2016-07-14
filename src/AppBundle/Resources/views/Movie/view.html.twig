@@ -7,6 +7,9 @@
 {% block meta_description %} 
     Watch Free Movie {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Online Free. {{movie.overview|slice(0, 80)}}.
 {% endblock %}
+{% block alternate %}
+    <link rel="alternate" href="{{ path('viewmovie', {'slug': movie.originalTitle|GenerateSlug, 'id': movie.id}) }}" hreflang="en-us" />
+{% endblock %}
 
 {% block meta_title %}
     <meta property="og:url" content="{{ path('viewmovie', {'slug': movie.originalTitle|GenerateSlug, 'id': movie.id}) }}">

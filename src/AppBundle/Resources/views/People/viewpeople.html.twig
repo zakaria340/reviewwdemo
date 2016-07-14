@@ -5,6 +5,9 @@
     {{people.name}} - {{ parent() }}
 {% endblock %}
 
+    {% block alternate %}
+    <link rel="alternate" href="{{ path('viewpeople', {'slug': people.name|GenerateSlug, 'id': people.id}) }}" hreflang="en-us" />
+{% endblock %}
 {% block body %}
 
     <div id="body-wrapper">

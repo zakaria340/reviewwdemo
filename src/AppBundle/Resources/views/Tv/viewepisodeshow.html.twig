@@ -9,6 +9,9 @@
    Watch {{tvshow.name}} Saison {{season.name}} Episode {{movie.name}} latest tv-shows Watch {{tvshow.name}} in 2016 with HD quality for free tv-series Online. 
 {% endblock %}
 
+{% block alternate %}
+    <link rel="alternate" href="{{ path('viewtvshow', {'slug': tvshow.name|GenerateSlug, 'id': tvshow.id}) }}" hreflang="en-us" />
+{% endblock %}
 {% block body %}
     <div id="body-wrapper">
         <div class="watching">

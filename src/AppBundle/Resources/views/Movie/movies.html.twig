@@ -10,6 +10,9 @@
 {% endblock %}
 {% block body %}
 
+    {% block alternate %}
+    <link rel="alternate" href="{{ path('popularMovies') }}" hreflang="en-us" />
+{% endblock %}
     <div class="media">
         <h2><span class="title">Movies</span>
         </h2>
