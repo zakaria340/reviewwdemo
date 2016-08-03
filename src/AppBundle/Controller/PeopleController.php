@@ -24,7 +24,7 @@ class PeopleController extends Controller {
     $pagination = array(
       'page' => $page,
       'route' => 'people',
-      'pages_count' => 10,//$TopRatedMovies['total_pages'],
+      'pages_count' => 50,//$TopRatedMovies['total_pages'],
       'route_params' => array()
     );
     return $this->render('AppBundle:People:people.html.twig', array(

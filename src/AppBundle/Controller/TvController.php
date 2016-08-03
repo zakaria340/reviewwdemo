@@ -27,7 +27,7 @@ class TvController extends Controller {
     $pagination = array(
       'page' => $page,
       'route' => 'tvshow',
-      'pages_count' => 10, //$TopRatedMovies['total_pages'],
+      'pages_count' => 40, //$TopRatedMovies['total_pages'],
       'route_params' => array()
     );
     return $this->render('AppBundle:Tv:tvshow.html.twig', array(
@@ -79,6 +79,7 @@ class TvController extends Controller {
     $title = str_replace(' ', '+', $title);
     $em = $this->getDoctrine()->getManager();
     $itemEntity = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $idSais));
+    /**
     if (empty($itemEntity)) {
       $listUrlsVideo = $this->getUrlsMovies($title);
       if (!empty($listUrlsVideo)) {
@@ -96,7 +97,7 @@ class TvController extends Controller {
         }
       }
     }
-
+*/
     $listImages = $movie->getImages();
     return $this->render('AppBundle:Tv:viewseasonshow.html.twig', array(
           'movie' => $movie,
@@ -126,7 +127,7 @@ class TvController extends Controller {
     $em = $this->getDoctrine()->getManager();
     $itemEntity = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $idEpis));
     $listUrlsVideo = array();
-    if (empty($itemEntity)) {
+    if (false && empty($itemEntity)) {
       $listUrlsVideo = $this->getUrlsMovies($title);
       if (!empty($listUrlsVideo)) {
             $itemEntityA = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $idseason));
@@ -152,7 +153,7 @@ if(empty($itemEntityA)){
       $listUrls = $em->getRepository('AppBundle:Urls')
           ->findBy(array('item' => $itemEntity));
 
-      if (empty($listUrls)) {
+      if (false && empty($listUrls)) {
         $listUrlsVideo = $this->getUrlsMovies($title);
         if (!empty($listUrlsVideo)) {
           $em = $this->getDoctrine()->getManager();
