@@ -45,6 +45,9 @@ class TvController extends Controller {
   public function viewtvshowAction($slug, $id) {
 
     $movie = $this->get('tmdb.tv_repository')->load($id);
+    if(empty($movie)) {
+      return $this->redirect($this->generateUrl('homepage'));
+    }
     $crew = $movie->getCredits()->getCrew();
     $castList = $movie->getCredits()->getCast();
     $listMovies = $movie->getSimilar();
@@ -71,6 +74,9 @@ class TvController extends Controller {
    */
   public function viewseasonshowAction($slug, $id, $idseason) {
     $movie = $this->get('tmdb.tv_season_repository')->load($id, $idseason);
+    if(empty($movie)) {
+      return $this->redirect($this->generateUrl('homepage'));
+    }
     $idSais = $movie->getId();
     $tvshow = $this->get('tmdb.tv_repository')->load($id);
     $listEpisodes = $movie->getEpisodes();
@@ -117,6 +123,9 @@ class TvController extends Controller {
    */
   public function viewepisodeshowAction($slug, $id, $idseason, $idepisode) {
     $movie = $this->get('tmdb.tv_episode_repository')->load($id, $idseason, $idepisode);
+    if(empty($movie)) {
+      return $this->redirect($this->generateUrl('homepage'));
+    }
     $idEpis = $movie->getId();
     $listImages = $movie->getImages();
     $tvshow = $this->get('tmdb.tv_repository')->load($id);

@@ -152,6 +152,9 @@ class MovieController extends Controller {
    */
   public function viewAction($slug, $id) {
     $movie = $this->get('tmdb.movie_repository')->load($id);
+    if(empty($movie)) {
+      return $this->redirect($this->generateUrl('homepage'));
+    }
     $title = $movie->getTitle();
     $imdbId = $movie->getImdbId();
     $em = $this->getDoctrine()->getManager();
