@@ -199,7 +199,9 @@ if(empty($itemEntityA)){
           'tvshow' => $tvshow,
           'season' => $season,
           'listImages' => $listImages,
-          'listUrls' => $listUrlsVideo
+          'listUrls' => $listUrlsVideo,
+        'listEpisodes' => $listEpisodes,
+        'idTv' => $id
             )
     );
   }

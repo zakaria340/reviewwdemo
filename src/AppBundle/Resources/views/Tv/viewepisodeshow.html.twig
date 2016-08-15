@@ -128,8 +128,20 @@
 
                             </div>
 
-                        </div> 
+                        </div>
+                        <div class="col-left col-md-8 col-xs-24">
+                            <ul class="media_items">
+                                {% for item in listEpisodes %}
 
+                                    <li class="w92">
+                                        <a href="{{ path('viewepisodeshow', {'slug': tvshow.name|GenerateSlug, 'id': idTv,'idseason': item.seasonNumber,'idepisode':item.episodeNumber}) }}"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.stillPath }}" title="{{movie.name}} - Saison {{item.seasonNumber}}" alt="{{movie.name}} - Saison {{item.seasonNumber}}" class="shadow"></a>
+                                        <a href="{{ path('viewepisodeshow', {'slug': tvshow.name|GenerateSlug, 'id': idTv,'idseason': item.seasonNumber,'idepisode':item.episodeNumber}) }}" class="title">{{item.name}} - Saison {{item.episodeNumber}} </a>
+                                    </li>
+                                {% endfor %}
+                                <div style="clear: both;"></div>
+                            </ul>
+
+                        </div>
                     </div>
                 </div> 
 
