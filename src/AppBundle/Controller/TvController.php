@@ -27,7 +27,7 @@ class TvController extends Controller {
     $pagination = array(
       'page' => $page,
       'route' => 'tvshow',
-      'pages_count' => 40, //$TopRatedMovies['total_pages'],
+      'pages_count' => 100, //$TopRatedMovies['total_pages'],
       'route_params' => array()
     );
     return $this->render('AppBundle:Tv:tvshow.html.twig', array(
@@ -85,7 +85,6 @@ class TvController extends Controller {
     $title = str_replace(' ', '+', $title);
     $em = $this->getDoctrine()->getManager();
     $itemEntity = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $idSais));
-    /**
     if (empty($itemEntity)) {
       $listUrlsVideo = $this->getUrlsMovies($title);
       if (!empty($listUrlsVideo)) {
@@ -103,7 +102,7 @@ class TvController extends Controller {
         }
       }
     }
-*/
+
     $listImages = $movie->getImages();
     return $this->render('AppBundle:Tv:viewseasonshow.html.twig', array(
           'movie' => $movie,

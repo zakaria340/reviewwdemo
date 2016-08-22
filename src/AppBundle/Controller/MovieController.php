@@ -28,7 +28,7 @@ class MovieController extends Controller {
     $pagination = array(
       'page' => $page,
       'route' => 'popularMovies',
-      'pages_count' => 50, //$TopRatedMovies['total_pages'],
+      'pages_count' => 100, //$TopRatedMovies['total_pages'],
       'route_params' => array()
     );
     return $this->render('AppBundle:Movie:popularmovies.html.twig', array(
@@ -83,7 +83,7 @@ class MovieController extends Controller {
     $pagination = array(
       'page' => $page,
       'route' => 'genreMovies',
-      'pages_count' => 40, //$TopRatedMovies['total_pages'],
+      'pages_count' => 100, //$TopRatedMovies['total_pages'],
       'route_params' => array('genre' => $genre, 'idgenre' => $idgenre)
     );
     return $this->render('AppBundle:Movie:genremovies.html.twig', array(
@@ -166,8 +166,8 @@ class MovieController extends Controller {
           ->findBy(array('item' => $itemEntity));
       $listUrlsVideo = array();
       if (empty($listUrls)) {
-        //$listUrlsVideo = $this->getUrlsMovies($title, $imdbId);
-        //$this->SaveUrlsMovies($listUrlsVideo, $id, FALSE);
+        $listUrlsVideo = $this->getUrlsMovies($title, $imdbId);
+        $this->SaveUrlsMovies($listUrlsVideo, $id, FALSE);
       }
       else {
         foreach ($listUrls as $url) {
@@ -183,8 +183,8 @@ class MovieController extends Controller {
       }
     }
     else {
-      //$listUrlsVideo = $this->getUrlsMovies($title, $imdbId);
-      //$this->SaveUrlsMovies($listUrlsVideo, $id);
+      $listUrlsVideo = $this->getUrlsMovies($title, $imdbId);
+      $this->SaveUrlsMovies($listUrlsVideo, $id);
     }
     $crew = $movie->getCredits()->getCrew();
     $cast = $movie->getCredits()->getCast();
