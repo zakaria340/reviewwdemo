@@ -28,7 +28,7 @@ class MovieController extends Controller {
     $pagination = array(
       'page' => $page,
       'route' => 'popularMovies',
-      'pages_count' => 100, //$TopRatedMovies['total_pages'],
+      'pages_count' => 150, //$TopRatedMovies['total_pages'],
       'route_params' => array()
     );
     return $this->render('AppBundle:Movie:popularmovies.html.twig', array(
@@ -83,7 +83,7 @@ class MovieController extends Controller {
     $pagination = array(
       'page' => $page,
       'route' => 'genreMovies',
-      'pages_count' => 100, //$TopRatedMovies['total_pages'],
+      'pages_count' => 150, //$TopRatedMovies['total_pages'],
       'route_params' => array('genre' => $genre, 'idgenre' => $idgenre)
     );
     return $this->render('AppBundle:Movie:genremovies.html.twig', array(
