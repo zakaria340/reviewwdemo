@@ -32,9 +32,9 @@ class TvController extends Controller {
     );
     return $this->render(
       'AppBundle:Tv:tvshow.html.twig', array(
-      'movies'     => $TopRatedMovies,
-      'pagination' => $pagination,
-    )
+        'movies'     => $TopRatedMovies,
+        'pagination' => $pagination,
+      )
     );
   }
 
@@ -126,10 +126,8 @@ class TvController extends Controller {
    * )
    */
   public function viewepisodeshowAction($slug, $id, $idseason, $idepisode) {
-    $movie = $this->get('tmdb.tv_episode_repository')->load(
-      $id, $idseason, $idepisode
-    );
-    if (empty($movie)) {
+    $movie = $this->get('tmdb.tv_episode_repository')->load($id, $idseason, $idepisode);
+    if(empty($movie)) {
       return $this->redirect($this->generateUrl('homepage'));
     }
     $idEpis = $movie->getId();
@@ -140,17 +138,13 @@ class TvController extends Controller {
     $title = $tvshow->getName() . ' season ' . $idseason;
     //$title = str_replace(' ', '+', $title);
     $em = $this->getDoctrine()->getManager();
-    $itemEntity = $em->getRepository('AppBundle:Item')->findBy(
-      array('idApi' => $idEpis)
-    );
+    $itemEntity = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $idEpis));
     $listUrlsVideo = array();
     if (empty($itemEntity)) {
       $listUrlsVideo = $this->getUrlsMovies($title);
       if (!empty($listUrlsVideo)) {
-        $itemEntityA = $em->getRepository('AppBundle:Item')->findBy(
-          array('idApi' => $idseason)
-        );
-        if (empty($itemEntityA)) {
+        $itemEntityA = $em->getRepository('AppBundle:Item')->findBy(array('idApi' => $idseason));
+        if(empty($itemEntityA)){
           $em = $this->getDoctrine()->getManager();
           $item = new Item();
           $item->setIdApi($idseason);
@@ -171,16 +165,9 @@ class TvController extends Controller {
     else {
       $listUrls = $em->getRepository('AppBundle:Urls')
         ->findBy(array('item' => $itemEntity));
-
       if (empty($listUrls)) {
         $listUrlsVideo = $this->getUrlsMovies($title);
         if (!empty($listUrlsVideo)) {
-          $em = $this->getDoctrine()->getManager();
-          $item = new Item();
-          $item->setIdApi($idseason);
-          $em->persist($item);
-          $em->flush();
-
           foreach ($listEpisodes as $ep) {
             $epNumber = $ep->getEpisodeNumber();
             //$epNumber = sprintf('%02d', $epNumber);
@@ -193,25 +180,24 @@ class TvController extends Controller {
       else {
         foreach ($listUrls as $url) {
           $listUrlsVideo[] = array(
-            'url'     => $url->getUrl(),
-            'name'    => $url->getName(),
+            'url' => $url->getUrl(),
+            'name' => $url->getName(),
             'qualite' => $url->getQualite(),
-            'id'      => $url->getId(),
-            'type'    => $url->getType(),
-            'host'    => $url->getHost(),
+            'id' => $url->getId(),
+            'type' => $url->getType(),
+            'host' => $url->getHost()
           );
         }
       }
     }
-    return $this->render(
-      'AppBundle:Tv:viewepisodeshow.html.twig', array(
-        'movie'        => $movie,
-        'tvshow'       => $tvshow,
-        'season'       => $season,
-        'listImages'   => $listImages,
-        'listUrls'     => $listUrlsVideo,
+    return $this->render('AppBundle:Tv:viewepisodeshow.html.twig', array(
+        'movie' => $movie,
+        'tvshow' => $tvshow,
+        'season' => $season,
+        'listImages' => $listImages,
+        'listUrls' => $listUrlsVideo,
         'listEpisodes' => $listEpisodes,
-        'idTv'         => $id,
+        'idTv' => $id
       )
     );
   }
@@ -259,7 +245,7 @@ class TvController extends Controller {
     $i = 0;
     $listUrlsVideo = array();
     foreach ($dom->find('#server-14 .les-content a') as $div) {
-      sleep(2);
+
       $i++;
       $episodeId = $div->attr['episode-id'];
       $episodeId = trim($episodeId);
