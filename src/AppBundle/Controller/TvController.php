@@ -204,7 +204,7 @@ class TvController extends Controller {
 
   public function getUrlsMovies($title) {
     sleep(1);
-    $url = 'http://123movies.to/ajax/suggest_search';
+    $url = 'http://123movies.is/ajax/suggest_search';
     $fields = array(
       'keyword' => urlencode($title),
     );

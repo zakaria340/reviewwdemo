@@ -218,7 +218,7 @@ class MovieController extends Controller {
 
   public function getContentFromCurl($keyword) {
 
-    $url = 'http://123movies.to/ajax/suggest_search';
+    $url = 'http://123movies.is/ajax/suggest_search';
     $fields = array(
       'keyword' => urlencode($keyword),
     );
@@ -238,6 +238,9 @@ class MovieController extends Controller {
     $query = curl_exec($curl_handle);
     curl_close($curl_handle);
     $dom = HtmlDomParser::str_get_html($query);
+    if(is_null($dom->find('a', 1))) {
+      return [];
+    }
     $urlMovie = $dom->find('a', 1)->attr['href'];
     $urlMovie = stripslashes($urlMovie);
     $urlMovie = str_replace('/"n', '', $urlMovie);
