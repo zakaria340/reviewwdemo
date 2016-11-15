@@ -233,7 +233,7 @@ class TvController extends Controller {
     $urlMovie = str_replace('"', '', $urlMovie);
     $urlMovie = explode('-', $urlMovie);
     $idMovie = end($urlMovie);
-    $listMovie = 'http://123movies.to/ajax/v2_get_episodes/' . $idMovie;
+    $listMovie = 'http://123movies.is/ajax/v2_get_episodes/' . $idMovie;
     $curl_handle = curl_init();
     curl_setopt($curl_handle, CURLOPT_URL, $listMovie);
     curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
@@ -250,7 +250,7 @@ class TvController extends Controller {
       $episodeId = $div->attr['episode-id'];
       $episodeId = trim($episodeId);
 
-      $geturl = "http://123movies.to/ajax/load_embed/$episodeId";
+      $geturl = "http://123movies.is/ajax/load_embed/$episodeId";
       $curl_handle = curl_init();
       curl_setopt($curl_handle, CURLOPT_URL, $geturl);
       curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
