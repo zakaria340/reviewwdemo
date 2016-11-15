@@ -41,7 +41,6 @@ class MovieController extends Controller {
    * @Route(
    *     "/movies/tag/{tag}",
    *     name="moviestag",
-   *     options={"sitemap" = {"priority" = 0.7, "changefreq" = "weekly" }},
    *     defaults={"page" = 1},
    *     requirements={
    *         "page": "\d*"
@@ -69,7 +68,6 @@ class MovieController extends Controller {
    * @Route(
    *     "/watch-movies/genre/{idgenre}-{genre}/{page}",
    *     name="genreMovies",
-   *     options={"sitemap" = {"priority" = 0.7, "changefreq" = "weekly" }},
    *     defaults={"page" = 1},
    *     requirements={
    *         "page": "\d*"
