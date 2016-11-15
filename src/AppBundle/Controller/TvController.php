@@ -233,7 +233,8 @@ class TvController extends Controller {
     $urlMovie = str_replace('"', '', $urlMovie);
     $urlMovie = explode('-', $urlMovie);
     $idMovie = end($urlMovie);
-    $listMovie = 'http://123movies.is/ajax/v2_get_episodes/' . $idMovie;
+    $urlMovie = explode('.', $idMovie);
+    $listMovie = 'http://123movies.is/ajax/v2_get_episodes/' . $urlMovie[0];
     $curl_handle = curl_init();
     curl_setopt($curl_handle, CURLOPT_URL, $listMovie);
     curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
