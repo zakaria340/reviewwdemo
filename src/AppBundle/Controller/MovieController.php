@@ -218,7 +218,7 @@ class MovieController extends Controller {
 
   public function getContentFromCurl($keyword) {
 
-    $url = 'http://123movies.is/ajax/suggest_search';
+    $url = 'https://123movies.is/ajax/suggest_search';
     $fields = array(
       'keyword' => urlencode($keyword),
     );
@@ -248,7 +248,7 @@ class MovieController extends Controller {
     $urlMovie = explode('-', $urlMovie);
     $idMovie = end($urlMovie);
     $urlMovie = explode('.', $idMovie);
-    $listMovie = 'http://123movies.is/ajax/v2_get_episodes/' . $urlMovie[0];
+    $listMovie = 'https://123movies.is/ajax/v2_get_episodes/' . $urlMovie[0];
 
     $curl_handle = curl_init();
     curl_setopt($curl_handle, CURLOPT_URL, $listMovie);
@@ -272,7 +272,7 @@ class MovieController extends Controller {
         $i++;
         $hrefIframedata = $div->find('a', 0)->attr['episode-id'];
         $hrefIframequalite = $div->find('a', 0)->attr['title'];
-        $hrefIframe = 'http://123movies.is/ajax/load_embed/' . $hrefIframedata;
+        $hrefIframe = 'https://123movies.is/ajax/load_embed/' . $hrefIframedata;
 
         $curl_handle = curl_init();
         curl_setopt($curl_handle, CURLOPT_URL, $hrefIframe);
