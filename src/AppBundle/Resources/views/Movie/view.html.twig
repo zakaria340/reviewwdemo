@@ -242,6 +242,8 @@
                                     {% for item in listMovies|slice(0, 10) %}
 
                                         <li class="w92">
+                                            <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id}) }}"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.posterPath }}" title="{{ item.title }}" alt="{{ item.title }}" class="shadow"></a>
+                                            <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id}) }}" class="title">{{ item.title }} {{item.releaseDate.format('Y')}}</a>
                                         </li>
                                     {% endfor %}
                                     <div style="clear: both;"></div>
