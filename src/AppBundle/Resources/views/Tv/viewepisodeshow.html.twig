@@ -91,30 +91,7 @@
                                         </div>
                                     </div> 
                                 </div>
-                                             <div class="container">
-                            <div class="row">
-                                <div class="span12">
-                                    <ul class="nav nav-tabs" id="myTabs">
-                                        {% for key,itemUrl in listUrls %}
-                                            <li><a href="#videoo-{{itemUrl.id}}" data-toggle="tab">{{itemUrl.name}} - {{itemUrl.qualite}}</a></li>
-                                            {% endfor %}
-                                    </ul>
-                                    <div class="tab-content">
-                                        {% for key,itemUrl in listUrls %}
-                                            <div  {%if itemUrl.type =='iframe'%}data-src="{{itemUrl.url|raw}}" {%endif%} class="tab-pane  {% if key == 0 %} active {% endif %}" id="videoo-{{itemUrl.id}}">
-                                                {%if itemUrl.type =='direct'%}
-                                                    <video id="video_video_1" class="video-js vjs-default-skin" controls preload="none" poster="https://image.tmdb.org/t/p/original{{movie.backdropPath}}" data-setup="{}">
-                                                        <source src="{{itemUrl.url|raw}}"  type="video/mp4">
-                                                    </video>
-                                                {%elseif itemUrl.type =='iframe'%}
-                                                    <iframe  width="850" height="480" frameborder="0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" scrolling="no" src="{{itemUrl.url|raw}}"></iframe>
-                                                {%endif%}
-                                            </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                          
                                 <div id="info" class="mt">
                                     <div class="col-left col-md-24 col-xs-24">
                                         <div class="popup-gallery">
