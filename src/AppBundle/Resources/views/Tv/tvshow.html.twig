@@ -21,7 +21,17 @@
             <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class="active"> 
                 <a title="Movies" href="{{ path('tvshow') }}" itemprop="item"><span itemprop="name">Tv show</span></a> 
             </li>  
-        </ol> 
+        </ol>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- annonce textuel -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-0366082310128425"
+             data-ad-slot="9546584512"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
         <div class="results">
             {% for key,movie in movies.results %}
                 <div class="item {{ key % 4 == 0 ? 'backdrop' : 'poster' }}">
