@@ -2,11 +2,11 @@
 {% extends "AppBundle::layout.html.twig" %}
 
 {% block title %}
-  {{tvshow.name}} Saison {{season.name}} Episode {{movie.name}}
+    {{tvshow.name}} Saison {{season.name}} Episode {{movie.name}}
 {% endblock %}
 
-{% block meta_description %} 
-   Watch {{tvshow.name}} Saison {{season.name}} Episode {{movie.name}} latest tv-shows Watch {{tvshow.name}} in 2016 with HD quality for free tv-series Online. 
+{% block meta_description %}
+    Watch {{tvshow.name}} Saison {{season.name}} Episode {{movie.name}} latest tv-shows Watch {{tvshow.name}} in 2016 with HD quality for free tv-series Online.
 {% endblock %}
 
 {% block alternate %}
@@ -17,58 +17,104 @@
         <div class="watching">
             <div id="body-wrapper">
                 <div itemtype="http://data-vocabulary.org/Review-aggregate" itemscope="" data-short-url="#" data-cover="" data-id="7lr6" id="movie" class="container">
-                    <ol itemtype="http://schema.org/BreadcrumbList" itemscope="" class="breadcrumb"> 
+                    <ol itemtype="http://schema.org/BreadcrumbList" itemscope="" class="breadcrumb">
                         <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement">
                             <a title="Watching movies online" href="{{ path('homepage') }}" itemprop="item"><span itemprop="name">Home</span></a>
-                        </li> 
-                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement"> 
-                            <a title="Movies" href="{{ path('tvshow') }}" itemprop="item"><span itemprop="name">Tv show</span></a> 
-                        </li> 
-                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class=""> 
+                        </li>
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement">
+                            <a title="Movies" href="{{ path('tvshow') }}" itemprop="item"><span itemprop="name">Tv show</span></a>
+                        </li>
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class="">
                             <a title=" {{tvshow.name}}" href="{{ path('viewtvshow', {'slug': tvshow.name|GenerateSlug, 'id': tvshow.id}) }}" itemprop="item">
-                                <span itemprop="name"> {{tvshow.name}}</span></a> 
-                        </li> 
+                                <span itemprop="name"> {{tvshow.name}}</span></a>
+                        </li>
 
-                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class=""> 
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class="">
                             <a title=" {{tvshow.name}} {{season.name}}" href="{{ path('viewseasonshow', {'slug': tvshow.name|GenerateSlug, 'id': tvshow.id,'idseason': season.seasonNumber}) }}" itemprop="item">
-                                <span itemprop="name">  {{season.name}}</span></a> 
-                        </li> 
-                          <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class="active"> 
+                                <span itemprop="name">  {{season.name}}</span></a>
+                        </li>
+                        <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement" class="active">
                             <a title=" {{tvshow.name}} {{season.name}}" href="{{ path('viewepisodeshow', {'slug': tvshow.name|GenerateSlug, 'id': tvshow.id,'idseason': season.seasonNumber,'idepisode':movie.episodeNumber}) }}" itemprop="item">
-                                <span itemprop="name">  {{movie.name}}</span></a> 
-                        </li> 
+                                <span itemprop="name">  {{movie.name}}</span></a>
+                        </li>
                     </ol>
-                    <div class="widget">   
-                        <div class="mt row"> 
-                            <div class="col-left col-md-14 col-xs-24"> 
+                    <div class="widget">
+                        <div class="mt row">
+                            <div class="col-left col-md-14 col-xs-24">
                                 <div class="mt" id="info">
                                     <div class="row">
-                                        <div class="thumb col-md-6 hidden-sm hidden-xs"> 
+                                        <div class="thumb col-md-6 hidden-sm hidden-xs">
                                             <img width="185" height="278" src="https://image.tmdb.org/t/p/w185{{movie.stillPath}}" class="shadow" title="{{movie.name}}" alt="{{movie.name}}" id="upload_poster" itemprop="image">
                                             <a href="http://hlok.qertewrt.com/offer?prod=139&ref=5090732" class="myButton">PLAY NOW</a>
                                         </div>
-                                        <div class="info col-md-18"> 
-                                            <div itemtype="http://schema.org/Movie" itemscope="" itemprop="itemReviewed"> 
+                                        <div class="info col-md-18">
+                                            <div itemtype="http://schema.org/Movie" itemscope="" itemprop="itemReviewed">
                                                 <h1 itemprop="name" class="name">{{movie.name}} Online</h1>
                                                 <a href="http://hlok.qertewrt.com/offer?prod=3&ref=5090688"><img class="img-responsive" style="display:inline-block;" src="http://www.photo-host.org/images/2017/01/31/7iQFf8uR.gif"></a>
 
                                                 <div class="meta">
-                                                    <span> <span class="imdb">IMDb</span> <b>7.5</b> </span> 
-                                                    <span> <i class="fa fa-clock-o"></i> <b> min</b> </span> 
-                                                </div>  
+                                                    <span> <span class="imdb">IMDb</span> <b>7.5</b> </span>
+                                                    <span> <i class="fa fa-clock-o"></i> <b> min</b> </span>
+                                                </div>
                                                 <div itemprop="description" class="desc">
                                                     <div class="shortcontent">
 
                                                         <p itemprop="description" id="overview">   {{movie.overview}}</p>
                                                     </div>
-                                                </div> 
+                                                </div>
 
                                             </div>
-                                        </div> 
-                                    </div> 
+                                        </div>
+                                    </div>
                                 </div>
+                                <div id="servers">
+                                    {%if listUrls is not empty%}
+                                        <div class="alert alert-primary notice">
+                                            <i class="fa fa-exclamation-circle"></i>
+                                            Scroll down to choose episode or server you want to watch.<br>
+                                            There is no pop, pop-up or any annoying advertising.<br>
+                                            If you don't hear the sounds, please try another server or use Desktop browsers to watch.
+                                        </div>
+                                    {%endif%}
+                                    <div data-type="direct" class="server row">
+                                        <div class="col-md-20 col-sm-19">
+                                            <ul id="list-servers" data-range-id="0" class="list-servers-link range active">
+                                                {%if listUrls is empty%}
+                                                    <li>
+                                                        <div class="alert alert-primary notice">
+                                                            No video currently available. Please choose another movie or come back later.
 
-
+                                                        </div>
+                                                    </li>
+                                                {%endif%}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="span12">
+                                            <ul class="nav nav-tabs" id="myTabs">
+                                                {% for key,itemUrl in listUrls %}
+                                                    <li><a href="#videoo-{{itemUrl.id}}" data-toggle="tab">{{itemUrl.name}} - {{itemUrl.qualite}}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                            <div class="tab-content">
+                                                {% for key,itemUrl in listUrls %}
+                                                    <div  {%if itemUrl.type =='iframe'%}data-src="{{itemUrl.url|raw}}" {%endif%} class="tab-pane  {% if key == 0 %} active {% endif %}" id="videoo-{{itemUrl.id}}">
+                                                        {%if itemUrl.type =='direct'%}
+                                                            <video id="video_video_1" class="video-js vjs-default-skin" controls preload="none" poster="https://image.tmdb.org/t/p/original{{movie.backdropPath}}" data-setup="{}">
+                                                                <source src="{{itemUrl.url|raw}}"  type="video/mp4">
+                                                            </video>
+                                                        {%elseif itemUrl.type =='iframe'%}
+                                                            <iframe  width="850" height="480" frameborder="0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" scrolling="no" src="{{itemUrl.url|raw}}"></iframe>
+                                                        {%endif%}
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div id="info" class="mt">
                                     <div class="col-left col-md-24 col-xs-24">
                                         <div class="popup-gallery">
@@ -76,7 +122,7 @@
                                             {% for item in listImages %}
 
                                                 <a href="https://image.tmdb.org/t/p/original{{item.filePath}}" title="The Cleaner"><img src="https://image.tmdb.org/t/p/w185{{item.filePath}}" height="100" width="75"></a>
-                                                {% endfor %}
+                                            {% endfor %}
                                         </div>
 
                                     </div>
@@ -99,7 +145,7 @@
 
                         </div>
                     </div>
-                </div> 
+                </div>
 
             </div>
         </div>

@@ -204,7 +204,7 @@ class TvController extends Controller {
 
   public function getUrlsMovies($title) {
     sleep(1);
-    $url = 'https://123movies.is/ajax/suggest_search';
+    $url = 'https://gomovies.to/ajax/suggest_search';
     $fields = array(
       'keyword' => urlencode($title),
     );
@@ -234,7 +234,7 @@ class TvController extends Controller {
     $urlMovie = explode('-', $urlMovie);
     $idMovie = end($urlMovie);
     $urlMovie = explode('.', $idMovie);
-    $listMovie = 'https://123movies.is/ajax/v2_get_episodes/' . $urlMovie[0];
+    $listMovie = 'https://gomovies.to/ajax/v2_get_episodes/' . $urlMovie[0];
     $curl_handle = curl_init();
     curl_setopt($curl_handle, CURLOPT_URL, $listMovie);
     curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
@@ -251,7 +251,7 @@ class TvController extends Controller {
       $episodeId = $div->attr['episode-id'];
       $episodeId = trim($episodeId);
 
-      $geturl = "https://123movies.is/ajax/load_embed/$episodeId";
+      $geturl = "https://gomovies.to/ajax/load_embed/$episodeId";
       $curl_handle = curl_init();
       curl_setopt($curl_handle, CURLOPT_URL, $geturl);
       curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
