@@ -32,4 +32,14 @@ $( ".menu-toggler" ).click(function() {
   $( "#menu" ).toggle( "slow", function() {
   });
 });
+
+  echo.init({
+    offset: 100,
+    throttle: 250,
+    unload: false,
+    callback: function (element, op) {
+      console.log(element, 'has been', op + 'ed')
+    }
+  });
+
 });

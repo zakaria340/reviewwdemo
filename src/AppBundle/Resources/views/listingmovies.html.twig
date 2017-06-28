@@ -6,10 +6,10 @@
 
                             <a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id}) }}">
                                 {% if key % 4 == 0 %}
-                                    <img alt="{{movie.title}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}" class="backdrop lazyloaded" src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}">
+                                    <img src="{{ asset('img/blank.gif') }}"alt="{{movie.title}}" data-src="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}" class="backdrop lazyloaded" data-echo="https://image.tmdb.org/t/p/w500_and_h281_bestv2{{ movie.backdrop_path }}">
                                 {% else %}
 
-                                    <img alt="{{movie.title}}" data-srcset="https://image.tmdb.org/t/p/w185/{{ movie.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ movie.poster_path }} 2x" data-src="https://image.tmdb.org/t/p/w185{{ movie.poster_path }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w185{{ movie.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ movie.poster_path }} 2x" src="https://image.tmdb.org/t/p/w185{{ movie.poster_path }}">
+                                    <img src="{{ asset('img/blank.gif') }}"alt="{{movie.title}}" data-srcset="https://image.tmdb.org/t/p/w185/{{ movie.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ movie.poster_path }} 2x" data-src="https://image.tmdb.org/t/p/w185{{ movie.poster_path }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w185{{ movie.poster_path }} 1x, https://image.tmdb.org/t/p/w370{{ movie.poster_path }} 2x" data-echo="https://image.tmdb.org/t/p/w185{{ movie.poster_path }}">
                                 {% endif %}
                                 <div class="meta" data-role="tooltip">
                                     <span class="release_date"> {{movie.release_date}}</span>

@@ -16,7 +16,7 @@
     <div class="media">
         <h2><span class="title">Movies</span>
         </h2>
-        <script data-cfasync="false" type="text/javascript" src="https://www.liveadexchanger.com/ad/display.php?r=1474957"></script>   <ol itemtype="http://schema.org/BreadcrumbList" itemscope="" class="breadcrumb">
+        <script data-cfasync="false" type="text/javascript" data-echo="https://www.liveadexchanger.com/ad/display.php?r=1474957"></script>   <ol itemtype="http://schema.org/BreadcrumbList" itemscope="" class="breadcrumb">
                         <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement">
                             <a title="Watching movies online" href="{{ path('homepage') }}" itemprop="item"><span itemprop="name">Home</span></a>
                         </li> 
@@ -29,7 +29,7 @@
                 <div class="item poster">
                     <div class="image_content">
                         <a alt="{{movie.title}}" title="{{movie.title}}" href="{{ path('viewmovie', {'slug': movie.title|GenerateSlug, 'id': movie.id}) }}">
-                            <img alt="{{movie.title}}" data-srcset="https://image.tmdb.org/t/p/w185/{{ movie.posterPath }} 1x, https://image.tmdb.org/t/p/w370{{ movie.posterPath }} 2x" data-src="https://image.tmdb.org/t/p/w185{{ movie.posterPath }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w185{{ movie.posterPath }} 1x, https://image.tmdb.org/t/p/w370{{ movie.posterPath }} 2x" src="https://image.tmdb.org/t/p/w185{{ movie.posterPath }}">
+                            <img src="{{ asset('img/blank.gif') }}" alt="{{movie.title}}" data-srcset="https://image.tmdb.org/t/p/w185/{{ movie.posterPath }} 1x, https://image.tmdb.org/t/p/w370{{ movie.posterPath }} 2x" data-src="https://image.tmdb.org/t/p/w185{{ movie.posterPath }}" class="poster lazyloaded" srcset="https://image.tmdb.org/t/p/w185{{ movie.posterPath }} 1x, https://image.tmdb.org/t/p/w370{{ movie.posterPath }} 2x" data-echo="https://image.tmdb.org/t/p/w185{{ movie.posterPath }}">
                             <div class="meta" data-role="tooltip">
                                 <span class="release_date"></span>
                                 <span class="vote_average">{{movie.voteAverage}}<span class="glyphicons glyphicons-star x1 rating" id="rating_5256cfba19c2956ff60a01e4"></span></span>
@@ -40,7 +40,7 @@
                 </div>
             {% endfor %}
         </div>
-        <script data-cfasync="false" type="text/javascript" src="https://www.liveadexchanger.com/ad/display.php?r=1474957"></script>
+        <script data-cfasync="false" type="text/javascript" data-echo="https://www.liveadexchanger.com/ad/display.php?r=1474957"></script>
         {% include 'AppBundle::pagination.html.twig' %}
 
     </div>

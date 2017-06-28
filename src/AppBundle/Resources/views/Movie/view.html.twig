@@ -53,7 +53,7 @@
 <span class='st_pinterest_large' displayText='Pinterest'></span>
                                         <div class="row">
                                             <div class="thumb col-md-6 hidden-sm hidden-xs"> 
-                                                <img width="185" height="278" src="https://image.tmdb.org/t/p/w185{{movie.posterPath}}" class="shadow" title="X-Men - Apocalypse Poster" alt="X-Men - Apocalypse Poster" id="upload_poster" itemprop="image">
+                                                <img src="{{ asset('img/blank.gif') }}"  width="185" height="278" data-echo="https://image.tmdb.org/t/p/w185{{movie.posterPath}}" class="shadow" title="X-Men - Apocalypse Poster" alt="X-Men - Apocalypse Poster" id="upload_poster" itemprop="image">
                                                 <a href="http://hlok.qertewrt.com/offer?prod=139&ref=5090732" class="myButton">PLAY NOW</a>
                                             </div>
                                             <div class="info col-md-18">
@@ -61,7 +61,7 @@
 
                                                 <h1 itemprop="name" class="name">Watch {{movie.originalTitle}} {{movie.releaseDate.format('Y')}} Movie online</h1>
 
-                                                <a href="http://hlok.qertewrt.com/offer?prod=3&ref=5090688"><img class="img-responsive" style="display:inline-block;" src="http://www.photo-host.org/images/2017/01/31/7iQFf8uR.gif"></a>
+                                                <a href="http://hlok.qertewrt.com/offer?prod=3&ref=5090688"><img src="{{ asset('img/blank.gif') }}"  class="img-responsive" style="display:inline-block;" data-echo="http://www.photo-host.org/images/2017/01/31/7iQFf8uR.gif"></a>
 
                                                 <div class="meta">
                                                     <span> <span class="imdb">IMDb</span> <b>7.5</b> </span> 
@@ -160,7 +160,7 @@
 
                                             {% for item in listImages|slice(0, 20) %}
 
-                                                <a href="https://image.tmdb.org/t/p/original{{item.filePath}}" title="The Cleaner"><img src="https://image.tmdb.org/t/p/w185{{item.filePath}}" height="100" width="100"></a>
+                                                <a href="https://image.tmdb.org/t/p/original{{item.filePath}}" title="The Cleaner"><img src="{{ asset('img/blank.gif') }}"  data-echo="https://image.tmdb.org/t/p/w185{{item.filePath}}" height="100" width="100"></a>
                                             {% endfor %}
                                         </div>
 
@@ -202,7 +202,7 @@
                                 <ul class="media_items">
                                     {% for item in castList|slice(0, 10) %}
                                         <li class="w92">
-                                            <a href="{{ path('viewpeople', {'slug': item.name|GenerateSlug, 'id': item.id}) }}"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.profilePath }}" title="Le Trône de fer" alt="Le Trône de fer" class="shadow"></a>
+                                            <a href="{{ path('viewpeople', {'slug': item.name|GenerateSlug, 'id': item.id}) }}"><img src="{{ asset('img/blank.gif') }}"  width="65"  data-echo="https://image.tmdb.org/t/p/w75/{{ item.profilePath }}" title="Le Trône de fer" alt="Le Trône de fer" class="shadow"></a>
                                             <a href="{{ path('viewpeople', {'slug': item.name|GenerateSlug, 'id': item.id}) }}" class="title">{{ item.name }}  as {{ item.character }}</a>
                                         </li>
                                     {% endfor %}
@@ -224,10 +224,10 @@
                                             <div  {%if itemUrl.type =='iframe'%}data-src="{{itemUrl.url|raw}}" {%endif%} class="tab-pane  {% if key == 0 %} active {% endif %}" id="videoo-{{itemUrl.id}}">
                                                 {%if itemUrl.type =='direct'%}
                                                     <video id="video_video_1" class="video-js vjs-default-skin" controls preload="none" poster="https://image.tmdb.org/t/p/original{{movie.backdropPath}}" data-setup="{}">
-                                                        <source src="{{itemUrl.url|raw}}"  type="video/mp4">
+                                                        <source data-echo="{{itemUrl.url|raw}}"  type="video/mp4">
                                                     </video>
                                                 {%elseif itemUrl.type =='iframe'%}
-                                                    <iframe  width="850" height="480" frameborder="0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" scrolling="no" src="{{itemUrl.url|raw}}"></iframe>
+                                                    <iframe  width="850" height="480" frameborder="0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" scrolling="no" data-echo="{{itemUrl.url|raw}}"></iframe>
                                                 {%endif%}
                                             </div>
                                         {% endfor %}
@@ -243,7 +243,7 @@
                                     {% for item in listMovies|slice(0, 10) %}
 
                                         <li class="w92">
-                                            <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id}) }}"><img width="65"  src="https://image.tmdb.org/t/p/w75/{{ item.posterPath }}" title="{{ item.title }}" alt="{{ item.title }}" class="shadow"></a>
+                                            <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id}) }}"><img src="{{ asset('img/blank.gif') }}"  width="65"  data-echo="https://image.tmdb.org/t/p/w75/{{ item.posterPath }}" title="{{ item.title }}" alt="{{ item.title }}" class="shadow"></a>
                                             <a href="{{ path('viewmovie', {'slug': item.title|GenerateSlug, 'id': item.id}) }}" class="title">{{ item.title }} {{item.releaseDate.format('Y')}}</a>
                                         </li>
                                     {% endfor %}
