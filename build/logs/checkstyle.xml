@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="3.4.0">
+<file name="/home/zak/reviewwdemo/src/AppBundle/Controller/TvController.php">
+ <error line="12" column="39" severity="error" message="Opening brace of a class must be on the line after the definition" source="PSR2.Classes.ClassDeclaration.OpenBraceNewLine"/>
+ <error line="24" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="24" column="39" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="25" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="26" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="27" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="28" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="29" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="30" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="31" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="32" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="33" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="34" column="1" severity="error" message="Multi-line function call not indented correctly; expected 8 spaces but found 6" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="34" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="34" column="40" severity="error" message="Only one argument is allowed per line in a multi-line function call" source="PSR2.Methods.FunctionCallSignature.MultipleArguments"/>
+ <error line="37" column="1" severity="error" message="Multi-line function call not indented correctly; expected 8 spaces but found 6" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="37" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="38" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="39" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="47" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="47" column="48" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="49" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="50" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="51" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="52" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="53" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="54" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="55" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="56" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="57" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="58" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="59" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="60" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="61" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="62" column="1" severity="error" message="Multi-line function call not indented correctly; expected 8 spaces but found 6" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="62" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="62" column="44" severity="error" message="Only one argument is allowed per line in a multi-line function call" source="PSR2.Methods.FunctionCallSignature.MultipleArguments"/>
+ <error line="68" column="1" severity="error" message="Multi-line function call not indented correctly; expected 8 spaces but found 6" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="68" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="69" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="70" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="79" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="79" column="63" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="80" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="81" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="82" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="83" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="84" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="85" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="86" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="88" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="89" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="90" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="91" column="1" severity="error" message="Multi-line function call not indented correctly; expected 8 spaces but found 6" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="91" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="92" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="93" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="94" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="95" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="96" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="97" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="98" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="99" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="100" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="101" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="102" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="103" column="11" severity="error" message="Line indented incorrectly; expected 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="104" column="13" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="105" column="11" severity="error" message="Line indented incorrectly; expected 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="106" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="107" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="108" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="110" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="111" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="112" column="1" severity="error" message="Multi-line function call not indented correctly; expected 8 spaces but found 6" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="112" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="112" column="48" severity="error" message="Only one argument is allowed per line in a multi-line function call" source="PSR2.Methods.FunctionCallSignature.MultipleArguments"/>
+ <error line="118" column="1" severity="error" message="Multi-line function call not indented correctly; expected 8 spaces but found 6" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="118" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="119" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="120" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="128" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="128" column="76" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="129" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="130" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="130" column="5" severity="error" message="Expected 1 space(s) after IF keyword; 0 found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword"/>
+ <error line="131" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="132" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="133" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="134" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="135" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="136" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="137" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="138" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="140" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="141" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="142" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="143" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="144" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="145" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="146" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="147" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="147" column="9" severity="error" message="Expected 1 space(s) after IF keyword; 0 found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword"/>
+ <error line="147" column="31" severity="error" message="Expected 1 space(s) after closing parenthesis; found 0" source="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis"/>
+ <error line="148" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="149" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="150" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="151" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="152" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="153" column="1" severity="error" message="Blank line found at end of control structure" source="Squiz.WhiteSpace.ControlStructureSpacing.SpacingBeforeClose"/>
+ <error line="154" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="156" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="157" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="159" column="11" severity="error" message="Line indented incorrectly; expected 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="160" column="13" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="161" column="11" severity="error" message="Line indented incorrectly; expected 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="162" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="163" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="164" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="164" column="5" severity="error" message="Expected 1 space after closing brace; newline found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace"/>
+ <error line="165" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="166" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="167" column="9" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="168" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="169" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="170" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="171" column="11" severity="error" message="Line indented incorrectly; expected 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="172" column="13" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="174" column="13" severity="error" message="Line indented incorrectly; expected 24 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="175" column="15" severity="error" message="Line indented incorrectly; expected at least 28 spaces, found 14" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="176" column="13" severity="error" message="Line indented incorrectly; expected 24 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="177" column="11" severity="error" message="Line indented incorrectly; expected 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="178" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="179" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="179" column="7" severity="error" message="Expected 1 space after closing brace; newline found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace"/>
+ <error line="180" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="181" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="182" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="183" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="184" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="185" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="186" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="187" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="188" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="189" column="11" severity="error" message="Line indented incorrectly; expected at least 28 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="190" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="191" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="192" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="193" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="193" column="19" severity="error" message="Expected 0 spaces before closing bracket; newline found" source="PSR2.Methods.FunctionCallSignature.SpaceBeforeCloseBracket"/>
+ <error line="201" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="202" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="203" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="205" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="205" column="41" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="206" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="207" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="208" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="209" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="210" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="211" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="213" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="214" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="215" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="216" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="217" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="218" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="219" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="220" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="221" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="222" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="223" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="224" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="225" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="226" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="227" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="227" column="5" severity="error" message="Expected 1 space(s) after IF keyword; 0 found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword"/>
+ <error line="228" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="229" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="230" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="231" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="232" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="233" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="234" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="235" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="236" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="237" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="238" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="239" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="240" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="241" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="242" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="243" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="244" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="245" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="246" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="247" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="248" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="248" column="63" severity="error" message="Blank line found at start of control structure" source="Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterOpen"/>
+ <error line="250" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="251" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="252" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="254" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="255" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="256" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="257" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="258" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="259" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="260" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="261" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="262" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="264" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="265" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="266" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="267" column="11" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="268" column="11" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="269" column="11" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="270" column="11" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="271" column="11" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="272" column="11" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="273" column="9" severity="error" message="Line indented incorrectly; expected at least 22 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="274" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="275" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="276" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="277" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="284" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="284" column="10" severity="error" message="Method name &quot;TvController::SaveUrlsMovies&quot; is not in camel caps format" source="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/>
+ <error line="284" column="63" severity="error" message="TRUE, FALSE and NULL must be lowercase; expected &quot;true&quot; but found &quot;TRUE&quot;" source="Generic.PHP.LowerCaseConstant.Found"/>
+ <error line="284" column="69" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="285" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="287" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="288" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="289" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="290" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="291" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="292" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="293" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="294" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="294" column="5" severity="error" message="Expected 1 space after closing brace; newline found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace"/>
+ <error line="295" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="296" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="297" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="298" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="301" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="302" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="303" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="304" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="305" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="306" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="307" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="308" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="309" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="310" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="312" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="313" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="314" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="316" column="1" severity="error" message="The closing brace for the class must go on the next line after the body" source="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody"/>
+</file>
+<file name="/home/zak/reviewwdemo/src/AppBundle/Controller/MovieController.php">
+ <error line="12" column="42" severity="error" message="Opening brace of a class must be on the line after the definition" source="PSR2.Classes.ClassDeclaration.OpenBraceNewLine"/>
+ <error line="25" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="25" column="46" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="26" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="27" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="28" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="29" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="30" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="31" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="32" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="33" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="34" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="37" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="38" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="50" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="50" column="41" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="51" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="52" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="53" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="54" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="55" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="56" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="57" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="58" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="59" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="60" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="64" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="65" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="77" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="77" column="62" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="78" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="79" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="80" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="81" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="82" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="83" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="84" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="85" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="86" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="87" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="91" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="92" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="97" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="97" column="38" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="98" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="99" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="100" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="101" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="102" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="103" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="104" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="105" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="107" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="108" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="109" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="110" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="111" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="112" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="113" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="114" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="115" column="11" severity="error" message="Line indented incorrectly; expected 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="116" column="13" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="117" column="13" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="118" column="13" severity="error" message="Line indented incorrectly; expected 24 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="119" column="15" severity="error" message="Line indented incorrectly; expected 28 spaces, found 14" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="120" column="17" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="121" column="17" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="122" column="17" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="123" column="17" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="124" column="17" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="125" column="17" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="126" column="17" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="127" column="17" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="128" column="17" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="129" column="19" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 18" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="130" column="19" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 18" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="131" column="19" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 18" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="132" column="19" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 18" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="133" column="19" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 18" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="134" column="19" severity="error" message="Line indented incorrectly; expected at least 32 spaces, found 18" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="135" column="17" severity="error" message="Line indented incorrectly; expected at least 46 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="136" column="15" severity="error" message="Line indented incorrectly; expected 28 spaces, found 14" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="137" column="13" severity="error" message="Line indented incorrectly; expected 24 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="138" column="13" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="139" column="11" severity="error" message="Line indented incorrectly; expected 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="140" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="141" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="142" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="143" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="151" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="151" column="42" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="152" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="153" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="153" column="5" severity="error" message="Expected 1 space(s) after IF keyword; 0 found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword"/>
+ <error line="154" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="155" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="156" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="157" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="158" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="159" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="161" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="162" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="163" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="164" column="11" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="165" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="167" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="168" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="169" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="169" column="52" severity="error" message="TRUE, FALSE and NULL must be lowercase; expected &quot;false&quot; but found &quot;FALSE&quot;" source="Generic.PHP.LowerCaseConstant.Found"/>
+ <error line="170" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="170" column="7" severity="error" message="Expected 1 space after closing brace; newline found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace"/>
+ <error line="171" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="172" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="173" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="174" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="175" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="176" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="177" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="178" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="179" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="180" column="11" severity="error" message="Line indented incorrectly; expected at least 28 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="181" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="182" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="183" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="183" column="5" severity="error" message="Expected 1 space after closing brace; newline found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace"/>
+ <error line="184" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="185" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="186" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="187" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="188" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="189" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="190" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="191" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="192" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="193" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="194" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="195" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="196" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="198" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="199" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="199" column="145" severity="warning" message="Line exceeds 120 characters; contains 145 characters" source="Generic.Files.LineLength.TooLong"/>
+ <error line="200" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="200" column="19" severity="error" message="Expected 0 spaces before closing bracket; newline found" source="PSR2.Methods.FunctionCallSignature.SpaceBeforeCloseBracket"/>
+ <error line="209" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="210" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="212" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="212" column="50" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="213" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="214" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="215" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="216" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="217" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="219" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="219" column="48" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="220" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="221" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="222" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="223" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="224" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="226" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="227" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="228" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="229" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="230" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="231" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="232" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="233" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="234" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="235" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="236" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="237" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="238" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="239" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="240" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="240" column="5" severity="error" message="Expected 1 space(s) after IF keyword; 0 found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword"/>
+ <error line="241" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="242" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="243" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="244" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="245" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="246" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="247" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="248" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="249" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="251" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="253" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="254" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="255" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="256" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="257" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="258" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="259" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="261" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="263" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="264" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="265" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="266" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="267" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="269" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="271" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="272" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="273" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="274" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="275" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="277" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="278" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="279" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="280" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="281" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="282" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="283" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="285" column="9" severity="error" message="Line indented incorrectly; expected at least 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="286" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="287" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="289" column="11" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="290" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="291" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="292" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="293" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="294" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="295" column="13" severity="error" message="Line indented incorrectly; expected at least 20 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="296" column="11" severity="error" message="Line indented incorrectly; expected at least 28 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="297" column="9" severity="error" message="Line indented incorrectly; expected 16 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="298" column="7" severity="error" message="Line indented incorrectly; expected 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="299" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="300" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="301" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="303" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="303" column="71" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="304" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="305" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="306" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="307" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="307" column="7" severity="error" message="Inline control structures are not allowed" source="Generic.ControlStructures.InlineControlStructure.NotAllowed"/>
+ <error line="308" column="9" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="309" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="310" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="310" column="5" severity="error" message="Inline control structures are not allowed" source="Generic.ControlStructures.InlineControlStructure.NotAllowed"/>
+ <error line="311" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="312" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="313" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="315" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="315" column="10" severity="error" message="Method name &quot;MovieController::SaveUrlsMovies&quot; is not in camel caps format" source="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/>
+ <error line="315" column="63" severity="error" message="TRUE, FALSE and NULL must be lowercase; expected &quot;true&quot; but found &quot;TRUE&quot;" source="Generic.PHP.LowerCaseConstant.Found"/>
+ <error line="315" column="69" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="317" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="319" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="320" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="321" column="11" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="322" column="11" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="323" column="11" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="324" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="325" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="326" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="326" column="5" severity="error" message="Expected 1 space after closing brace; 0 found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace"/>
+ <error line="326" column="6" severity="error" message="Expected 1 space(s) after ELSE keyword; 0 found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword"/>
+ <error line="327" column="11" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="328" column="5" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="329" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="330" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="331" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="332" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="333" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="334" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="335" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="336" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="337" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="338" column="7" severity="error" message="Line indented incorrectly; expected at least 12 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="339" column="5" severity="error" message="Line indented incorrectly; expected 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="340" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="342" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="343" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="345" column="1" severity="error" message="The closing brace for the class must go on the next line after the body" source="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody"/>
+</file>
+<file name="/home/zak/reviewwdemo/src/AppBundle/Controller/PeopleController.php">
+ <error line="9" column="43" severity="error" message="Opening brace of a class must be on the line after the definition" source="PSR2.Classes.ClassDeclaration.OpenBraceNewLine"/>
+ <error line="21" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="21" column="39" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="22" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="23" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="24" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="25" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="26" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="27" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="28" column="7" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="29" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="30" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="33" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="34" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="42" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="42" column="48" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="43" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="44" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="45" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="46" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="48" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="49" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="51" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="51" column="19" severity="error" message="Expected 0 spaces before closing bracket; newline found" source="PSR2.Methods.FunctionCallSignature.SpaceBeforeCloseBracket"/>
+ <error line="60" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="61" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="63" column="1" severity="error" message="The closing brace for the class must go on the next line after the body" source="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody"/>
+</file>
+<file name="/home/zak/reviewwdemo/src/AppBundle/Controller/DefaultController.php">
+ <error line="10" column="44" severity="error" message="Opening brace of a class must be on the line after the definition" source="PSR2.Classes.ClassDeclaration.OpenBraceNewLine"/>
+ <error line="15" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="15" column="48" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="16" column="1" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 0" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="17" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="22" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="22" column="51" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="23" column="1" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 0" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="24" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="30" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="30" column="49" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="31" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="32" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="33" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="34" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="35" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="36" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="37" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="38" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="39" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="40" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="45" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="46" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="48" column="1" severity="error" message="The closing brace for the class must go on the next line after the body" source="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody"/>
+</file>
+<file name="/home/zak/reviewwdemo/src/AppBundle/Tests/Controller/UrlsControllerTest.php">
+ <error line="17" column="1" severity="warning" message="Line exceeds 120 characters; contains 126 characters" source="Generic.Files.LineLength.TooLong"/>
+ <error line="30" column="1" severity="warning" message="Line exceeds 120 characters; contains 125 characters" source="Generic.Files.LineLength.TooLong"/>
+</file>
+<file name="/home/zak/reviewwdemo/src/AppBundle/Tests/Controller/ItemControllerTest.php">
+ <error line="17" column="1" severity="warning" message="Line exceeds 120 characters; contains 126 characters" source="Generic.Files.LineLength.TooLong"/>
+ <error line="30" column="1" severity="warning" message="Line exceeds 120 characters; contains 125 characters" source="Generic.Files.LineLength.TooLong"/>
+</file>
+<file name="/home/zak/reviewwdemo/src/AppBundle/Twig/AppExtension.php">
+ <error line="16" column="6" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 5" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="23" column="7" severity="error" message="Line indented incorrectly; expected 4 spaces, found 6" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="23" column="41" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="38" column="5" severity="error" message="Closing brace indented incorrectly; expected 6 spaces, found 4" source="Squiz.WhiteSpace.ScopeClosingBrace.Indent"/>
+ <error line="39" column="1" severity="error" message="Expected 1 newline at end of file; 0 found" source="PSR2.Files.EndFileNewline.NoneFound"/>
+</file>
+<file name="/home/zak/reviewwdemo/src/AppBundle/Entity/Item.php">
+ <error line="13" column="12" severity="error" message="Opening brace of a class must be on the line after the definition" source="PSR2.Classes.ClassDeclaration.OpenBraceNewLine"/>
+ <error line="22" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="29" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="36" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="36" column="27" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="37" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="38" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="47" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="47" column="36" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="48" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="50" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="51" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="58" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="58" column="30" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="59" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="60" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="62" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="62" column="32" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="63" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="64" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="66" column="1" severity="error" message="The closing brace for the class must go on the next line after the body" source="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody"/>
+</file>
+<file name="/home/zak/reviewwdemo/src/AppBundle/Entity/Urls.php">
+ <error line="13" column="12" severity="error" message="Opening brace of a class must be on the line after the definition" source="PSR2.Classes.ClassDeclaration.OpenBraceNewLine"/>
+ <error line="22" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="29" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="36" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="43" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="50" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="57" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="64" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="71" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="71" column="27" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="72" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="73" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="82" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="82" column="34" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="83" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="85" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="86" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="93" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="93" column="29" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="94" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="95" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="104" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="104" column="40" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="105" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="107" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="108" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="115" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="115" column="32" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="116" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="117" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="126" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="126" column="57" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="127" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="129" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="130" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="137" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="137" column="29" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="138" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="139" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="148" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="148" column="36" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="149" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="151" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="152" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="159" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="159" column="30" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="160" column="5" severity="error" message="Line indented incorrectly; expected at least 8 spaces, found 4" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="161" column="3" severity="error" message="Line indented incorrectly; expected 4 spaces, found 2" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+</file>
+<file name="/home/zak/reviewwdemo/src/AppBundle/AppBundle.php">
+ <error line="9" column="1" severity="error" message="There must be one blank line after the last USE statement; 0 found;" source="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse"/>
+ <error line="12" column="4" severity="error" message="Line indented incorrectly; expected 4 spaces, found 3" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="13" column="5" severity="error" message="Opening brace indented incorrectly; expected 3 spaces, found 4" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceIndent"/>
+ <error line="20" column="13" severity="error" message="Expected 1 space after FUNCTION keyword; 0 found" source="Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterFunction"/>
+ <error line="20" column="72" severity="error" message="Expected 1 space before opening brace; found 0" source="Squiz.Functions.MultiLineFunctionDeclaration.SpaceBeforeBrace"/>
+ <error line="33" column="17" severity="error" message="Expected 1 space(s) after FOR keyword; 0 found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword"/>
+ <error line="33" column="17" severity="error" message="Expected 1 space after first semicolon of FOR loop; 0 found" source="Squiz.ControlStructures.ForLoopDeclaration.NoSpaceAfterFirst"/>
+ <error line="33" column="17" severity="error" message="Expected 1 space after second semicolon of FOR loop; 0 found" source="Squiz.ControlStructures.ForLoopDeclaration.NoSpaceAfterSecond"/>
+ <error line="33" column="46" severity="error" message="Expected 1 space(s) after closing parenthesis; found 0" source="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis"/>
+ <error line="33" column="47" severity="error" message="Blank line found at start of control structure" source="Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterOpen"/>
+ <error line="38" column="1" severity="error" message="Multi-line function call not indented correctly; expected 12 spaces but found 8" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="38" column="9" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="40" column="1" severity="error" message="Multi-line function call not indented correctly; expected 12 spaces but found 8" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="41" column="1" severity="error" message="Multi-line function call not indented correctly; expected 12 spaces but found 8" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="41" column="9" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="43" column="1" severity="error" message="Multi-line function call not indented correctly; expected 12 spaces but found 8" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="44" column="1" severity="error" message="Multi-line function call not indented correctly; expected 12 spaces but found 8" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="44" column="9" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="46" column="1" severity="error" message="Multi-line function call not indented correctly; expected 12 spaces but found 8" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="47" column="1" severity="error" message="Multi-line function call not indented correctly; expected 12 spaces but found 8" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="47" column="9" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="49" column="13" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="49" column="133" severity="warning" message="Line exceeds 120 characters; contains 133 characters" source="Generic.Files.LineLength.TooLong"/>
+ <error line="50" column="13" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="51" column="1" severity="error" message="Multi-line function call not indented correctly; expected 16 spaces but found 14" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="51" column="15" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 14" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="52" column="1" severity="error" message="Multi-line function call not indented correctly; expected 16 spaces but found 14" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="52" column="1" severity="error" message="Multi-line function call not indented correctly; expected 18 spaces but found 14" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="52" column="15" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 14" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="52" column="22" severity="error" message="Only one argument is allowed per line in a multi-line function call" source="PSR2.Methods.FunctionCallSignature.MultipleArguments"/>
+ <error line="52" column="39" severity="error" message="Only one argument is allowed per line in a multi-line function call" source="PSR2.Methods.FunctionCallSignature.MultipleArguments"/>
+ <error line="52" column="70" severity="error" message="Only one argument is allowed per line in a multi-line function call" source="PSR2.Methods.FunctionCallSignature.MultipleArguments"/>
+ <error line="53" column="1" severity="error" message="Multi-line function call not indented correctly; expected 16 spaces but found 14" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="53" column="15" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 14" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="53" column="18" severity="error" message="Only one argument is allowed per line in a multi-line function call" source="PSR2.Methods.FunctionCallSignature.MultipleArguments"/>
+ <error line="54" column="13" severity="error" message="Line indented incorrectly; expected at least 24 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ <error line="55" column="1" severity="error" message="Multi-line function call not indented correctly; expected 12 spaces but found 10" source="PSR2.Methods.FunctionCallSignature.Indent"/>
+ <error line="55" column="11" severity="error" message="Line indented incorrectly; expected 20 spaces, found 10" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="55" column="11" severity="error" message="Closing brace indented incorrectly; expected 20 spaces, found 10" source="Squiz.WhiteSpace.ScopeClosingBrace.Indent"/>
+ <error line="58" column="9" severity="error" message="Line indented incorrectly; expected 12 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="58" column="9" severity="error" message="Function closing brace must go on the next line following the body; found 1 blank lines before brace" source="PSR2.Methods.FunctionClosingBrace.SpacingBeforeClose"/>
+ <error line="58" column="9" severity="error" message="Closing brace indented incorrectly; expected 12 spaces, found 8" source="Squiz.WhiteSpace.ScopeClosingBrace.Indent"/>
+ <error line="58" column="10" severity="error" message="Closing parenthesis of a multi-line function call must be on a line by itself" source="PSR2.Methods.FunctionCallSignature.CloseBracketLine"/>
+ <error line="59" column="5" severity="error" message="Closing brace indented incorrectly; expected 3 spaces, found 4" source="Squiz.WhiteSpace.ScopeClosingBrace.Indent"/>
+ <error line="60" column="10" severity="error" message="Line indented incorrectly; expected 4 spaces, found 9" source="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+ <error line="60" column="44" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="75" column="5" severity="error" message="Closing brace indented incorrectly; expected 9 spaces, found 4" source="Squiz.WhiteSpace.ScopeClosingBrace.Indent"/>
+</file>
+</checkstyle>
+

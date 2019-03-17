@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+  <duplication lines="42" tokens="135">
+    <file path="/home/zak/reviewwdemo/src/AppBundle/Controller/TvController.php" line="211"/>
+    <file path="/home/zak/reviewwdemo/src/AppBundle/Controller/MovieController.php" line="224"/>
+    <codefragment>    $fields_string = '';
+    //url-ify the data for the POST
+    foreach ($fields as $key =&gt; $value) {
+      $fields_string .= $key . '=' . $value . '&amp;';
+    }
+    rtrim($fields_string, '&amp;');
+    $curl_handle = curl_init();
+    curl_setopt($curl_handle, CURLOPT_URL, $url);
+    curl_setopt($curl_handle, CURLOPT_POST, count($fields));
+    curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $fields_string);
+    curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
+    curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl_handle, CURLOPT_USERAGENT, 'Google');
+    $query = curl_exec($curl_handle);
+    curl_close($curl_handle);
+    $dom = HtmlDomParser::str_get_html($query);
+    if(is_null($dom-&gt;find('a', 1))) {
+      return [];
+    }
+    $urlMovie = $dom-&gt;find('a', 1)-&gt;attr['href'];
+    $urlMovie = stripslashes($urlMovie);
+    $urlMovie = str_replace('/"n', '', $urlMovie);
+    $urlMovie = str_replace('"', '', $urlMovie);
+    $urlMovie = explode('-', $urlMovie);
+    $idMovie = end($urlMovie);
+    $urlMovie = explode('.', $idMovie);
+    $listMovie = 'https://gomovies.to/ajax/v2_get_episodes/' . $urlMovie[0];
+    $curl_handle = curl_init();
+    curl_setopt($curl_handle, CURLOPT_URL, $listMovie);
+    curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
+    curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl_handle, CURLOPT_USERAGENT, 'Google');
+    $query = curl_exec($curl_handle);
+    curl_close($curl_handle);
+    $dom = HtmlDomParser::str_get_html($query);
+    $i = 0;
+    $listUrlsVideo = array();
+    foreach ($dom-&gt;find('#server-14 .les-content a') as $div) {
+
+      $i++;
+      $episodeId = $div-&gt;attr['episode-id'];
+      $episodeId = trim($episodeId);
+</codefragment>
+  </duplication>
+</pmd-cpd>

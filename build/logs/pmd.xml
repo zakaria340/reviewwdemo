@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pmd version="@project.version@" timestamp="2019-03-17T12:30:15+00:00">
+  <file name="/home/zak/reviewwdemo/src/AppBundle/Controller/DefaultController.php">
+    <violation beginline="15" endline="15" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$request'.
+    </violation>
+    <violation beginline="22" endline="22" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$request'.
+    </violation>
+    <violation beginline="30" endline="30" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$request'.
+    </violation>
+  </file>
+  <file name="/home/zak/reviewwdemo/src/AppBundle/Controller/ItemController.php">
+    <violation beginline="27" endline="27" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $em. Configured minimum length is 3.
+    </violation>
+    <violation beginline="49" endline="49" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $em. Configured minimum length is 3.
+    </violation>
+    <violation beginline="91" endline="91" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $em. Configured minimum length is 3.
+    </violation>
+    <violation beginline="117" endline="117" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $em. Configured minimum length is 3.
+    </violation>
+  </file>
+  <file name="/home/zak/reviewwdemo/src/AppBundle/Controller/MovieController.php">
+    <violation beginline="100" endline="100" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Sunra\PhpSimple\HtmlDomParser' in method 'updatabaseAction'.
+    </violation>
+    <violation beginline="105" endline="105" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Sunra\PhpSimple\HtmlDomParser' in method 'updatabaseAction'.
+    </violation>
+    <violation beginline="151" endline="151" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$slug'.
+    </violation>
+    <violation beginline="151" endline="151" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $id. Configured minimum length is 3.
+    </violation>
+    <violation beginline="158" endline="158" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $em. Configured minimum length is 3.
+    </violation>
+    <violation beginline="171" endline="182" rule="ElseExpression" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#elseexpression" priority="1">
+      The method viewAction uses an else expression. Else is never necessary and you can simplify the code to work without else.
+    </violation>
+    <violation beginline="184" endline="187" rule="ElseExpression" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#elseexpression" priority="1">
+      The method viewAction uses an else expression. Else is never necessary and you can simplify the code to work without else.
+    </violation>
+    <violation beginline="194" endline="194" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$key'.
+    </violation>
+    <violation beginline="212" endline="212" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$imdbId'.
+    </violation>
+    <violation beginline="239" endline="239" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Sunra\PhpSimple\HtmlDomParser' in method 'getContentFromCurl'.
+    </violation>
+    <violation beginline="261" endline="261" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Sunra\PhpSimple\HtmlDomParser' in method 'getContentFromCurl'.
+    </violation>
+    <violation beginline="263" endline="263" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $i. Configured minimum length is 3.
+    </violation>
+    <violation beginline="315" endline="315" rule="BooleanArgumentFlag" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#booleanargumentflag" priority="1">
+      The method SaveUrlsMovies has a boolean flag argument $save, which is a certain sign of a Single Responsibility Principle violation.
+    </violation>
+    <violation beginline="315" endline="315" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $id. Configured minimum length is 3.
+    </violation>
+    <violation beginline="317" endline="317" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $em. Configured minimum length is 3.
+    </violation>
+    <violation beginline="326" endline="329" rule="ElseExpression" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#elseexpression" priority="1">
+      The method SaveUrlsMovies uses an else expression. Else is never necessary and you can simplify the code to work without else.
+    </violation>
+  </file>
+  <file name="/home/zak/reviewwdemo/src/AppBundle/Controller/PeopleController.php">
+    <violation beginline="42" endline="42" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$slug'.
+    </violation>
+    <violation beginline="42" endline="42" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $id. Configured minimum length is 3.
+    </violation>
+  </file>
+  <file name="/home/zak/reviewwdemo/src/AppBundle/Controller/TvController.php">
+    <violation beginline="47" endline="47" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$slug'.
+    </violation>
+    <violation beginline="47" endline="47" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $id. Configured minimum length is 3.
+    </violation>
+    <violation beginline="58" endline="58" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$key'.
+    </violation>
+    <violation beginline="79" endline="79" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$slug'.
+    </violation>
+    <violation beginline="79" endline="79" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $id. Configured minimum length is 3.
+    </violation>
+    <violation beginline="89" endline="89" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $em. Configured minimum length is 3.
+    </violation>
+    <violation beginline="128" endline="203" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="AppBundle\Controller" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="TvController" method="viewepisodeshowAction" priority="3">
+      The method viewepisodeshowAction() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="128" endline="128" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$slug'.
+    </violation>
+    <violation beginline="128" endline="128" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $id. Configured minimum length is 3.
+    </violation>
+    <violation beginline="140" endline="140" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $em. Configured minimum length is 3.
+    </violation>
+    <violation beginline="165" endline="192" rule="ElseExpression" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#elseexpression" priority="1">
+      The method viewepisodeshowAction uses an else expression. Else is never necessary and you can simplify the code to work without else.
+    </violation>
+    <violation beginline="180" endline="191" rule="ElseExpression" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#elseexpression" priority="1">
+      The method viewepisodeshowAction uses an else expression. Else is never necessary and you can simplify the code to work without else.
+    </violation>
+    <violation beginline="226" endline="226" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Sunra\PhpSimple\HtmlDomParser' in method 'getUrlsMovies'.
+    </violation>
+    <violation beginline="245" endline="245" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Sunra\PhpSimple\HtmlDomParser' in method 'getUrlsMovies'.
+    </violation>
+    <violation beginline="246" endline="246" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $i. Configured minimum length is 3.
+    </violation>
+    <violation beginline="284" endline="284" rule="BooleanArgumentFlag" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#booleanargumentflag" priority="1">
+      The method SaveUrlsMovies has a boolean flag argument $save, which is a certain sign of a Single Responsibility Principle violation.
+    </violation>
+    <violation beginline="284" endline="284" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$save'.
+    </violation>
+    <violation beginline="284" endline="284" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $id. Configured minimum length is 3.
+    </violation>
+    <violation beginline="285" endline="285" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $em. Configured minimum length is 3.
+    </violation>
+    <violation beginline="295" endline="298" rule="ElseExpression" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#elseexpression" priority="1">
+      The method SaveUrlsMovies uses an else expression. Else is never necessary and you can simplify the code to work without else.
+    </violation>
+  </file>
+  <file name="/home/zak/reviewwdemo/src/AppBundle/Controller/UrlsController.php">
+    <violation beginline="27" endline="27" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $em. Configured minimum length is 3.
+    </violation>
+    <violation beginline="49" endline="49" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $em. Configured minimum length is 3.
+    </violation>
+    <violation beginline="91" endline="91" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $em. Configured minimum length is 3.
+    </violation>
+    <violation beginline="117" endline="117" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $em. Configured minimum length is 3.
+    </violation>
+  </file>
+  <file name="/home/zak/reviewwdemo/src/AppBundle/Entity/Item.php">
+    <violation beginline="22" endline="22" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $id. Configured minimum length is 3.
+    </violation>
+  </file>
+  <file name="/home/zak/reviewwdemo/src/AppBundle/Entity/Urls.php">
+    <violation beginline="22" endline="22" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $id. Configured minimum length is 3.
+    </violation>
+  </file>
+  <file name="/home/zak/reviewwdemo/src/AppBundle/Form/ItemType.php">
+    <violation beginline="15" endline="15" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$options'.
+    </violation>
+  </file>
+  <file name="/home/zak/reviewwdemo/src/AppBundle/Form/UrlsType.php">
+    <violation beginline="15" endline="15" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$options'.
+    </violation>
+  </file>
+</pmd>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PDepend>
+  <Packages>
+    <Package name="AppBundle">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>5</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/AppBundle.php">AppBundle</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package></Package>
+        <Package>Presta\SitemapBundle\Event</Package>
+        <Package>Presta\SitemapBundle\Sitemap\Url</Package>
+        <Package>Symfony\Component\HttpKernel\Bundle</Package>
+        <Package>Symfony\Component\Routing\Generator</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="AppBundle\Controller">
+      <Stats>
+        <TotalClasses>6</TotalClasses>
+        <ConcreteClasses>6</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>4</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Controller/DefaultController.php">DefaultController</Class>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Controller/ItemController.php">ItemController</Class>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Controller/MovieController.php">MovieController</Class>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Controller/PeopleController.php">PeopleController</Class>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Controller/TvController.php">TvController</Class>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Controller/UrlsController.php">UrlsController</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>AppBundle\Entity</Package>
+        <Package>Sunra\PhpSimple</Package>
+        <Package>Symfony\Bundle\FrameworkBundle\Controller</Package>
+        <Package>Symfony\Component\HttpFoundation</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="AppBundle\Entity">
+      <Stats>
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>2</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>0</Ce>
+        <A>0</A>
+        <I>0</I>
+        <D>1</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Entity/Item.php">Item</Class>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Entity/Urls.php">Urls</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon/>
+      <UsedBy>
+        <Package>AppBundle\Controller</Package>
+      </UsedBy>
+    </Package>
+    <Package name="AppBundle\Form">
+      <Stats>
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>2</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>2</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Form/ItemType.php">ItemType</Class>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Form/UrlsType.php">UrlsType</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Component\Form</Package>
+        <Package>Symfony\Component\OptionsResolver</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="AppBundle\Repository">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Repository/ItemRepository.php">ItemRepository</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Doctrine\ORM</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="AppBundle\Tests\Controller">
+      <Stats>
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>2</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Tests/Controller/ItemControllerTest.php">ItemControllerTest</Class>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Tests/Controller/UrlsControllerTest.php">UrlsControllerTest</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Symfony\Bundle\FrameworkBundle\Test</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="AppBundle\Twig">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/home/zak/reviewwdemo/src/AppBundle/Twig/AppExtension.php">AppExtension</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package></Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+  </Packages>
+  <Cycles/>
+</PDepend>
